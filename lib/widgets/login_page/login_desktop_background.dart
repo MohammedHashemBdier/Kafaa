@@ -9,6 +9,8 @@ class LoginDesktopBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
+
     return Stack(
       children: [
         Container(
@@ -20,13 +22,21 @@ class LoginDesktopBackground extends StatelessWidget {
         ),
         Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                const Color.fromARGB(0, 255, 255, 255),
-                AppColors.c2,
-                AppColors.c2,
-              ],
-            ),
+            gradient: isArabic
+                ? LinearGradient(
+                    colors: [
+                      AppColors.c2,
+                      AppColors.c2,
+                      const Color.fromARGB(0, 255, 255, 255),
+                    ],
+                  )
+                : LinearGradient(
+                    colors: [
+                      const Color.fromARGB(0, 255, 255, 255),
+                      AppColors.c2,
+                      AppColors.c2,
+                    ],
+                  ),
           ),
         ),
       ],

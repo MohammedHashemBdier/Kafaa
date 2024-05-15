@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:kfaa_app/generated/l10n.dart';
 import 'package:kfaa_app/utils/app_colors.dart';
 import 'package:kfaa_app/utils/app_styles.dart';
+import 'package:kfaa_app/views/employees_view.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({
+class CustomLoginButton extends StatelessWidget {
+  const CustomLoginButton({
     super.key,
-    required this.title,
   });
-  final String title;
   @override
   Widget build(BuildContext context) {
     return PhysicalModel(
@@ -16,7 +16,14 @@ class CustomButton extends StatelessWidget {
       shadowColor: AppColors.c1,
       borderRadius: BorderRadius.circular(50),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => (const EmployeesView()),
+            ),
+          );
+        },
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
@@ -31,7 +38,7 @@ class CustomButton extends StatelessWidget {
             color: const Color.fromARGB(0, 255, 255, 255),
             elevation: 10,
             borderRadius: BorderRadius.circular(12),
-            child: Text(title,
+            child: Text(S.of(context).login,
                 style: AppStyles.styleSemiBold24(context).copyWith(
                   color: AppColors.c2,
                 )),

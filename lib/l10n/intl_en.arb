@@ -2,6 +2,16 @@
     "title" : "Kafa'a App Dash Board",
     "login" : "Login",
     "password" : "Password",
-    "entr_the_password" : "Entr the Password"
+    "entr_the_password" : "Entr the Password",
+    "home" : "Home",
+    "employees" : "Employees",
+    "targets" : "Targets",
+    "reviews" : "Reviews",
+    "notification" : "Notification",
+"settings" : "Settings",
+"logout" : "Logout"
+
+
+
 
 }

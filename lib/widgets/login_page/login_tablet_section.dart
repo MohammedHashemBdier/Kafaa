@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/generated/l10n.dart';
 import 'package:kfaa_app/utils/app_colors.dart';
 import 'package:kfaa_app/utils/app_images.dart';
-import 'package:kfaa_app/widgets/custom_buttom.dart';
-import 'package:kfaa_app/widgets/custom_login_text_field.dart';
+import 'package:kfaa_app/widgets/login_page/custom_login_buttom.dart';
+import 'package:kfaa_app/widgets/login_page/login_custom_text_field.dart';
 
-class LoginDesktopSection extends StatelessWidget {
-  const LoginDesktopSection({
+class LoginTabletSection extends StatelessWidget {
+  const LoginTabletSection({
     super.key,
   });
 
@@ -16,6 +15,7 @@ class LoginDesktopSection extends StatelessWidget {
       children: [
         const Expanded(child: SizedBox()),
         Expanded(
+          flex: 5,
           child: CustomScrollView(
             slivers: [
               SliverFillRemaining(
@@ -28,9 +28,8 @@ class LoginDesktopSection extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.topRight,
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        bottomLeft: Radius.circular(50),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(50),
                       ),
                       color: AppColors.c4,
                     ),
@@ -49,7 +48,7 @@ class LoginDesktopSection extends StatelessWidget {
                         )),
                         const CustomLoginTextField(),
                         const SizedBox(height: 20),
-                        CustomButton(title: S.of(context).login),
+                        const CustomLoginButton(),
                         const SizedBox(height: 20),
                       ],
                     ),
@@ -59,6 +58,7 @@ class LoginDesktopSection extends StatelessWidget {
             ],
           ),
         ),
+        const Expanded(child: SizedBox()),
       ],
     );
   }

@@ -1,38 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:kfaa_app/generated/l10n.dart';
 import 'package:kfaa_app/utils/app_colors.dart';
 import 'package:kfaa_app/utils/app_images.dart';
-import 'package:kfaa_app/widgets/custom_buttom.dart';
-import 'package:kfaa_app/widgets/custom_login_text_field.dart';
+import 'package:kfaa_app/widgets/app_border_radius.dart';
+import 'package:kfaa_app/widgets/login_page/custom_login_buttom.dart';
+import 'package:kfaa_app/widgets/login_page/login_custom_text_field.dart';
 
-class LoginMobileSection extends StatelessWidget {
-  const LoginMobileSection({
+class LoginDesktopSection extends StatelessWidget {
+  const LoginDesktopSection({
     super.key,
   });
+
   @override
   Widget build(BuildContext context) {
-    return Column(
+    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
+
+    return Row(
       children: [
         const Expanded(child: SizedBox()),
         Expanded(
-          flex: 8,
           child: CustomScrollView(
             slivers: [
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: PhysicalModel(
-                  color: Colors.black12,
+                  color: Colors.black,
                   elevation: 10,
                   shadowColor: AppColors.c1,
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(50),
                   child: Container(
                     alignment: Alignment.topRight,
                     decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        topRight: Radius.circular(50),
-                      ),
+                      borderRadius: appBorderRadius(isArabic),
                       color: AppColors.c4,
                     ),
                     child: Column(
@@ -50,7 +48,7 @@ class LoginMobileSection extends StatelessWidget {
                         )),
                         const CustomLoginTextField(),
                         const SizedBox(height: 20),
-                        CustomButton(title: S.of(context).login),
+                        const CustomLoginButton(),
                         const SizedBox(height: 20),
                       ],
                     ),

@@ -22,10 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "employees": MessageLookupByLibrary.simpleMessage("الموظفين"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+        "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
+        "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+        "targets": MessageLookupByLibrary.simpleMessage("النقاط"),
         "title": MessageLookupByLibrary.simpleMessage("لوحة تحكم تطبيق كفاءة")
       };
 }

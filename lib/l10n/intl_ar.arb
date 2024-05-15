@@ -2,6 +2,12 @@
     "title" : "لوحة تحكم تطبيق كفاءة",
     "login" : "تسجيل الدخول",
     "password" : "كلمة المرور",
-    "entr_the_password" : "أدخل كلمة المرور"
-
+    "entr_the_password" : "أدخل كلمة المرور",
+    "home" : "الصفحة الرئيسية",
+    "employees" : "الموظفين",
+    "targets" : "النقاط",
+    "reviews" : "التقييمات",
+    "notification" : "الإشعارات",
+    "settings" : "الإعدادات",
+    "logout" : "تسجيل الخروج"
 }

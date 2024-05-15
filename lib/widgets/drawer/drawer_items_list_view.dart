@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+import 'package:kfaa_app/generated/l10n.dart';
+import 'package:kfaa_app/models/drawer_item_model.dart';
+import 'package:kfaa_app/utils/app_images.dart';
+import 'package:kfaa_app/widgets/drawer/drawer_item.dart';
+
+class DrawerItemsListView extends StatefulWidget {
+  const DrawerItemsListView({
+    super.key,
+  });
+
+  @override
+  State<DrawerItemsListView> createState() => _DrawerItemsListViewState();
+}
+
+class _DrawerItemsListViewState extends State<DrawerItemsListView> {
+  int activeIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    final List<DrawerItemModel> items = [
+      DrawerItemModel(
+          title: S.of(context).home, image: Assets.imagesDashboardIcon),
+      DrawerItemModel(
+          title: S.of(context).employees, image: Assets.imagesEmployeesIcon),
+      DrawerItemModel(
+          title: S.of(context).targets, image: Assets.imagesTargetIcon),
+      DrawerItemModel(
+          title: S.of(context).reviews, image: Assets.imagesReviewsIcon),
+      DrawerItemModel(
+          title: S.of(context).notification,
+          image: Assets.imagesNotificationIcon),
+      DrawerItemModel(
+          title: S.of(context).settings, image: Assets.imagesSettingsIcon),
+    ];
+
+    return SliverList.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: () {
+            if (activeIndex != index) {
+              setState(
+                () {
+                  activeIndex = index;
+                },
+              );
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: DrawerItem(
+              draweritemModel: items[index],
+              isActive: activeIndex == index,
+            ),
+          ),
+        );
+      },
+    );
+  }
+}

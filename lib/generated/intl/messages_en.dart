@@ -22,10 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "employees": MessageLookupByLibrary.simpleMessage("Employees"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("Entr the Password"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "targets": MessageLookupByLibrary.simpleMessage("Targets"),
         "title": MessageLookupByLibrary.simpleMessage("Kafa\'a App Dash Board")
       };
 }
