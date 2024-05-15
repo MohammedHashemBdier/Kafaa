@@ -25,16 +25,16 @@ class LoginDesktopBackground extends StatelessWidget {
             gradient: isArabic
                 ? LinearGradient(
                     colors: [
-                      AppColors.c2,
-                      AppColors.c2,
                       const Color.fromARGB(0, 255, 255, 255),
+                      AppColors.c2,
+                      AppColors.c2,
                     ],
                   )
                 : LinearGradient(
                     colors: [
+                      AppColors.c2,
+                      AppColors.c2,
                       const Color.fromARGB(0, 255, 255, 255),
-                      AppColors.c2,
-                      AppColors.c2,
                     ],
                   ),
           ),

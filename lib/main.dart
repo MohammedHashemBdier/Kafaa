@@ -26,6 +26,7 @@ class KafaaApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
+        primaryColor: customMaterialColors,
         fontFamily: "ElMessiri",
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.c1,

@@ -16,7 +16,6 @@ class LoginDesktopSection extends StatelessWidget {
 
     return Row(
       children: [
-        const Expanded(child: SizedBox()),
         Expanded(
           child: CustomScrollView(
             slivers: [
@@ -58,6 +57,7 @@ class LoginDesktopSection extends StatelessWidget {
             ],
           ),
         ),
+        const Expanded(child: SizedBox()),
       ],
     );
   }
