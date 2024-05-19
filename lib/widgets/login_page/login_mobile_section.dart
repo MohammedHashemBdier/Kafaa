@@ -24,13 +24,13 @@ class LoginMobileSection extends StatelessWidget {
                   color: Colors.black12,
                   elevation: 10,
                   shadowColor: AppColors.c1,
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(10),
                   child: Container(
                     alignment: Alignment.topRight,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        topRight: Radius.circular(50),
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
                       ),
                       color: AppColors.c4,
                     ),

@@ -8,10 +8,31 @@
     "targets" : "Targets",
     "reviews" : "Reviews",
     "notification" : "Notification",
-"settings" : "Settings",
-"logout" : "Logout"
-
-
-
-
+    "settings" : "Settings",
+    "logout" : "Logout",
+    "add_an_employee": "Add an Employee",
+    "name": "Name",
+    "add_name" : "Add Name",
+    "username":"Username",
+    "add_username": "Add Username",
+    "add_password" : "Add Password",
+    "department" : "Department",
+    "add_department" : "Add Department",
+    "phone_number" : "Phone Number",
+    "add_phone_number" : "Add Phone Number",
+    "mobile_number" : "Mobile Number",
+    "add_mobile_number" : "Add Mobile Number",
+    "date_of_joining_the_department" :  "Date of Joining the Department",
+    "select_date" :  "Select Date",
+    "id_number" : "ID Number",
+    "add_id_number" : "Add ID Number",
+    "address" :  "Address",
+    "add_address" : "Add Address",
+    "date_of_birth" :  "Date of Birth",
+    "academic_specialization" : "Academic Specialization",
+    "add_academic_specialization" : "Add Academic Specialization",
+    "work_state" : "Work State",
+    "add_work_state" : "Add Work State",
+    "work" :"Work",
+    "not_work" :"Not Work"
 }

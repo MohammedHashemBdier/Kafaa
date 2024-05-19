@@ -4,18 +4,16 @@ import 'package:kfaa_app/utils/size_config.dart';
 import 'package:kfaa_app/widgets/adaptiv_layout.dart';
 import 'package:kfaa_app/widgets/custom_app_bar.dart';
 import 'package:kfaa_app/widgets/drawer/custom_drawer.dart';
-import 'package:kfaa_app/widgets/employees_page/employees_desktop_layout.dart';
-import 'package:kfaa_app/widgets/employees_page/employees_mobile_layout.dart';
-import 'package:kfaa_app/widgets/employees_page/employees_tablet_layout.dart';
+import 'package:kfaa_app/widgets/home_page/Home_desktop_layout.dart';
 
-class EmployeesView extends StatefulWidget {
-  const EmployeesView({super.key});
+class HomView extends StatefulWidget {
+  const HomView({super.key});
 
   @override
-  State<EmployeesView> createState() => _HomViewState();
+  State<HomView> createState() => _HomViewState();
 }
 
-class _HomViewState extends State<EmployeesView> {
+class _HomViewState extends State<HomView> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   @override
@@ -30,9 +28,9 @@ class _HomViewState extends State<EmployeesView> {
           ? CustomAppBar(scaffoldKey: scaffoldKey)
           : null,
       body: AdaptiveLayout(
-        mobileLayout: (context) => const EmployeesMobileLayout(),
-        tabletLayout: (context) => const EmployeesTabletLayout(),
-        desktopLayout: (context) => const EmployeesDesktopLayout(),
+        mobileLayout: (context) => const SizedBox(),
+        tabletLayout: (context) => const SizedBox(),
+        desktopLayout: (context) => const HomeDesktopLayout(),
       ),
     );
   }

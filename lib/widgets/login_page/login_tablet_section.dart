@@ -24,12 +24,12 @@ class LoginTabletSection extends StatelessWidget {
                   color: Colors.black,
                   elevation: 10,
                   shadowColor: AppColors.c1,
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.circular(30),
                   child: Container(
                     alignment: Alignment.topRight,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(
-                        Radius.circular(50),
+                        Radius.circular(30),
                       ),
                       color: AppColors.c4,
                     ),

@@ -159,6 +159,256 @@ class S {
       args: [],
     );
   }
+
+  /// `Add an Employee`
+  String get add_an_employee {
+    return Intl.message(
+      'Add an Employee',
+      name: 'add_an_employee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Name`
+  String get add_name {
+    return Intl.message(
+      'Add Name',
+      name: 'add_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Username`
+  String get add_username {
+    return Intl.message(
+      'Add Username',
+      name: 'add_username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Password`
+  String get add_password {
+    return Intl.message(
+      'Add Password',
+      name: 'add_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Department`
+  String get department {
+    return Intl.message(
+      'Department',
+      name: 'department',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Department`
+  String get add_department {
+    return Intl.message(
+      'Add Department',
+      name: 'add_department',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Phone Number`
+  String get add_phone_number {
+    return Intl.message(
+      'Add Phone Number',
+      name: 'add_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile Number`
+  String get mobile_number {
+    return Intl.message(
+      'Mobile Number',
+      name: 'mobile_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Mobile Number`
+  String get add_mobile_number {
+    return Intl.message(
+      'Add Mobile Number',
+      name: 'add_mobile_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of Joining the Department`
+  String get date_of_joining_the_department {
+    return Intl.message(
+      'Date of Joining the Department',
+      name: 'date_of_joining_the_department',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Date`
+  String get select_date {
+    return Intl.message(
+      'Select Date',
+      name: 'select_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ID Number`
+  String get id_number {
+    return Intl.message(
+      'ID Number',
+      name: 'id_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add ID Number`
+  String get add_id_number {
+    return Intl.message(
+      'Add ID Number',
+      name: 'add_id_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message(
+      'Address',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Address`
+  String get add_address {
+    return Intl.message(
+      'Add Address',
+      name: 'add_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date of Birth`
+  String get date_of_birth {
+    return Intl.message(
+      'Date of Birth',
+      name: 'date_of_birth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Academic Specialization`
+  String get academic_specialization {
+    return Intl.message(
+      'Academic Specialization',
+      name: 'academic_specialization',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Academic Specialization`
+  String get add_academic_specialization {
+    return Intl.message(
+      'Add Academic Specialization',
+      name: 'add_academic_specialization',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Work State`
+  String get work_state {
+    return Intl.message(
+      'Work State',
+      name: 'work_state',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Work State`
+  String get add_work_state {
+    return Intl.message(
+      'Add Work State',
+      name: 'add_work_state',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Work`
+  String get work {
+    return Intl.message(
+      'Work',
+      name: 'work',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not Work`
+  String get not_work {
+    return Intl.message(
+      'Not Work',
+      name: 'not_work',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

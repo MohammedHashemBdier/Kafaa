@@ -9,6 +9,7 @@ class CustomLoginTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isActiv = false;
     return Row(
       children: [
         const Expanded(
@@ -17,6 +18,9 @@ class CustomLoginTextField extends StatelessWidget {
         Expanded(
           flex: 3,
           child: CustomTextField(
+            onTap: () {
+              isActiv == true;
+            },
             suffixIcon: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.remove_red_eye)),
             hint: S.of(context).entr_the_password,

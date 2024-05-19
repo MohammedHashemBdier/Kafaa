@@ -22,17 +22,50 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "academic_specialization":
+            MessageLookupByLibrary.simpleMessage("Academic Specialization"),
+        "add_academic_specialization":
+            MessageLookupByLibrary.simpleMessage("Add Academic Specialization"),
+        "add_address": MessageLookupByLibrary.simpleMessage("Add Address"),
+        "add_an_employee":
+            MessageLookupByLibrary.simpleMessage("Add an Employee"),
+        "add_department":
+            MessageLookupByLibrary.simpleMessage("Add Department"),
+        "add_id_number": MessageLookupByLibrary.simpleMessage("Add ID Number"),
+        "add_mobile_number":
+            MessageLookupByLibrary.simpleMessage("Add Mobile Number"),
+        "add_name": MessageLookupByLibrary.simpleMessage("Add Name"),
+        "add_password": MessageLookupByLibrary.simpleMessage("Add Password"),
+        "add_phone_number":
+            MessageLookupByLibrary.simpleMessage("Add Phone Number"),
+        "add_username": MessageLookupByLibrary.simpleMessage("Add Username"),
+        "add_work_state":
+            MessageLookupByLibrary.simpleMessage("Add Work State"),
+        "address": MessageLookupByLibrary.simpleMessage("Address"),
+        "date_of_birth": MessageLookupByLibrary.simpleMessage("Date of Birth"),
+        "date_of_joining_the_department": MessageLookupByLibrary.simpleMessage(
+            "Date of Joining the Department"),
+        "department": MessageLookupByLibrary.simpleMessage("Department"),
         "employees": MessageLookupByLibrary.simpleMessage("Employees"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("Entr the Password"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "id_number": MessageLookupByLibrary.simpleMessage("ID Number"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "mobile_number": MessageLookupByLibrary.simpleMessage("Mobile Number"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "not_work": MessageLookupByLibrary.simpleMessage("Not Work"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+        "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "targets": MessageLookupByLibrary.simpleMessage("Targets"),
-        "title": MessageLookupByLibrary.simpleMessage("Kafa\'a App Dash Board")
+        "title": MessageLookupByLibrary.simpleMessage("Kafa\'a App Dash Board"),
+        "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "work": MessageLookupByLibrary.simpleMessage("Work"),
+        "work_state": MessageLookupByLibrary.simpleMessage("Work State")
       };
 }

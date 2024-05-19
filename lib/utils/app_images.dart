@@ -1,6 +1,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesCloseIcon
+  /// assets/images/close_icon.svg
+  static const String imagesCloseIcon = "assets/images/close_icon.svg";
+
   /// Assets for imagesDashboardIcon
   /// assets/images/dashboard_icon.svg
   static const String imagesDashboardIcon = "assets/images/dashboard_icon.svg";
@@ -37,12 +41,24 @@ class Assets {
   /// assets/images/reviews_icon.svg
   static const String imagesReviewsIcon = "assets/images/reviews_icon.svg";
 
+  /// Assets for imagesSettings
+  /// assets/images/settings.svg
+  static const String imagesSettings = "assets/images/settings.svg";
+
   /// Assets for imagesSettingsIcon
   /// assets/images/settings_icon.svg
   static const String imagesSettingsIcon = "assets/images/settings_icon.svg";
 
+  /// Assets for imagesStatistics
+  /// assets/images/statistics.svg
+  static const String imagesStatistics = "assets/images/statistics.svg";
+
   /// Assets for imagesTargetIcon
   /// assets/images/target_icon.svg
   static const String imagesTargetIcon = "assets/images/target_icon.svg";
+
+  /// Assets for imagesWalletAccount
+  /// assets/images/wallet_account.svg
+  static const String imagesWalletAccount = "assets/images/wallet_account.svg";
 }
 

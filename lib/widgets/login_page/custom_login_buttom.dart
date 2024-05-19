@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kfaa_app/generated/l10n.dart';
 import 'package:kfaa_app/utils/app_colors.dart';
 import 'package:kfaa_app/utils/app_styles.dart';
-import 'package:kfaa_app/views/employees_view.dart';
+import 'package:kfaa_app/views/home_view.dart';
 
 class CustomLoginButton extends StatelessWidget {
   const CustomLoginButton({
@@ -20,7 +20,7 @@ class CustomLoginButton extends StatelessWidget {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => (const EmployeesView()),
+              builder: (context) => (const HomView()),
             ),
           );
         },

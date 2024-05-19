@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:kfaa_app/utils/app_colors.dart';
 import 'package:kfaa_app/utils/app_styles.dart';
 import 'package:kfaa_app/widgets/app_text_fields_border.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-    required this.hint,
-    required this.label,
-    this.prefixIcon,
-    this.suffixIcon,
-    this.onTap,
-    this.enabled,
-  });
+class CustomNumberField extends StatelessWidget {
+  const CustomNumberField(
+      {super.key,
+      required this.hint,
+      required this.label,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.maxLength});
 
   final String hint;
   final String label;
   final Widget? prefixIcon, suffixIcon;
-  final Function()? onTap;
-  final bool? enabled;
+  final int? maxLength;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
-      child: TextField(
-        enabled: enabled,
+      child: TextFormField(
+        keyboardType: TextInputType.number,
+        inputFormatters: <TextInputFormatter>[
+          FilteringTextInputFormatter.digitsOnly,
+        ],
         decoration: InputDecoration(
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
@@ -39,7 +40,7 @@ class CustomTextField extends StatelessWidget {
           border: AppTextFieldsBorder.appTextFieldsBorder(),
           enabledBorder: AppTextFieldsBorder.appTextFieldsBorder(),
         ),
-        onTap: onTap,
+        maxLength: maxLength,
       ),
     );
   }
