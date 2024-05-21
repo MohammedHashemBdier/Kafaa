@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:kfaa_app/widgets/custom_app_container.dart';
 import 'package:kfaa_app/widgets/drawer/custom_drawer.dart';
-import 'package:kfaa_app/widgets/employees_page/add_an_employee_body.dart';
-import 'package:kfaa_app/widgets/employees_page/add_an_employee_button.dart';
-import 'package:kfaa_app/widgets/employees_page/add_an_employee_header.dart';
+import 'package:kfaa_app/widgets/employees_page/add_an_employee_section.dart';
+import 'package:kfaa_app/widgets/employees_page/employees_section.dart';
 
 class EmployeesDesktopLayout extends StatelessWidget {
   const EmployeesDesktopLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
-        const Expanded(child: CustomDrawer()),
-        const SizedBox(width: 30),
+        Expanded(child: CustomDrawer()),
+        SizedBox(width: 30),
         Expanded(
           flex: 4,
           child: CustomScrollView(
@@ -22,23 +19,17 @@ class EmployeesDesktopLayout extends StatelessWidget {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 40, bottom: 40, right: 20, left: 20),
+                  padding:
+                      EdgeInsets.only(top: 40, bottom: 40, right: 20, left: 20),
                   child: Row(
                     children: [
-                      const Expanded(flex: 2, child: SizedBox()),
                       Expanded(
-                        child: CustomAppContainer(
-                          child: Column(
-                            children: [
-                              const AddAnEmployeeHeader(),
-                              const AddAnEmployeeBody(),
-                              const SizedBox(height: 40),
-                              AddAnEmployeeButton(onPressed: () {}),
-                              const SizedBox(height: 40),
-                            ],
-                          ),
-                        ),
+                        flex: 2,
+                        child: EmployeesSection(),
+                      ),
+                      SizedBox(width: 20),
+                      Expanded(
+                        child: AddAnEmployeeSection(),
                       ),
                     ],
                   ),

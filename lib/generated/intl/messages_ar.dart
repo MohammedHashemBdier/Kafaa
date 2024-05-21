@@ -45,12 +45,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "date_of_birth": MessageLookupByLibrary.simpleMessage("تاريخ الولادة"),
         "date_of_joining_the_department":
             MessageLookupByLibrary.simpleMessage("تاريخ الإنضمام للقسم"),
+        "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "department": MessageLookupByLibrary.simpleMessage("القسم"),
+        "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
         "employees": MessageLookupByLibrary.simpleMessage("الموظفين"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "id_number": MessageLookupByLibrary.simpleMessage("الرقم الوطني"),
+        "info": MessageLookupByLibrary.simpleMessage("التفاصيل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "mobile_number": MessageLookupByLibrary.simpleMessage("رقم الجوال"),
@@ -60,9 +63,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
+        "search_for_an_employee":
+            MessageLookupByLibrary.simpleMessage("ابحث عن موظف"),
         "select_date": MessageLookupByLibrary.simpleMessage("اخترتاريخا"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "targets": MessageLookupByLibrary.simpleMessage("النقاط"),
+        "the_search": MessageLookupByLibrary.simpleMessage("البحث"),
         "title": MessageLookupByLibrary.simpleMessage("لوحة تحكم تطبيق كفاءة"),
         "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "work": MessageLookupByLibrary.simpleMessage("يعمل"),

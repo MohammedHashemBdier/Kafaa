@@ -409,6 +409,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Info`
+  String get info {
+    return Intl.message(
+      'Info',
+      name: 'info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Search`
+  String get the_search {
+    return Intl.message(
+      'The Search',
+      name: 'the_search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for an Employee`
+  String get search_for_an_employee {
+    return Intl.message(
+      'Search for an Employee',
+      name: 'search_for_an_employee',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

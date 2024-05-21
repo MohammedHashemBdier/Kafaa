@@ -1,6 +1,14 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesAppFavIconPng
+  /// assets/images/app_fav_icon_png.png
+  static const String imagesAppFavIconPng = "assets/images/app_fav_icon_png.png";
+
+  /// Assets for imagesAppFavIconSvg
+  /// assets/images/app_fav_icon_svg.svg
+  static const String imagesAppFavIconSvg = "assets/images/app_fav_icon_svg.svg";
+
   /// Assets for imagesCloseIcon
   /// assets/images/close_icon.svg
   static const String imagesCloseIcon = "assets/images/close_icon.svg";
@@ -8,6 +16,10 @@ class Assets {
   /// Assets for imagesDashboardIcon
   /// assets/images/dashboard_icon.svg
   static const String imagesDashboardIcon = "assets/images/dashboard_icon.svg";
+
+  /// Assets for imagesEmployeeAvatar
+  /// assets/images/employee_avatar.svg
+  static const String imagesEmployeeAvatar = "assets/images/employee_avatar.svg";
 
   /// Assets for imagesEmployeesIcon
   /// assets/images/employees_icon.svg

@@ -30,42 +30,45 @@ class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
-      child: DropdownButtonFormField(
-        decoration: InputDecoration(
-          prefix: Padding(
-            padding: const EdgeInsets.only(right: 7, top: 8),
-            child: Icon(
-              Icons.work_outline,
+      child: Card(
+        elevation: 3,
+        child: DropdownButtonFormField(
+          decoration: InputDecoration(
+            prefix: Padding(
+              padding: const EdgeInsets.only(right: 7, top: 8),
+              child: Icon(
+                Icons.work_outline,
+                color: AppColors.c5,
+              ),
+            ),
+            label: Text(
+              S.of(context).work_state,
+            ),
+            labelStyle: AppStyles.styleRegular16(context),
+            hintText: S.of(context).add_work_state,
+            hintStyle: AppStyles.styleRegular16(context).copyWith(
               color: AppColors.c5,
             ),
+            fillColor: AppColors.c3,
+            filled: true,
+            border: AppTextFieldsBorder.appTextFieldsBorder(),
+            enabledBorder: AppTextFieldsBorder.appTextFieldsBorder(),
           ),
-          label: Text(
-            S.of(context).work_state,
-          ),
-          labelStyle: AppStyles.styleRegular16(context),
-          hintText: S.of(context).add_work_state,
-          hintStyle: AppStyles.styleRegular16(context).copyWith(
-            color: Colors.black,
-          ),
-          fillColor: AppColors.c3,
-          filled: true,
-          border: AppTextFieldsBorder.appTextFieldsBorder(),
-          enabledBorder: AppTextFieldsBorder.appTextFieldsBorder(),
-        ),
-        value: selectedValue,
-        items: workState.map(
-          (e) {
-            return DropdownMenuItem(
-              value: e,
-              child: Text(e),
-            );
+          value: selectedValue,
+          items: workState.map(
+            (e) {
+              return DropdownMenuItem(
+                value: e,
+                child: Text(e),
+              );
+            },
+          ).toList(),
+          onChanged: (val) {
+            setState(() {
+              selectedValue = val!;
+            });
           },
-        ).toList(),
-        onChanged: (val) {
-          setState(() {
-            selectedValue = val!;
-          });
-        },
+        ),
       ),
     );
   }

@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kfaa_app/utils/app_images.dart';
 
-class CloseIcon extends StatelessWidget {
-  const CloseIcon({
+class CustomCloseIcon extends StatelessWidget {
+  const CustomCloseIcon({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
+    return Align(
+      alignment: AlignmentDirectional.centerStart,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.all(10),

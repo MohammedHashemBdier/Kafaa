@@ -34,5 +34,10 @@
     "work_state" : "Work State",
     "add_work_state" : "Add Work State",
     "work" :"Work",
-    "not_work" :"Not Work"
+    "not_work" :"Not Work",
+    "edit": "Edit",
+    "delete": "Delete",
+    "info": "Info",
+    "the_search" : "The Search",
+    "search_for_an_employee" : "Search for an Employee"
 }

@@ -34,5 +34,10 @@
     "work_state" : "حالة العمل",
     "add_work_state" : "اضف حالة العمل",
     "work" :"يعمل",
-    "not_work" :"لا يعمل"
+    "not_work" :"لا يعمل",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "info": "التفاصيل",
+    "the_search" : "البحث",
+    "search_for_an_employee" : "ابحث عن موظف"
 }

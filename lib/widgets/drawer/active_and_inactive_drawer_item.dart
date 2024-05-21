@@ -23,7 +23,7 @@ class InActiveDrawerItem extends StatelessWidget {
             draweritemModel.image,
             width: 25,
             height: 25,
-            colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(AppColors.c5, BlendMode.srcIn),
           ),
         ),
         title: FittedBox(

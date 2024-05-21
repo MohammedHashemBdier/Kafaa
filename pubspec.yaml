@@ -37,6 +37,8 @@ dependencies:
   flutter_localization: ^0.2.0
   flutter_svg: ^2.0.10+1
   font_awesome_flutter: ^10.7.0
+  awesome_dialog: ^3.2.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -104,3 +106,10 @@ flutter_assets:
   field_prefix: null
 flutter_intl:
   enabled: true
+
+flutter_icons:
+  android: true
+  ios: true
+  web: true
+  desktop: true
+  image_path: "assets/images/app_fav_icon_png.png"

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kfaa_app/generated/l10n.dart';
 import 'package:kfaa_app/utils/app_colors.dart';
 import 'package:kfaa_app/utils/app_styles.dart';
+import 'package:kfaa_app/widgets/custom_app_container.dart';
 
 class AddAnEmployeeHeader extends StatelessWidget {
   const AddAnEmployeeHeader({
@@ -10,11 +11,9 @@ class AddAnEmployeeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
+    return CustomAppContainer(
       child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.person_add_alt_1,

@@ -11,36 +11,45 @@ class CustomNumberField extends StatelessWidget {
       required this.label,
       this.prefixIcon,
       this.suffixIcon,
-      this.maxLength});
+      this.maxLength,
+      this.onTap,
+      this.enabled});
 
   final String hint;
   final String label;
   final Widget? prefixIcon, suffixIcon;
+  final Function()? onTap;
   final int? maxLength;
+  final bool? enabled;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
-      child: TextFormField(
-        keyboardType: TextInputType.number,
-        inputFormatters: <TextInputFormatter>[
-          FilteringTextInputFormatter.digitsOnly,
-        ],
-        decoration: InputDecoration(
-          prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
-          label: Text(label),
-          labelStyle: AppStyles.styleRegular16(context),
-          hintText: hint,
-          hintStyle: AppStyles.styleRegular16(context).copyWith(
-            color: Colors.black,
+      child: Card(
+        elevation: 3,
+        child: TextFormField(
+          enabled: enabled,
+          keyboardType: TextInputType.number,
+          inputFormatters: <TextInputFormatter>[
+            FilteringTextInputFormatter.digitsOnly,
+          ],
+          decoration: InputDecoration(
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+            label: Text(label),
+            labelStyle: AppStyles.styleRegular16(context),
+            hintText: hint,
+            hintStyle: AppStyles.styleRegular16(context).copyWith(
+              color: AppColors.c5,
+            ),
+            fillColor: AppColors.c3,
+            filled: true,
+            border: AppTextFieldsBorder.appTextFieldsBorder(),
+            enabledBorder: AppTextFieldsBorder.appTextFieldsBorder(),
           ),
-          fillColor: AppColors.c3,
-          filled: true,
-          border: AppTextFieldsBorder.appTextFieldsBorder(),
-          enabledBorder: AppTextFieldsBorder.appTextFieldsBorder(),
+          maxLength: maxLength,
         ),
-        maxLength: maxLength,
       ),
     );
   }

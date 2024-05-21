@@ -45,12 +45,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "date_of_birth": MessageLookupByLibrary.simpleMessage("Date of Birth"),
         "date_of_joining_the_department": MessageLookupByLibrary.simpleMessage(
             "Date of Joining the Department"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "department": MessageLookupByLibrary.simpleMessage("Department"),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "employees": MessageLookupByLibrary.simpleMessage("Employees"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("Entr the Password"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "id_number": MessageLookupByLibrary.simpleMessage("ID Number"),
+        "info": MessageLookupByLibrary.simpleMessage("Info"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "mobile_number": MessageLookupByLibrary.simpleMessage("Mobile Number"),
@@ -60,9 +63,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+        "search_for_an_employee":
+            MessageLookupByLibrary.simpleMessage("Search for an Employee"),
         "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "targets": MessageLookupByLibrary.simpleMessage("Targets"),
+        "the_search": MessageLookupByLibrary.simpleMessage("The Search"),
         "title": MessageLookupByLibrary.simpleMessage("Kafa\'a App Dash Board"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "work": MessageLookupByLibrary.simpleMessage("Work"),

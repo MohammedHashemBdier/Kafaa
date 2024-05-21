@@ -11,15 +11,18 @@ class CustomAppContainer extends StatelessWidget {
   final double? padding;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(padding ?? 20),
-      decoration: ShapeDecoration(
-        color: AppColors.c4,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+    return Card(
+      elevation: 3,
+      child: Container(
+        padding: EdgeInsets.all(padding ?? 20),
+        decoration: ShapeDecoration(
+          color: AppColors.c4,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
         ),
+        child: child,
       ),
-      child: child,
     );
   }
 }

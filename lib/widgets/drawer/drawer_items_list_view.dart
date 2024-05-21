@@ -37,18 +37,18 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
     return SliverList.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            if (activeIndex != index) {
-              setState(
-                () {
-                  activeIndex = index;
-                },
-              );
-            }
-          },
-          child: Padding(
-            padding: const EdgeInsets.only(top: 20),
+        return Padding(
+          padding: const EdgeInsets.all(10),
+          child: InkWell(
+            onTap: () {
+              if (activeIndex != index) {
+                setState(
+                  () {
+                    activeIndex = index;
+                  },
+                );
+              }
+            },
             child: DrawerItem(
               draweritemModel: items[index],
               isActive: activeIndex == index,
