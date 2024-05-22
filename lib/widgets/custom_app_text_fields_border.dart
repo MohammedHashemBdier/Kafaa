@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
 
-class AppTextFieldsBorder {
+class CustomAppTextFieldsBorder {
   static OutlineInputBorder appTextFieldsBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),

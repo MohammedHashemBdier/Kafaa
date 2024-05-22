@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/widgets/login_page/login_tablet_background.dart';
-import 'package:kfaa_app/widgets/login_page/login_tablet_section.dart';
+import 'package:kafaa_app/widgets/login_page/login_tablet_background.dart';
+import 'package:kafaa_app/widgets/login_page/login_tablet_section.dart';
 
 class LoginTabletLayout extends StatelessWidget {
   const LoginTabletLayout({super.key});

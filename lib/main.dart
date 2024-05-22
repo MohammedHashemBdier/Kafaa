@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:kfaa_app/generated/l10n.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/views/employees_view.dart';
+import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/views/employees_view.dart';
 
 void main() {
   return runApp(

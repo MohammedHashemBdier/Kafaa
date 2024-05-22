@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/widgets/drawer/custom_drawer.dart';
+import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 
 class HomeDesktopLayout extends StatelessWidget {
   const HomeDesktopLayout({super.key});
@@ -8,7 +8,7 @@ class HomeDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: CustomDrawer()),
+        Expanded(child: AppDrawer()),
         Expanded(flex: 4, child: SizedBox()),
       ],
     );

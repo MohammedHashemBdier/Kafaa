@@ -39,5 +39,16 @@
     "delete": "Delete",
     "info": "Info",
     "the_search" : "The Search",
-    "search_for_an_employee" : "Search for an Employee"
+    "search_for_an_employee" : "Search for an Employee",
+    "employee_info": "Employee Info",
+    "save_edits": "Save Edits",
+    "cancel" :     "Cancel",
+    "confirm" : "Confirm",
+    "do_you_want_to_logout" :"Do you want to Logout?",
+    "do_you_want_to_delete_the_employee":"Do you want to delete the Employee?",
+    "do_you_want_to_add_an_employee" : "Do you want to add an Employee?",
+    "do_you_want_to_save_the_edits" : "Do you want to save the edits?",
+    "alart" : "Alart",
+    "ok" : "Ok",
+    "you_are_now_logged_in" : "You are now logged in"
 }

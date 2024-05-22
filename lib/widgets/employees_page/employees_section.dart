@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kfaa_app/widgets/employees_page/custom_employees_table_body.dart';
-import 'package:kfaa_app/widgets/employees_page/custom_employees_table_header.dart';
+import 'package:kafaa_app/widgets/employees_page/employees_table_body.dart';
+import 'package:kafaa_app/widgets/employees_page/employees_table_header.dart';
 
 class EmployeesSection extends StatelessWidget {
   const EmployeesSection({
@@ -12,8 +12,8 @@ class EmployeesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        CustomEmployeesTableHeader(),
-        CustomEmployeesTableBody(),
+        EmployeesTableHeader(),
+        EmployeesTableBody(),
         SizedBox(height: 40),
       ],
     );

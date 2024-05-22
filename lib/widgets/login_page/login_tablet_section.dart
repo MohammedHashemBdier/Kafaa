@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_images.dart';
-import 'package:kfaa_app/widgets/login_page/custom_login_buttom.dart';
-import 'package:kfaa_app/widgets/login_page/login_custom_text_field.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_images.dart';
+import 'package:kafaa_app/widgets/login_page/login_buttom.dart';
+import 'package:kafaa_app/widgets/login_page/login_text_field.dart';
 
 class LoginTabletSection extends StatelessWidget {
   const LoginTabletSection({
@@ -39,16 +39,15 @@ class LoginTabletSection extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        Center(
-                            child: Flexible(
+                        Flexible(
                           child: Padding(
                             padding: const EdgeInsets.all(100),
                             child: Image.asset(Assets.imagesKfaaAppLogoPng),
                           ),
-                        )),
-                        const CustomLoginTextField(),
+                        ),
+                        const LoginTextField(),
                         const SizedBox(height: 20),
-                        const CustomLoginButton(),
+                        const LoginButton(),
                         const SizedBox(height: 20),
                       ],
                     ),

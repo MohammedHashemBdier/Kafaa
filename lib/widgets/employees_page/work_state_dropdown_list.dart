@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/generated/l10n.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_styles.dart';
-import 'package:kfaa_app/widgets/app_text_fields_border.dart';
+import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/widgets/custom_app_text_fields_border.dart';
 
 class WorkStatetDropdownList extends StatefulWidget {
-  const WorkStatetDropdownList({super.key});
-
+  const WorkStatetDropdownList({super.key, required this.enabled, this.label});
+  final bool enabled;
+  final String? label;
   @override
   _WorkStatetDropdownListState createState() => _WorkStatetDropdownListState();
 }
 
 class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
-  late String selectedValue;
+  late String? selectedValue;
   late List<String> workState;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // الحصول على القيم المترجمة عند تغيير السياق
     workState = [
       S.of(context).work,
       S.of(context).not_work,
     ];
-    selectedValue = workState[0]; // تحديد القيمة الافتراضية
+    selectedValue = workState[0];
   }
 
   @override
@@ -34,16 +34,11 @@ class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
         elevation: 3,
         child: DropdownButtonFormField(
           decoration: InputDecoration(
-            prefix: Padding(
-              padding: const EdgeInsets.only(right: 7, top: 8),
-              child: Icon(
-                Icons.work_outline,
-                color: AppColors.c5,
-              ),
+            prefixIcon: Icon(
+              Icons.work_outline,
+              color: AppColors.c5,
             ),
-            label: Text(
-              S.of(context).work_state,
-            ),
+            labelText: widget.label ?? S.of(context).work_state,
             labelStyle: AppStyles.styleRegular16(context),
             hintText: S.of(context).add_work_state,
             hintStyle: AppStyles.styleRegular16(context).copyWith(
@@ -51,10 +46,10 @@ class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
             ),
             fillColor: AppColors.c3,
             filled: true,
-            border: AppTextFieldsBorder.appTextFieldsBorder(),
-            enabledBorder: AppTextFieldsBorder.appTextFieldsBorder(),
+            border: CustomAppTextFieldsBorder.appTextFieldsBorder(),
+            enabledBorder: CustomAppTextFieldsBorder.appTextFieldsBorder(),
           ),
-          value: selectedValue,
+          value: widget.enabled ? selectedValue : null,
           items: workState.map(
             (e) {
               return DropdownMenuItem(
@@ -63,11 +58,13 @@ class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
               );
             },
           ).toList(),
-          onChanged: (val) {
-            setState(() {
-              selectedValue = val!;
-            });
-          },
+          onChanged: widget.enabled
+              ? (val) {
+                  setState(() {
+                    selectedValue = val as String?;
+                  });
+                }
+              : null,
         ),
       ),
     );

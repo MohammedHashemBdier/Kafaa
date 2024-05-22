@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kfaa_app/generated/l10n.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_images.dart';
-import 'package:kfaa_app/utils/app_styles.dart';
-import 'package:kfaa_app/widgets/custom_app_container.dart';
-import 'package:kfaa_app/widgets/custom_text_field.dart';
+import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_images.dart';
+import 'package:kafaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/widgets/custom_app_container.dart';
+import 'package:kafaa_app/widgets/custom_text_field.dart';
 
-class CustomEmployeesTableHeader extends StatelessWidget {
-  const CustomEmployeesTableHeader({
+class EmployeesTableHeader extends StatelessWidget {
+  const EmployeesTableHeader({
     super.key,
   });
 

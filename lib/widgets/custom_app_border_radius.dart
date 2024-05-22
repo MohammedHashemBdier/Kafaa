@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-BorderRadius appBorderRadius(bool isArabic) {
+BorderRadius customAppBorderRadius(bool isArabic) {
   return BorderRadius.only(
     bottomRight:
         isArabic ? const Radius.circular(0) : const Radius.circular(30),

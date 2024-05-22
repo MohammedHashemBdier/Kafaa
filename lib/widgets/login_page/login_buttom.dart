@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/generated/l10n.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_styles.dart';
-import 'package:kfaa_app/views/home_view.dart';
+import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/views/home_view.dart';
+import 'package:kafaa_app/widgets/custom_alart_dialog.dart';
 
-class CustomLoginButton extends StatelessWidget {
-  const CustomLoginButton({
+class LoginButton extends StatelessWidget {
+  const LoginButton({
     super.key,
   });
   @override
@@ -22,6 +23,14 @@ class CustomLoginButton extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => (const HomView()),
             ),
+          );
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return CustomAlartDialog(
+                content: S.of(context).you_are_now_logged_in,
+              );
+            },
           );
         },
         style: ButtonStyle(

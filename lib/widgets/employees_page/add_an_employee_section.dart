@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/widgets/employees_page/add_an_employee_body.dart';
-import 'package:kfaa_app/widgets/employees_page/add_an_employee_header.dart';
+import 'package:kafaa_app/widgets/employees_page/add_an_employee_body.dart';
+import 'package:kafaa_app/widgets/employees_page/add_an_employee_header.dart';
 
 class AddAnEmployeeSection extends StatelessWidget {
   const AddAnEmployeeSection({

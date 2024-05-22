@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/utils/size_config.dart';
+import 'package:kafaa_app/utils/size_config.dart';
 
 class AdaptiveLayout extends StatelessWidget {
   const AdaptiveLayout({

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kfaa_app/models/drawer_item_model.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/models/drawer_item_model.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_images.dart';
+import 'package:kafaa_app/utils/app_styles.dart';
 
 class InActiveDrawerItem extends StatelessWidget {
   const InActiveDrawerItem({
@@ -70,11 +71,11 @@ class ActiveDrawerItem extends StatelessWidget {
                 .copyWith(color: AppColors.c1),
           ),
         ),
-        trailing: Container(
-          width: 4,
-          decoration: BoxDecoration(
-            color: AppColors.c1,
-          ),
+        trailing: SvgPicture.asset(
+          Assets.imagesAppFavIconSvg,
+          width: 30,
+          height: 30,
+          colorFilter: ColorFilter.mode(AppColors.c1, BlendMode.srcIn),
         ),
       ),
     );

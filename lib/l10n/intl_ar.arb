@@ -39,5 +39,16 @@
     "delete": "حذف",
     "info": "التفاصيل",
     "the_search" : "البحث",
-    "search_for_an_employee" : "ابحث عن موظف"
+    "search_for_an_employee" : "ابحث عن موظف",
+    "employee_info": "معلومات الموظف",
+    "save_edits": "حفظ التعديلات",
+    "cancel" :     "الغاء",
+    "confirm" :     "تأكيد",
+    "do_you_want_to_logout" :"هل تريد تسجيل الخروج؟",
+    "do_you_want_to_delete_the_employee":"هل تريد حذف الموظف؟",
+    "do_you_want_to_add_an_employee" : "هل تريد إضافة الموظف؟",
+    "do_you_want_to_save_the_edits" : "هل تريد حفظ التعديلات؟",
+    "alart" : "تنبيه",
+    "ok" : "تم",
+    "you_are_now_logged_in" : "لقد تم تسجيل دخولك بنجاك"
 }

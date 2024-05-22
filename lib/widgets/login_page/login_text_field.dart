@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/generated/l10n.dart';
-import 'package:kfaa_app/widgets/custom_text_field.dart';
+import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/widgets/custom_text_field.dart';
 
-class CustomLoginTextField extends StatelessWidget {
-  const CustomLoginTextField({
+class LoginTextField extends StatelessWidget {
+  const LoginTextField({
     super.key,
   });
 

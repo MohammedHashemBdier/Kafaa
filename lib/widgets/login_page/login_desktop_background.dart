@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_images.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_images.dart';
 
 class LoginDesktopBackground extends StatelessWidget {
   const LoginDesktopBackground({

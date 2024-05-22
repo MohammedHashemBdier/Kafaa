@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kfaa_app/generated/l10n.dart';
-import 'package:kfaa_app/widgets/custom_app_container.dart';
-import 'package:kfaa_app/widgets/custom_number_field.dart';
-import 'package:kfaa_app/widgets/custom_text_field.dart';
-import 'package:kfaa_app/widgets/date_dialog.dart';
-import 'package:kfaa_app/widgets/employees_page/add_an_employee_button.dart';
-import 'package:kfaa_app/widgets/employees_page/work_state_dropdown_list.dart';
+import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/widgets/custom_app_container.dart';
+import 'package:kafaa_app/widgets/custom_number_field.dart';
+import 'package:kafaa_app/widgets/custom_text_field.dart';
+import 'package:kafaa_app/widgets/custom_date_dialog.dart';
+import 'package:kafaa_app/widgets/employees_page/add_an_employee_button.dart';
+import 'package:kafaa_app/widgets/employees_page/work_state_dropdown_list.dart';
 
 class AddAnEmployeeBody extends StatelessWidget {
   const AddAnEmployeeBody({
@@ -59,14 +59,16 @@ class AddAnEmployeeBody extends StatelessWidget {
               maxLength: 10,
             ),
             const Flexible(
-              child: WorkStatetDropdownList(),
+              child: WorkStatetDropdownList(
+                enabled: true,
+              ),
             ),
             CustomTextField(
               prefixIcon: const Icon(Icons.calendar_today),
               hint: S.of(context).select_date,
               label: S.of(context).date_of_joining_the_department,
               onTap: () {
-                selectDate(context);
+                customSelectDate(context);
               },
             ),
             CustomNumberField(
@@ -91,19 +93,21 @@ class AddAnEmployeeBody extends StatelessWidget {
               hint: S.of(context).select_date,
               label: S.of(context).date_of_birth,
               onTap: () {
-                selectDate(context);
+                customSelectDate(context);
               },
             ),
             CustomTextField(
               prefixIcon: const Padding(
                 padding: EdgeInsets.all(10),
-                child: FaIcon(FontAwesomeIcons.pen),
+                child: FaIcon(FontAwesomeIcons.book),
               ),
               hint: S.of(context).add_academic_specialization,
               label: S.of(context).academic_specialization,
             ),
             const SizedBox(height: 20),
-            IntrinsicWidth(child: AddAnEmployeeButton(onPressed: () {})),
+            IntrinsicWidth(
+              child: AddAnEmployeeButton(onPressed: () {}),
+            ),
           ],
         ),
       ),

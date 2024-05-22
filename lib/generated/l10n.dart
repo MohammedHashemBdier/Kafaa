@@ -459,6 +459,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Employee Info`
+  String get employee_info {
+    return Intl.message(
+      'Employee Info',
+      name: 'employee_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Edits`
+  String get save_edits {
+    return Intl.message(
+      'Save Edits',
+      name: 'save_edits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to Logout?`
+  String get do_you_want_to_logout {
+    return Intl.message(
+      'Do you want to Logout?',
+      name: 'do_you_want_to_logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to delete the Employee?`
+  String get do_you_want_to_delete_the_employee {
+    return Intl.message(
+      'Do you want to delete the Employee?',
+      name: 'do_you_want_to_delete_the_employee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to add an Employee?`
+  String get do_you_want_to_add_an_employee {
+    return Intl.message(
+      'Do you want to add an Employee?',
+      name: 'do_you_want_to_add_an_employee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to save the edits?`
+  String get do_you_want_to_save_the_edits {
+    return Intl.message(
+      'Do you want to save the edits?',
+      name: 'do_you_want_to_save_the_edits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Alart`
+  String get alart {
+    return Intl.message(
+      'Alart',
+      name: 'alart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are now logged in`
+  String get you_are_now_logged_in {
+    return Intl.message(
+      'You are now logged in',
+      name: 'you_are_now_logged_in',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

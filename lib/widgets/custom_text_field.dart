@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_styles.dart';
-import 'package:kfaa_app/widgets/app_text_fields_border.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/widgets/custom_app_text_fields_border.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -41,8 +41,8 @@ class CustomTextField extends StatelessWidget {
             ),
             fillColor: AppColors.c3,
             filled: true,
-            border: AppTextFieldsBorder.appTextFieldsBorder(),
-            enabledBorder: AppTextFieldsBorder.appTextFieldsBorder(),
+            border: CustomAppTextFieldsBorder.appTextFieldsBorder(),
+            enabledBorder: CustomAppTextFieldsBorder.appTextFieldsBorder(),
           ),
           onTap: onTap,
         ),

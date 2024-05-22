@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/widgets/employees_page/add_an_employee_dialog.dart';
-import 'package:kfaa_app/widgets/employees_page/add_an_employee_header.dart';
-import 'package:kfaa_app/widgets/employees_page/employees_section.dart';
+import 'package:kafaa_app/widgets/employees_page/add_an_employee_dialog.dart';
+import 'package:kafaa_app/widgets/employees_page/add_an_employee_header.dart';
+import 'package:kafaa_app/widgets/employees_page/employees_section.dart';
 
 class EmployeesMobileLayout extends StatelessWidget {
   const EmployeesMobileLayout({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_images.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -21,6 +22,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       elevation: 0,
       backgroundColor: AppColors.c4,
+      centerTitle: true,
+      title: Image.asset(
+        Assets.imagesKfaaAppLogoPng,
+        width: 100,
+        height: 100,
+      ),
       leading: IconButton(
         icon: Icon(
           Icons.menu,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/generated/l10n.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_styles.dart';
-import 'package:kfaa_app/views/login_view.dart';
+import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/views/login_view.dart';
+import 'package:kafaa_app/widgets/custom_confirmation_dialog.dart';
 
-class CustomLogoutButon extends StatelessWidget {
-  const CustomLogoutButon({
+class LogoutButon extends StatelessWidget {
+  const LogoutButon({
     super.key,
   });
   @override
@@ -17,11 +18,21 @@ class CustomLogoutButon extends StatelessWidget {
       borderRadius: BorderRadius.circular(50),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => (const LoginView()),
-            ),
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return CustomConfirmationDialog(
+                content: S.of(context).do_you_want_to_logout,
+                onConfirm: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => (const LoginView()),
+                    ),
+                  );
+                },
+              );
+            },
           );
         },
         style: ButtonStyle(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/size_config.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/size_config.dart';
 
 abstract class AppStyles {
   static TextStyle styleRegular16(context) {

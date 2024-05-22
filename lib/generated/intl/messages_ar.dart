@@ -42,12 +42,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_work_state":
             MessageLookupByLibrary.simpleMessage("اضف حالة العمل"),
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
+        "alart": MessageLookupByLibrary.simpleMessage("تنبيه"),
+        "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
+        "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("تاريخ الولادة"),
         "date_of_joining_the_department":
             MessageLookupByLibrary.simpleMessage("تاريخ الإنضمام للقسم"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "department": MessageLookupByLibrary.simpleMessage("القسم"),
+        "do_you_want_to_add_an_employee":
+            MessageLookupByLibrary.simpleMessage("هل تريد إضافة الموظف؟"),
+        "do_you_want_to_delete_the_employee":
+            MessageLookupByLibrary.simpleMessage("هل تريد حذف الموظف؟"),
+        "do_you_want_to_logout":
+            MessageLookupByLibrary.simpleMessage("هل تريد تسجيل الخروج؟"),
+        "do_you_want_to_save_the_edits":
+            MessageLookupByLibrary.simpleMessage("هل تريد حفظ التعديلات؟"),
         "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
+        "employee_info": MessageLookupByLibrary.simpleMessage("معلومات الموظف"),
         "employees": MessageLookupByLibrary.simpleMessage("الموظفين"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
@@ -60,9 +72,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "not_work": MessageLookupByLibrary.simpleMessage("لا يعمل"),
         "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+        "ok": MessageLookupByLibrary.simpleMessage("تم"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
+        "save_edits": MessageLookupByLibrary.simpleMessage("حفظ التعديلات"),
         "search_for_an_employee":
             MessageLookupByLibrary.simpleMessage("ابحث عن موظف"),
         "select_date": MessageLookupByLibrary.simpleMessage("اخترتاريخا"),
@@ -72,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "title": MessageLookupByLibrary.simpleMessage("لوحة تحكم تطبيق كفاءة"),
         "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "work": MessageLookupByLibrary.simpleMessage("يعمل"),
-        "work_state": MessageLookupByLibrary.simpleMessage("حالة العمل")
+        "work_state": MessageLookupByLibrary.simpleMessage("حالة العمل"),
+        "you_are_now_logged_in":
+            MessageLookupByLibrary.simpleMessage("لقد تم تسجيل دخولك بنجاك")
       };
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kfaa_app/generated/l10n.dart';
-import 'package:kfaa_app/utils/app_colors.dart';
-import 'package:kfaa_app/utils/app_images.dart';
-import 'package:kfaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:kafaa_app/utils/app_images.dart';
+import 'package:kafaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/widgets/employees_page/employee_info_dialog.dart';
 
-class CustomEmployeesTable {
+class EmployeesTable {
   static Table customEmployeesTable(BuildContext context) {
     return Table(
       border: TableBorder(
@@ -103,30 +104,6 @@ class CustomEmployeesTable {
             ),
           ),
         ),
-        // TableCell(
-        //   verticalAlignment: TableCellVerticalAlignment.middle,
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(10),
-        //     child: Text(
-        //       textAlign: TextAlign.center,
-        //       S.of(context).edit,
-        //       style:
-        //           AppStyles.styleBold16(context).copyWith(color: AppColors.c2),
-        //     ),
-        //   ),
-        // ),
-        // TableCell(
-        //   verticalAlignment: TableCellVerticalAlignment.middle,
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(10),
-        //     child: Text(
-        //       textAlign: TextAlign.center,
-        //       S.of(context).delete,
-        //       style:
-        //           AppStyles.styleBold16(context).copyWith(color: AppColors.c2),
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }
@@ -137,7 +114,14 @@ class CustomEmployeesTable {
         TableCell(
           verticalAlignment: TableCellVerticalAlignment.middle,
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return const EmployeeInfoDialog();
+                },
+              );
+            },
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.all(10),
@@ -197,34 +181,6 @@ class CustomEmployeesTable {
             ),
           ),
         ),
-        // TableCell(
-        //   verticalAlignment: TableCellVerticalAlignment.middle,
-        //   child: Center(
-        //     child: Padding(
-        //       padding: const EdgeInsets.all(10),
-        //       child: IconButton(
-        //         icon: const Icon(
-        //           Icons.edit,
-        //         ),
-        //         onPressed: () {},
-        //       ),
-        //     ),
-        //   ),
-        // ),
-        // TableCell(
-        //   verticalAlignment: TableCellVerticalAlignment.middle,
-        //   child: Center(
-        //     child: Padding(
-        //       padding: const EdgeInsets.all(10),
-        //       child: IconButton(
-        //         icon: const Icon(
-        //           Icons.delete,
-        //         ),
-        //         onPressed: () {},
-        //       ),
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }

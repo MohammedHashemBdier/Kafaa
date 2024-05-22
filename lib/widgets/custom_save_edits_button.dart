@@ -4,49 +4,58 @@ import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_confirmation_dialog.dart';
 
-class AddAnEmployeeButton extends StatelessWidget {
-  const AddAnEmployeeButton({
+class CustomSaveEditsButton extends StatelessWidget {
+  const CustomSaveEditsButton({
     super.key,
     required this.onPressed,
+    required this.enabled,
   });
+  final bool enabled;
+
   final Function onPressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () async {
-        await showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return CustomConfirmationDialog(
-              content: S.of(context).do_you_want_to_add_an_employee,
-              onConfirm: () {
-                onPressed();
-              },
-            );
-          },
-        );
-      },
+      onPressed: enabled
+          ? () async {
+              await showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return CustomConfirmationDialog(
+                    content: S.of(context).do_you_want_to_delete_the_employee,
+                    onConfirm: () {
+                      onPressed();
+                    },
+                  );
+                },
+              );
+            }
+          : null,
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(AppColors.c2),
+        backgroundColor: MaterialStateProperty.all<Color>(
+            enabled ? AppColors.c2 : AppColors.c5),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.person_add_alt_1),
+            Icon(
+              Icons.save,
+              color: enabled ? AppColors.c5 : AppColors.c2,
+            ),
             const SizedBox(
               width: 10,
             ),
             Text(
-              S.of(context).add_an_employee,
+              S.of(context).save_edits,
               style: AppStyles.styleSemiBold16(context).copyWith(
-                color: AppColors.c1,
+                color: enabled ? AppColors.c1 : AppColors.c2,
               ),
             ),
           ],

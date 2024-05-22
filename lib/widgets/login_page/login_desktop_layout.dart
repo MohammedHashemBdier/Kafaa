@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/widgets/login_page/login_desctop_section.dart';
-import 'package:kfaa_app/widgets/login_page/login_desktop_background.dart';
+import 'package:kafaa_app/widgets/login_page/login_desctop_section.dart';
+import 'package:kafaa_app/widgets/login_page/login_desktop_background.dart';
 
 class LoginDesktopLayout extends StatelessWidget {
   const LoginDesktopLayout({super.key});

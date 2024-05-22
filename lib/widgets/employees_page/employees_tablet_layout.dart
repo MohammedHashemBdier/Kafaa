@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kfaa_app/widgets/drawer/custom_drawer.dart';
-import 'package:kfaa_app/widgets/employees_page/employees_mobile_layout.dart';
+import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
+import 'package:kafaa_app/widgets/employees_page/employees_mobile_layout.dart';
 
 class EmployeesTabletLayout extends StatelessWidget {
   const EmployeesTabletLayout({super.key});
@@ -9,7 +9,7 @@ class EmployeesTabletLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: CustomDrawer()),
+        Expanded(child: AppDrawer()),
         SizedBox(width: 30),
         Expanded(
           flex: 3,
