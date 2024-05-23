@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "alart": MessageLookupByLibrary.simpleMessage("تنبيه"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
+        "close": MessageLookupByLibrary.simpleMessage("إغلاق"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("تاريخ الولادة"),
         "date_of_joining_the_department":
@@ -68,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "info": MessageLookupByLibrary.simpleMessage("التفاصيل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "main_menu": MessageLookupByLibrary.simpleMessage("القائمة الرئيسية"),
         "mobile_number": MessageLookupByLibrary.simpleMessage("رقم الجوال"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "not_work": MessageLookupByLibrary.simpleMessage("لا يعمل"),

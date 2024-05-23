@@ -569,6 +569,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Colose`
+  String get close {
+    return Intl.message(
+      'Colose',
+      name: 'close',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main Menu`
+  String get main_menu {
+    return Intl.message(
+      'Main Menu',
+      name: 'main_menu',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

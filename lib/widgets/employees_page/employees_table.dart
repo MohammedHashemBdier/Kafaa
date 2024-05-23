@@ -113,22 +113,27 @@ class EmployeesTable {
       children: [
         TableCell(
           verticalAlignment: TableCellVerticalAlignment.middle,
-          child: InkWell(
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const EmployeeInfoDialog();
-                },
-              );
-            },
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: SvgPicture.asset(
-                  Assets.imagesEmployeeAvatar,
-                  width: 30,
-                  height: 30,
+          child: Tooltip(
+            showDuration: const Duration(milliseconds: 700),
+            waitDuration: const Duration(milliseconds: 700),
+            message: S.of(context).employee_info,
+            child: InkWell(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const EmployeeInfoDialog();
+                  },
+                );
+              },
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: SvgPicture.asset(
+                    Assets.imagesEmployeeAvatar,
+                    width: 30,
+                    height: 30,
+                  ),
                 ),
               ),
             ),

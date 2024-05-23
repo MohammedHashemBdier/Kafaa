@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("Address"),
         "alart": MessageLookupByLibrary.simpleMessage("Alart"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "close": MessageLookupByLibrary.simpleMessage("Colose"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("Date of Birth"),
         "date_of_joining_the_department": MessageLookupByLibrary.simpleMessage(
@@ -69,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "main_menu": MessageLookupByLibrary.simpleMessage("Main Menu"),
         "mobile_number": MessageLookupByLibrary.simpleMessage("Mobile Number"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "not_work": MessageLookupByLibrary.simpleMessage("Not Work"),

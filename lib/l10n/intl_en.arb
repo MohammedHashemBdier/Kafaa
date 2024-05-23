@@ -50,5 +50,7 @@
     "do_you_want_to_save_the_edits" : "Do you want to save the edits?",
     "alart" : "Alart",
     "ok" : "Ok",
-    "you_are_now_logged_in" : "You are now logged in"
+    "you_are_now_logged_in" : "You are now logged in",
+    "close" : "Colose",
+    "main_menu" : "Main Menu"
 }

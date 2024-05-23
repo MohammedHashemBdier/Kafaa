@@ -18,10 +18,15 @@ class EmployeeInfoHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconButton(
-            icon: const Icon(Icons.edit),
-            iconSize: 30,
-            onPressed: () {},
+          Tooltip(
+            message: S.of(context).edit,
+            showDuration: const Duration(milliseconds: 700),
+            waitDuration: const Duration(milliseconds: 700),
+            child: IconButton(
+              icon: const Icon(Icons.edit),
+              iconSize: 30,
+              onPressed: () {},
+            ),
           ),
           const Expanded(child: SizedBox()),
           Text(
@@ -36,20 +41,25 @@ class EmployeeInfoHeader extends StatelessWidget {
             colorFilter: ColorFilter.mode(AppColors.c5, BlendMode.srcIn),
           ),
           const Expanded(child: SizedBox()),
-          IconButton(
-            icon: const Icon(Icons.delete),
-            iconSize: 30,
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return CustomConfirmationDialog(
-                    content: S.of(context).do_you_want_to_delete_the_employee,
-                    onConfirm: () {},
-                  );
-                },
-              );
-            },
+          Tooltip(
+            showDuration: const Duration(milliseconds: 700),
+            waitDuration: const Duration(milliseconds: 700),
+            message: S.of(context).delete,
+            child: IconButton(
+              icon: const Icon(Icons.delete),
+              iconSize: 30,
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return CustomConfirmationDialog(
+                      content: S.of(context).do_you_want_to_delete_the_employee,
+                      onConfirm: () {},
+                    );
+                  },
+                );
+              },
+            ),
           ),
         ],
       ),

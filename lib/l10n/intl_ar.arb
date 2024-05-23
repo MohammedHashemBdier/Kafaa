@@ -50,5 +50,7 @@
     "do_you_want_to_save_the_edits" : "هل تريد حفظ التعديلات؟",
     "alart" : "تنبيه",
     "ok" : "تم",
-    "you_are_now_logged_in" : "لقد تم تسجيل دخولك بنجاك"
+    "you_are_now_logged_in" : "لقد تم تسجيل دخولك بنجاك",
+    "close" : "إغلاق",
+    "main_menu" : "القائمة الرئيسية"
 }

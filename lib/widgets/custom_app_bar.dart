@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_images.dart';
 
@@ -28,14 +29,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         width: 100,
         height: 100,
       ),
-      leading: IconButton(
-        icon: Icon(
-          Icons.menu,
-          color: AppColors.c1,
+      leading: Tooltip(
+        message: S.of(context).main_menu,
+        showDuration: const Duration(milliseconds: 700),
+        waitDuration: const Duration(milliseconds: 700),
+        child: IconButton(
+          icon: Icon(
+            Icons.menu,
+            color: AppColors.c1,
+          ),
+          onPressed: () {
+            scaffoldKey.currentState!.openDrawer();
+          },
         ),
-        onPressed: () {
-          scaffoldKey.currentState!.openDrawer();
-        },
       ),
     );
   }

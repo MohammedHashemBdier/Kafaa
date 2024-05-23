@@ -4,6 +4,7 @@ import 'package:kafaa_app/utils/size_config.dart';
 import 'package:kafaa_app/utils/adaptiv_layout.dart';
 import 'package:kafaa_app/widgets/custom_app_bar.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
+import 'package:kafaa_app/widgets/employees_page/add_an_employee_floating_action_button.dart';
 import 'package:kafaa_app/widgets/employees_page/employees_desktop_layout.dart';
 import 'package:kafaa_app/widgets/employees_page/employees_mobile_layout.dart';
 import 'package:kafaa_app/widgets/employees_page/employees_tablet_layout.dart';
@@ -27,6 +28,9 @@ class _HomViewState extends State<EmployeesView> {
       drawer: SizeConfig.width < SizeConfig.tablet ? const AppDrawer() : null,
       appBar: SizeConfig.width < SizeConfig.tablet
           ? CustomAppBar(scaffoldKey: scaffoldKey)
+          : null,
+      floatingActionButton: SizeConfig.width < SizeConfig.desktop
+          ? const AddAnEmployeeFloatingActionButton()
           : null,
       body: AdaptiveLayout(
         mobileLayout: (context) => const EmployeesMobileLayout(),
