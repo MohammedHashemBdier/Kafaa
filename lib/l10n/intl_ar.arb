@@ -52,5 +52,15 @@
     "ok" : "تم",
     "you_are_now_logged_in" : "لقد تم تسجيل دخولك بنجاك",
     "close" : "إغلاق",
-    "main_menu" : "القائمة الرئيسية"
+    "main_menu" : "القائمة الرئيسية",
+    "app_and_user_sittings":  "إعدادات التطبيق و المستخدم",
+    "admin" : "المدير",
+    "last_login" : "اخر تسجيل دخول",
+    "arabic" : "عربي",
+    "english" : "إنكليزي",
+    "choose_a_language"  : "اختر لغة",
+    "the_language" : "اللغة",
+    "change_the_password" : "تغيير كلمة المرور",
+    "old_password" : "كلمة المرور القديمة",
+    "new_password" : "كلمة المرور الجديدة"
 }

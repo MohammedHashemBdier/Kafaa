@@ -7,7 +7,7 @@
     "employees" : "Employees",
     "targets" : "Targets",
     "reviews" : "Reviews",
-    "notification" : "Notification",
+    "notification" : "Notifications",
     "settings" : "Settings",
     "logout" : "Logout",
     "add_an_employee": "Add an Employee",
@@ -52,5 +52,15 @@
     "ok" : "Ok",
     "you_are_now_logged_in" : "You are now logged in",
     "close" : "Colose",
-    "main_menu" : "Main Menu"
+    "main_menu" : "Main Menu",
+    "app_and_user_sittings":  "App and User Sittings",
+    "admin" : "Admin",
+    "last_login" : "Last Login",
+    "arabic" : "Arabic",
+    "english" : "English",
+    "choose_a_language"  : "Choose a Language",
+    "the_language" : "The Language",
+    "change_the_password" : "Change The Password",
+    "old_password" : "Old Password",
+    "new_password" : "New Password"
 }

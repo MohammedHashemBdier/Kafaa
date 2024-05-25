@@ -33,7 +33,7 @@ class InActiveDrawerItem extends StatelessWidget {
           child: Text(
             draweritemModel.title,
             style: AppStyles.styleBold16(context).copyWith(
-              color: Colors.black,
+              color: AppColors.c5,
             ),
           ),
         ),

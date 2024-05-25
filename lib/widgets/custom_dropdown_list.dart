@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_text_fields_border.dart';
 
-class WorkStatetDropdownList extends StatefulWidget {
-  const WorkStatetDropdownList({super.key, required this.enabled, this.label});
+class CustomDropdownList extends StatefulWidget {
+  const CustomDropdownList({
+    super.key,
+    required this.enabled,
+    required this.label,
+    required this.menuItems,
+    required this.onChose,
+    required this.icon,
+    required this.hintText,
+  });
   final bool enabled;
-  final String? label;
+  final String label;
+  final List<String> menuItems;
+  final Function onChose;
+  final Widget icon;
+  final String hintText;
   @override
-  _WorkStatetDropdownListState createState() => _WorkStatetDropdownListState();
+  CustomDropdownListtState createState() => CustomDropdownListtState();
 }
 
-class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
-  late String? selectedValue;
-  late List<String> workState;
+class CustomDropdownListtState extends State<CustomDropdownList> {
+  String? selectedValue;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    workState = [
-      S.of(context).work,
-      S.of(context).not_work,
-    ];
-    selectedValue = workState[0];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,13 +35,10 @@ class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
         elevation: 3,
         child: DropdownButtonFormField(
           decoration: InputDecoration(
-            prefixIcon: Icon(
-              Icons.work_outline,
-              color: AppColors.c5,
-            ),
-            labelText: widget.label ?? S.of(context).work_state,
+            prefixIcon: widget.icon,
+            labelText: widget.label,
             labelStyle: AppStyles.styleRegular16(context),
-            hintText: S.of(context).add_work_state,
+            hintText: widget.hintText,
             hintStyle: AppStyles.styleRegular16(context).copyWith(
               color: AppColors.c5,
             ),
@@ -50,9 +48,12 @@ class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
             enabledBorder: CustomAppTextFieldsBorder.appTextFieldsBorder(),
           ),
           value: widget.enabled ? selectedValue : null,
-          items: workState.map(
+          items: widget.menuItems.map(
             (e) {
               return DropdownMenuItem(
+                onTap: () {
+                  widget.onChose;
+                },
                 value: e,
                 child: Text(e),
               );
@@ -60,9 +61,11 @@ class _WorkStatetDropdownListState extends State<WorkStatetDropdownList> {
           ).toList(),
           onChanged: widget.enabled
               ? (val) {
-                  setState(() {
-                    selectedValue = val as String?;
-                  });
+                  setState(
+                    () {
+                      selectedValue = val as String?;
+                    },
+                  );
                 }
               : null,
         ),

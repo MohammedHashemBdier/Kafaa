@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
+import 'package:kafaa_app/widgets/custom_dropdown_list.dart';
 import 'package:kafaa_app/widgets/custom_number_field.dart';
+import 'package:kafaa_app/widgets/custom_password_field.dart';
 import 'package:kafaa_app/widgets/custom_text_field.dart';
 import 'package:kafaa_app/widgets/custom_date_dialog.dart';
 import 'package:kafaa_app/widgets/employees_page/add_an_employee_button.dart';
-import 'package:kafaa_app/widgets/employees_page/work_state_dropdown_list.dart';
 
 class AddAnEmployeeBody extends StatelessWidget {
   const AddAnEmployeeBody({
@@ -33,10 +35,11 @@ class AddAnEmployeeBody extends StatelessWidget {
               hint: S.of(context).add_username,
               label: S.of(context).username,
             ),
-            CustomTextField(
+            CustomPasswordField(
               prefixIcon: const Icon(Icons.password),
               hint: S.of(context).add_password,
               label: S.of(context).password,
+              onTap: () {},
             ),
             CustomTextField(
               prefixIcon: const Icon(Icons.badge),
@@ -58,10 +61,19 @@ class AddAnEmployeeBody extends StatelessWidget {
               label: S.of(context).mobile_number,
               maxLength: 10,
             ),
-            const Flexible(
-              child: WorkStatetDropdownList(
-                enabled: true,
+            CustomDropdownList(
+              menuItems: [
+                S.of(context).work,
+                S.of(context).not_work,
+              ],
+              label: S.of(context).work_state,
+              hintText: S.of(context).add_work_state,
+              icon: Icon(
+                Icons.work_outline,
+                color: AppColors.c5,
               ),
+              enabled: true,
+              onChose: () {},
             ),
             CustomTextField(
               prefixIcon: const Icon(Icons.calendar_today),

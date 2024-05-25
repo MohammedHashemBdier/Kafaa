@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
+import 'package:kafaa_app/widgets/custom_dropdown_list.dart';
 import 'package:kafaa_app/widgets/custom_number_field.dart';
+import 'package:kafaa_app/widgets/custom_password_field.dart';
 import 'package:kafaa_app/widgets/custom_text_field.dart';
 import 'package:kafaa_app/widgets/custom_date_dialog.dart';
-import 'package:kafaa_app/widgets/employees_page/work_state_dropdown_list.dart';
 
 class EmployeeInfoBody extends StatelessWidget {
   const EmployeeInfoBody({
@@ -37,11 +39,12 @@ class EmployeeInfoBody extends StatelessWidget {
           hint: S.of(context).add_username,
         ),
         Text(S.of(context).password, style: AppStyles.styleBold16(context)),
-        CustomTextField(
+        CustomPasswordField(
           label: "1@23456",
           enabled: enabled,
           prefixIcon: const Icon(Icons.password),
           hint: S.of(context).add_password,
+          onTap: () {},
         ),
         Text(S.of(context).department, style: AppStyles.styleBold16(context)),
         CustomTextField(
@@ -71,11 +74,19 @@ class EmployeeInfoBody extends StatelessWidget {
           maxLength: 10,
         ),
         Text(S.of(context).work_state, style: AppStyles.styleBold16(context)),
-        Flexible(
-          child: WorkStatetDropdownList(
-            label: S.of(context).work,
-            enabled: enabled,
+        CustomDropdownList(
+          menuItems: [
+            S.of(context).work,
+            S.of(context).not_work,
+          ],
+          label: S.of(context).work,
+          hintText: S.of(context).add_work_state,
+          icon: Icon(
+            Icons.work_outline,
+            color: AppColors.c5,
           ),
+          enabled: false,
+          onChose: () {},
         ),
         Text(S.of(context).date_of_joining_the_department,
             style: AppStyles.styleBold16(context)),

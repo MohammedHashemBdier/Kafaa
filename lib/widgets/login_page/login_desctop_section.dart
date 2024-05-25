@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
-import 'package:kafaa_app/utils/app_images.dart';
 import 'package:kafaa_app/widgets/custom_app_border_radius.dart';
-import 'package:kafaa_app/widgets/login_page/login_buttom.dart';
-import 'package:kafaa_app/widgets/login_page/login_text_field.dart';
+import 'package:kafaa_app/widgets/login_page/login_content.dart';
 
 class LoginDesktopSection extends StatelessWidget {
   const LoginDesktopSection({
@@ -32,24 +30,7 @@ class LoginDesktopSection extends StatelessWidget {
                       borderRadius: customAppBorderRadius(isArabic),
                       color: AppColors.c4,
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Flexible(
-                          child: Padding(
-                            padding: const EdgeInsets.all(100),
-                            child: Image.asset(Assets.imagesKfaaAppLogoPng),
-                          ),
-                        ),
-                        const LoginTextField(),
-                        const SizedBox(height: 20),
-                        const LoginButton(),
-                        const SizedBox(height: 20),
-                      ],
-                    ),
+                    child: const LoginContent(),
                   ),
                 ),
               ),

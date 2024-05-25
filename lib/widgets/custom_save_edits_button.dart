@@ -22,7 +22,7 @@ class CustomSaveEditsButton extends StatelessWidget {
                 context: context,
                 builder: (BuildContext context) {
                   return CustomConfirmationDialog(
-                    content: S.of(context).do_you_want_to_delete_the_employee,
+                    content: S.of(context).do_you_want_to_save_the_edits,
                     onConfirm: () {
                       onPressed();
                     },

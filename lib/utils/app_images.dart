@@ -1,6 +1,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesAdminAvatar
+  /// assets/images/admin_avatar.svg
+  static const String imagesAdminAvatar = "assets/images/admin_avatar.svg";
+
   /// Assets for imagesAppFavIconPng
   /// assets/images/app_fav_icon_png.png
   static const String imagesAppFavIconPng = "assets/images/app_fav_icon_png.png";
@@ -48,6 +52,10 @@ class Assets {
   /// Assets for imagesNotificationIcon
   /// assets/images/notification_icon.svg
   static const String imagesNotificationIcon = "assets/images/notification_icon.svg";
+
+  /// Assets for imagesPasswordIcon
+  /// assets/images/password_icon.svg
+  static const String imagesPasswordIcon = "assets/images/password_icon.svg";
 
   /// Assets for imagesReviewsIcon
   /// assets/images/reviews_icon.svg

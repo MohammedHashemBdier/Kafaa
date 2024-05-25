@@ -130,10 +130,10 @@ class S {
     );
   }
 
-  /// `Notification`
+  /// `Notifications`
   String get notification {
     return Intl.message(
-      'Notification',
+      'Notifications',
       name: 'notification',
       desc: '',
       args: [],
@@ -585,6 +585,106 @@ class S {
     return Intl.message(
       'Main Menu',
       name: 'main_menu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App and User Sittings`
+  String get app_and_user_sittings {
+    return Intl.message(
+      'App and User Sittings',
+      name: 'app_and_user_sittings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Admin`
+  String get admin {
+    return Intl.message(
+      'Admin',
+      name: 'admin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Login`
+  String get last_login {
+    return Intl.message(
+      'Last Login',
+      name: 'last_login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message(
+      'Arabic',
+      name: 'arabic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a Language`
+  String get choose_a_language {
+    return Intl.message(
+      'Choose a Language',
+      name: 'choose_a_language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Language`
+  String get the_language {
+    return Intl.message(
+      'The Language',
+      name: 'the_language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change The Password`
+  String get change_the_password {
+    return Intl.message(
+      'Change The Password',
+      name: 'change_the_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old Password`
+  String get old_password {
+    return Intl.message(
+      'Old Password',
+      name: 'old_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get new_password {
+    return Intl.message(
+      'New Password',
+      name: 'new_password',
       desc: '',
       args: [],
     );
