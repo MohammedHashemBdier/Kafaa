@@ -49,6 +49,10 @@ class Assets {
   /// assets/images/logout_icon.svg
   static const String imagesLogoutIcon = "assets/images/logout_icon.svg";
 
+  /// Assets for imagesNextIcon
+  /// assets/images/next_icon.svg
+  static const String imagesNextIcon = "assets/images/next_icon.svg";
+
   /// Assets for imagesNotificationIcon
   /// assets/images/notification_icon.svg
   static const String imagesNotificationIcon = "assets/images/notification_icon.svg";

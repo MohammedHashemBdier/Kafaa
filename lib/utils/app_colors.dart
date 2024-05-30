@@ -5,7 +5,7 @@ abstract class AppColors {
   static Color c2 = const Color(0xFFF3E2E2);
   static Color c3 = const Color.fromARGB(255, 234, 214, 214);
   static Color c4 = const Color.fromARGB(255, 241, 231, 231);
-  static Color c5 = const Color(0xff504441);
+  static Color c5 = const Color(0xFF504441);
 }
 
 const MaterialColor customMaterialColors =

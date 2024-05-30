@@ -16,6 +16,7 @@ class CustomConfirmationDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      backgroundColor: AppColors.c2,
       icon: Icon(
         Icons.error_outline_outlined,
         color: AppColors.c5,

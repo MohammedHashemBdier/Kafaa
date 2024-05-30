@@ -16,7 +16,7 @@ class EmployeeInfoDialog extends StatelessWidget {
     return SizedBox(
       child: Dialog(
         elevation: 10,
-        backgroundColor: AppColors.c4,
+        backgroundColor: AppColors.c2,
         child: SizedBox(
           width: SizeConfig.width < SizeConfig.desktop
               ? MediaQuery.sizeOf(context).width * 0.8

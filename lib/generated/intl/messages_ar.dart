@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Show_password":
+            MessageLookupByLibrary.simpleMessage("إظهار كلمة المرور"),
         "academic_specialization":
             MessageLookupByLibrary.simpleMessage("الإختصاص الأكاديمي"),
         "add_academic_specialization":
@@ -72,6 +74,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "english": MessageLookupByLibrary.simpleMessage("إنكليزي"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+        "hide_password":
+            MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "id_number": MessageLookupByLibrary.simpleMessage("الرقم الوطني"),
         "info": MessageLookupByLibrary.simpleMessage("التفاصيل"),
@@ -83,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "new_password":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+        "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "not_work": MessageLookupByLibrary.simpleMessage("لا يعمل"),
         "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "ok": MessageLookupByLibrary.simpleMessage("تم"),

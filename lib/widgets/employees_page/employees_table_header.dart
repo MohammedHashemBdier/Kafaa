@@ -1,11 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter/widgets.dart';
 import 'package:kafaa_app/generated/l10n.dart';
-import 'package:kafaa_app/utils/app_colors.dart';
-import 'package:kafaa_app/utils/app_images.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
 import 'package:kafaa_app/widgets/custom_text_field.dart';
+import 'package:lottie/lottie.dart';
 
 class EmployeesTableHeader extends StatelessWidget {
   const EmployeesTableHeader({
@@ -22,11 +22,13 @@ class EmployeesTableHeader extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  Assets.imagesEmployeesIcon,
-                  height: 30,
-                  width: 30,
-                  colorFilter: ColorFilter.mode(AppColors.c5, BlendMode.srcIn),
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: Lottie.asset(
+                    'assets/lottie/employees_header.json',
+                    height: 150,
+                    width: 150,
+                  ),
                 ),
                 const SizedBox(width: 10),
                 Text(

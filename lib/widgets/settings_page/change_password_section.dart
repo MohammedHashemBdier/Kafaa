@@ -12,7 +12,7 @@ class ChangePassworSection extends StatelessWidget {
     return const Column(
       children: [
         ChangePasswordHeader(),
-        ChangePassworBody(),
+        ChangePasswordBody(),
       ],
     );
   }

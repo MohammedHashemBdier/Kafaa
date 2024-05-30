@@ -90,11 +90,6 @@ double getResponsiveFontSize(context, {required double fontSize}) {
 }
 
 double getScaleFactor(context) {
-  // var dispatcher = PlatformDispatcher.instance;
-  // var physicalWidth = dispatcher.views.first.physicalSize.width;
-  // var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
-  // double width = physicalWidth / devicePixelRatio;
-
   double width = MediaQuery.sizeOf(context).width;
   if (width < SizeConfig.tablet) {
     return width / 800;

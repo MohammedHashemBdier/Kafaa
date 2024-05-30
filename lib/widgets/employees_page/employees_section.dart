@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kafaa_app/widgets/employees_page/employees_table_body.dart';
+import 'package:kafaa_app/widgets/employees_page/employees_table.dart';
 import 'package:kafaa_app/widgets/employees_page/employees_table_header.dart';
 
 class EmployeesSection extends StatelessWidget {
@@ -13,7 +13,7 @@ class EmployeesSection extends StatelessWidget {
     return const Column(
       children: [
         EmployeesTableHeader(),
-        EmployeesTableBody(),
+        EmployeesTable(),
         SizedBox(height: 40),
       ],
     );

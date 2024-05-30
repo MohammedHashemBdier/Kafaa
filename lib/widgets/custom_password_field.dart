@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_text_fields_border.dart';
@@ -55,8 +56,15 @@ class CustomPasswordFieldState extends State<CustomPasswordField> {
             enabledBorder: CustomAppTextFieldsBorder.appTextFieldsBorder(),
             prefixIcon: widget.prefixIcon,
             suffixIcon: IconButton(
-              icon: Icon(
-                _isObscured ? Icons.visibility : Icons.visibility_off,
+              icon: Tooltip(
+                showDuration: const Duration(milliseconds: 700),
+                waitDuration: const Duration(milliseconds: 700),
+                message: _isObscured
+                    ? S.of(context).Show_password
+                    : S.of(context).hide_password,
+                child: Icon(
+                  _isObscured ? Icons.visibility : Icons.visibility_off,
+                ),
               ),
               onPressed: _togglePasswordView,
             ),

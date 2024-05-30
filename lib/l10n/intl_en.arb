@@ -62,5 +62,8 @@
     "the_language" : "The Language",
     "change_the_password" : "Change The Password",
     "old_password" : "Old Password",
-    "new_password" : "New Password"
+    "new_password" : "New Password",
+    "Show_password" : "Show Password",
+    "hide_password" : "Hide Password",
+    "next":"Next"
 }

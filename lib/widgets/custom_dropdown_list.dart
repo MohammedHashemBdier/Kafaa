@@ -47,6 +47,7 @@ class CustomDropdownListtState extends State<CustomDropdownList> {
             border: CustomAppTextFieldsBorder.appTextFieldsBorder(),
             enabledBorder: CustomAppTextFieldsBorder.appTextFieldsBorder(),
           ),
+          dropdownColor: AppColors.c3,
           value: widget.enabled ? selectedValue : null,
           items: widget.menuItems.map(
             (e) {

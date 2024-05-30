@@ -62,5 +62,9 @@
     "the_language" : "اللغة",
     "change_the_password" : "تغيير كلمة المرور",
     "old_password" : "كلمة المرور القديمة",
-    "new_password" : "كلمة المرور الجديدة"
+    "new_password" : "كلمة المرور الجديدة",
+    "show_hide_Password" : "إظهار / إخفاء كلمة المرور",
+    "Show_password" : "إظهار كلمة المرور",
+    "hide_password" : "إخفاء كلمة المرور",
+    "next":"التالي"
 }

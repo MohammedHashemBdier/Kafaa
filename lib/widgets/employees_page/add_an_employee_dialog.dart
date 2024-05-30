@@ -11,7 +11,7 @@ class AddAnEmployeeDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       elevation: 10,
-      backgroundColor: AppColors.c4,
+      backgroundColor: AppColors.c2,
       child: SizedBox(
         width: SizeConfig.width < SizeConfig.desktop
             ? MediaQuery.sizeOf(context).width * 0.8

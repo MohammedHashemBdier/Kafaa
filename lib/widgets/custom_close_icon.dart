@@ -20,8 +20,8 @@ class CustomCloseIcon extends StatelessWidget {
           style: OutlinedButton.styleFrom(
             padding: const EdgeInsets.all(10),
             side: const BorderSide(
-              color: Colors.transparent, // Set the border color as desired
-              width: 2.0, // Adjust the border width as needed
+              color: Colors.transparent, 
+              width: 2.0,
             ),
             shape:
                 const CircleBorder(), // Use CircleBorder for a circular shape

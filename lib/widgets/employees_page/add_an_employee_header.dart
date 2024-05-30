@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kafaa_app/generated/l10n.dart';
-import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
+import 'package:lottie/lottie.dart';
 
 class AddAnEmployeeHeader extends StatelessWidget {
   const AddAnEmployeeHeader({
@@ -15,10 +15,14 @@ class AddAnEmployeeHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.person_add_alt_1,
-            color: AppColors.c5,
-            size: 30,
+          Flexible(
+            fit: FlexFit.loose,
+            child: Lottie.asset(
+              'assets/lottie/add_an_employee_header.json',
+              reverse: true,
+              height: 75,
+              width: 100,
+            ),
           ),
           const SizedBox(width: 10),
           Text(

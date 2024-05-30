@@ -689,6 +689,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Show Password`
+  String get Show_password {
+    return Intl.message(
+      'Show Password',
+      name: 'Show_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hide Password`
+  String get hide_password {
+    return Intl.message(
+      'Hide Password',
+      name: 'hide_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

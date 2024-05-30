@@ -14,6 +14,7 @@ class CustomAlartDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      backgroundColor: AppColors.c2,
       icon: Icon(
         Icons.notifications,
         color: AppColors.c5,

@@ -39,7 +39,10 @@ class AddAnEmployeeButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.person_add_alt_1),
+            Icon(
+              Icons.person_add_alt_1,
+              color: AppColors.c5,
+            ),
             const SizedBox(
               width: 10,
             ),
