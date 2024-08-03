@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
-import 'package:kafaa_app/utils/app_images.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
-import 'package:kafaa_app/widgets/employees_page/employee_info_dialog.dart';
-import 'package:kafaa_app/widgets/employees_page/employees_table_header.dart';
+import 'package:kafaa_app/widgets/evaluation_page/evaluation_info_dialog.dart';
+import 'package:kafaa_app/widgets/evaluation_page/evaluations_table_header.dart';
 
-class EmployeesTable extends StatefulWidget {
-  const EmployeesTable({super.key});
+class EvaluationsTable extends StatefulWidget {
+  const EvaluationsTable({super.key});
 
   @override
-  EmployeesTableState createState() => EmployeesTableState();
+  EvaluationsTableState createState() => EvaluationsTableState();
 }
 
-class EmployeesTableState extends State<EmployeesTable>
+class EvaluationsTableState extends State<EvaluationsTable>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -49,13 +47,8 @@ class EmployeesTableState extends State<EmployeesTable>
               border: TableBorder(
                 horizontalInside: BorderSide(color: AppColors.c4, width: 10),
               ),
-              columnWidths: const {
-                0: FixedColumnWidth(80.0),
-                2: FixedColumnWidth(80.0),
-                3: FixedColumnWidth(100.0),
-              },
               children: [
-                employeesTableHeader(context),
+                evaluationTableHeader(context),
                 ...List.generate(
                   10,
                   (index) => tableBody(context, index),
@@ -85,13 +78,13 @@ class EmployeesTableState extends State<EmployeesTable>
           child: Tooltip(
             showDuration: const Duration(milliseconds: 700),
             waitDuration: const Duration(milliseconds: 700),
-            message: S.of(context).employee_info,
+            message: S.of(context).evaluation_info,
             child: InkWell(
               onTap: () {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return const EmployeeInfoDialog();
+                    return const EvaluationsInfoDialog();
                   },
                 );
               },
@@ -102,15 +95,10 @@ class EmployeesTableState extends State<EmployeesTable>
                     begin: const Offset(0, 0.1),
                     end: Offset.zero,
                   ).animate(animation),
-                  child: Center(
+                  child: const Center(
                     child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: SvgPicture.asset(
-                        Assets.imagesEmployeeAvatar,
-                        width: 30,
-                        height: 30,
-                      ),
-                    ),
+                        padding: EdgeInsets.all(10),
+                        child: Icon(Icons.star_border_outlined)),
                   ),
                 ),
               ),
@@ -129,7 +117,7 @@ class EmployeesTableState extends State<EmployeesTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  "Mohammed Hashem Bdier",
+                  "تقيم معدل الكالمات متوسط",
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -149,7 +137,7 @@ class EmployeesTableState extends State<EmployeesTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  "Tech",
+                  "معدل المكالمات اليومي",
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -169,7 +157,7 @@ class EmployeesTableState extends State<EmployeesTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  S.of(context).work,
+                  "50",
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -191,7 +179,30 @@ class EmployeesTableState extends State<EmployeesTable>
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    "11/9/2022",
+                    "75",
+                    textAlign: TextAlign.center,
+                    style: AppStyles.styleRegular16(context),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        TableCell(
+          verticalAlignment: TableCellVerticalAlignment.middle,
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: FadeTransition(
+              opacity: animation,
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(0, 0.1),
+                  end: Offset.zero,
+                ).animate(animation),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    "4",
                     textAlign: TextAlign.center,
                     style: AppStyles.styleRegular16(context),
                   ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_section.dart';
+import 'package:kafaa_app/widgets/evaluation_page/evaluations_section.dart';
 
-class EvaluationDesktopLayout extends StatelessWidget {
-  const EvaluationDesktopLayout({super.key});
+class EvaluationsDesktopLayout extends StatelessWidget {
+  const EvaluationsDesktopLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class EvaluationDesktopLayout extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 2,
-                        child: SizedBox(),
+                        child: EvaluationsSection(),
                       ),
                       SizedBox(width: 20),
                       Expanded(

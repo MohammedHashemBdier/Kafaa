@@ -6,7 +6,7 @@
     "home" : "Home",
     "employees" : "Employees",
     "targets" : "Targets",
-    "evaluation" : "Evaluations",
+    "evaluations" : "Evaluations",
     "notification" : "Notifications",
     "settings" : "Settings",
     "logout" : "Logout",
@@ -77,6 +77,9 @@
     "enter_the_value_of_the_second_field" : "Enter the value of the second field",
     "target_value" : "Target Value",
     "add_target_value" : "Add Target Value",
-    "do_you_want_to_add_an_evaluation" : "Do you want to add an Evaluation?"
+    "do_you_want_to_add_an_evaluation" : "Do you want to add an Evaluation?",
+    "evaluation_info": "Evaluation Info",
+    "do_you_want_to_delete_the_evaluation":"Do you want to delete the Evaluation?"
+
 
 }

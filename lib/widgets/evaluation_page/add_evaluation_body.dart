@@ -108,7 +108,7 @@ class AddEvaluationBodyState extends State<AddEvaluationBody>
                 Icons.star,
                 color: AppColors.c5,
               ),
-              enabled: true,
+              enabled: widget.enabled,
               onChose: (val) {},
             ),
             3,

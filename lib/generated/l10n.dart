@@ -121,10 +121,10 @@ class S {
   }
 
   /// `Evaluations`
-  String get evaluation {
+  String get evaluations {
     return Intl.message(
       'Evaluations',
-      name: 'evaluation',
+      name: 'evaluations',
       desc: '',
       args: [],
     );
@@ -835,6 +835,26 @@ class S {
     return Intl.message(
       'Do you want to add an Evaluation?',
       name: 'do_you_want_to_add_an_evaluation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Evaluation Info`
+  String get evaluation_info {
+    return Intl.message(
+      'Evaluation Info',
+      name: 'evaluation_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to delete the Evaluation?`
+  String get do_you_want_to_delete_the_evaluation {
+    return Intl.message(
+      'Do you want to delete the Evaluation?',
+      name: 'do_you_want_to_delete_the_evaluation',
       desc: '',
       args: [],
     );

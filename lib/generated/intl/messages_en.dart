@@ -76,6 +76,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "do_you_want_to_delete_the_employee":
             MessageLookupByLibrary.simpleMessage(
                 "Do you want to delete the Employee?"),
+        "do_you_want_to_delete_the_evaluation":
+            MessageLookupByLibrary.simpleMessage(
+                "Do you want to delete the Evaluation?"),
         "do_you_want_to_logout":
             MessageLookupByLibrary.simpleMessage("Do you want to Logout?"),
         "do_you_want_to_save_the_edits": MessageLookupByLibrary.simpleMessage(
@@ -92,11 +95,13 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enter the value of the second field"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("Entr the Password"),
-        "evaluation": MessageLookupByLibrary.simpleMessage("Evaluations"),
+        "evaluation_info":
+            MessageLookupByLibrary.simpleMessage("Evaluation Info"),
         "evaluation_name":
             MessageLookupByLibrary.simpleMessage("Evaluation Name"),
         "evaluation_type":
             MessageLookupByLibrary.simpleMessage("Evaluation Type"),
+        "evaluations": MessageLookupByLibrary.simpleMessage("Evaluations"),
         "from_value": MessageLookupByLibrary.simpleMessage("From value"),
         "hide_password": MessageLookupByLibrary.simpleMessage("Hide Password"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),

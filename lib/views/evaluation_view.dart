@@ -4,7 +4,10 @@ import 'package:kafaa_app/utils/size_config.dart';
 import 'package:kafaa_app/utils/adaptiv_layout.dart';
 import 'package:kafaa_app/widgets/custom_app_bar.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
-import 'package:kafaa_app/widgets/evaluation_page/evaluation_desktop_layout.dart';
+import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_floating_action_button.dart';
+import 'package:kafaa_app/widgets/evaluation_page/evaluations_desktop_layout.dart';
+import 'package:kafaa_app/widgets/evaluation_page/evaluations_mobile_layout.dart';
+import 'package:kafaa_app/widgets/evaluation_page/evaluations_tablet_layout.dart';
 
 class EvaluationView extends StatefulWidget {
   const EvaluationView({super.key});
@@ -26,10 +29,13 @@ class _HomViewState extends State<EvaluationView> {
       appBar: SizeConfig.width < SizeConfig.tablet
           ? CustomAppBar(scaffoldKey: scaffoldKey)
           : null,
+      floatingActionButton: SizeConfig.width < SizeConfig.desktop
+          ? const AddEvaluatonFloatingActionButton()
+          : null,
       body: AdaptiveLayout(
-        mobileLayout: (context) => const SizedBox(),
-        tabletLayout: (context) => const SizedBox(),
-        desktopLayout: (context) => const EvaluationDesktopLayout(),
+        mobileLayout: (context) => const EvaluationsMobileLayout(),
+        tabletLayout: (context) => const EvaluationsTabletLayout(),
+        desktopLayout: (context) => const EvaluationsDesktopLayout(),
       ),
     );
   }

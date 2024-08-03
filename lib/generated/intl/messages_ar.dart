@@ -73,6 +73,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("هل تريد إضافة تقييم؟"),
         "do_you_want_to_delete_the_employee":
             MessageLookupByLibrary.simpleMessage("هل تريد حذف الموظف؟"),
+        "do_you_want_to_delete_the_evaluation":
+            MessageLookupByLibrary.simpleMessage("هل تريد حذف التقييم؟"),
         "do_you_want_to_logout":
             MessageLookupByLibrary.simpleMessage("هل تريد تسجيل الخروج؟"),
         "do_you_want_to_save_the_edits":
@@ -87,9 +89,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل قيمة المجال الثاني"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
-        "evaluation": MessageLookupByLibrary.simpleMessage("التقييمات"),
+        "evaluation_info":
+            MessageLookupByLibrary.simpleMessage("تفاصيل التقييم"),
         "evaluation_name": MessageLookupByLibrary.simpleMessage("اسم التقييم"),
         "evaluation_type": MessageLookupByLibrary.simpleMessage("نوع التقييم"),
+        "evaluations": MessageLookupByLibrary.simpleMessage("التقييمات"),
         "from_value": MessageLookupByLibrary.simpleMessage("من القيمة"),
         "hide_password":
             MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),

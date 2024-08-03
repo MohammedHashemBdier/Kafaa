@@ -6,7 +6,7 @@
     "home" : "الصفحة الرئيسية",
     "employees" : "الموظفين",
     "targets" : "النقاط",
-    "evaluation" : "التقييمات",
+    "evaluations" : "التقييمات",
     "notification" : "الإشعارات",
     "settings" : "الإعدادات",
     "logout" : "تسجيل الخروج",
@@ -78,6 +78,8 @@
     "enter_the_value_of_the_second_field" : "أدخل قيمة المجال الثاني",
     "target_value" : "قيمة النقاط",
     "add_target_value" : "أدخل قيمة النقاط",
-    "do_you_want_to_add_an_evaluation" : "هل تريد إضافة تقييم؟"
+    "do_you_want_to_add_an_evaluation" : "هل تريد إضافة تقييم؟",
+    "evaluation_info": "تفاصيل التقييم",
+    "do_you_want_to_delete_the_evaluation":"هل تريد حذف التقييم؟"
 
 }

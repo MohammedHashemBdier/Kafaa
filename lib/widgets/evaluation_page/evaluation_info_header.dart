@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:kafaa_app/generated/l10n.dart';
-import 'package:kafaa_app/utils/app_colors.dart';
-import 'package:kafaa_app/utils/app_images.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
 import 'package:kafaa_app/widgets/custom_confirmation_dialog.dart';
 
-class EmployeeInfoHeader extends StatelessWidget {
-  const EmployeeInfoHeader({
+class EvaluationInfoHeader extends StatelessWidget {
+  const EvaluationInfoHeader({
     super.key,
   });
 
@@ -29,16 +26,11 @@ class EmployeeInfoHeader extends StatelessWidget {
             ),
           ),
           const Expanded(child: SizedBox()),
-          Text(
-            S.of(context).employee_info,
-            style: AppStyles.styleBold24(context),
-          ),
+          const Icon(Icons.star),
           const SizedBox(width: 10),
-          SvgPicture.asset(
-            Assets.imagesEmployeeAvatar,
-            width: 50,
-            height: 50,
-            colorFilter: ColorFilter.mode(AppColors.c5, BlendMode.srcIn),
+          Text(
+            S.of(context).evaluation_info,
+            style: AppStyles.styleBold24(context),
           ),
           const Expanded(child: SizedBox()),
           Tooltip(
