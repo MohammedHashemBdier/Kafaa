@@ -5,15 +5,16 @@ import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_text_fields_border.dart';
 
 class CustomNumberField extends StatelessWidget {
-  const CustomNumberField(
-      {super.key,
-      required this.hint,
-      required this.label,
-      this.prefixIcon,
-      this.suffixIcon,
-      this.maxLength,
-      this.onTap,
-      this.enabled});
+  const CustomNumberField({
+    super.key,
+    required this.hint,
+    required this.label,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.maxLength,
+    this.onTap,
+    this.enabled,
+  });
 
   final String hint;
   final String label;
@@ -32,7 +33,7 @@ class CustomNumberField extends StatelessWidget {
           enabled: enabled,
           keyboardType: TextInputType.number,
           inputFormatters: <TextInputFormatter>[
-            FilteringTextInputFormatter.digitsOnly,
+            FilteringTextInputFormatter.allow(RegExp(r'[0-9+\-]')),
           ],
           decoration: InputDecoration(
             prefixIcon: prefixIcon,
@@ -49,6 +50,7 @@ class CustomNumberField extends StatelessWidget {
             enabledBorder: CustomAppTextFieldsBorder.appTextFieldsBorder(),
           ),
           maxLength: maxLength,
+          onTap: onTap,
         ),
       ),
     );

@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_address": MessageLookupByLibrary.simpleMessage("اضف العنوان"),
         "add_an_employee": MessageLookupByLibrary.simpleMessage("إضافة موظف"),
         "add_department": MessageLookupByLibrary.simpleMessage("اضف قسم"),
+        "add_evaluation": MessageLookupByLibrary.simpleMessage("إضافة تقييم"),
+        "add_evaluation_name":
+            MessageLookupByLibrary.simpleMessage("أدخل اسم التقييم"),
         "add_id_number":
             MessageLookupByLibrary.simpleMessage("اضف الرقم الوطني"),
         "add_mobile_number":
@@ -39,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_password": MessageLookupByLibrary.simpleMessage("اضف كلمة مرور"),
         "add_phone_number":
             MessageLookupByLibrary.simpleMessage("اضف رقم هاتف"),
+        "add_target_value":
+            MessageLookupByLibrary.simpleMessage("أدخل قيمة النقاط"),
         "add_username":
             MessageLookupByLibrary.simpleMessage("اضف اسم المستخدم"),
         "add_work_state":
@@ -52,7 +57,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
         "change_the_password":
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
-        "choose_a_language": MessageLookupByLibrary.simpleMessage("اختر لغة"),
+        "choose_a_language": MessageLookupByLibrary.simpleMessage("إختر لغة"),
+        "choose_evaluation_type":
+            MessageLookupByLibrary.simpleMessage("إختر نوع التقييم"),
         "close": MessageLookupByLibrary.simpleMessage("إغلاق"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("تاريخ الولادة"),
@@ -62,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "department": MessageLookupByLibrary.simpleMessage("القسم"),
         "do_you_want_to_add_an_employee":
             MessageLookupByLibrary.simpleMessage("هل تريد إضافة الموظف؟"),
+        "do_you_want_to_add_an_evaluation":
+            MessageLookupByLibrary.simpleMessage("هل تريد إضافة تقييم؟"),
         "do_you_want_to_delete_the_employee":
             MessageLookupByLibrary.simpleMessage("هل تريد حذف الموظف؟"),
         "do_you_want_to_logout":
@@ -72,14 +81,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "employee_info": MessageLookupByLibrary.simpleMessage("معلومات الموظف"),
         "employees": MessageLookupByLibrary.simpleMessage("الموظفين"),
         "english": MessageLookupByLibrary.simpleMessage("إنكليزي"),
+        "enter_the_value_of_the_first_field":
+            MessageLookupByLibrary.simpleMessage("أدخل قيمة المجال الاول"),
+        "enter_the_value_of_the_second_field":
+            MessageLookupByLibrary.simpleMessage("أدخل قيمة المجال الثاني"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+        "evaluation_name": MessageLookupByLibrary.simpleMessage("اسم التقييم"),
+        "evaluation_type": MessageLookupByLibrary.simpleMessage("نوع التقييم"),
+        "from_value": MessageLookupByLibrary.simpleMessage("من القيمة"),
         "hide_password":
             MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "id_number": MessageLookupByLibrary.simpleMessage("الرقم الوطني"),
         "info": MessageLookupByLibrary.simpleMessage("التفاصيل"),
-        "last_login": MessageLookupByLibrary.simpleMessage("اخر تسجيل دخول"),
+        "last_login": MessageLookupByLibrary.simpleMessage("آخر تسجيل دخول"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "main_menu": MessageLookupByLibrary.simpleMessage("القائمة الرئيسية"),
@@ -101,10 +117,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ابحث عن موظف"),
         "select_date": MessageLookupByLibrary.simpleMessage("اخترتاريخا"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+        "target_value": MessageLookupByLibrary.simpleMessage("قيمة النقاط"),
         "targets": MessageLookupByLibrary.simpleMessage("النقاط"),
         "the_language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "the_search": MessageLookupByLibrary.simpleMessage("البحث"),
         "title": MessageLookupByLibrary.simpleMessage("لوحة تحكم تطبيق كفاءة"),
+        "to_value": MessageLookupByLibrary.simpleMessage("إلى القيمة"),
         "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "work": MessageLookupByLibrary.simpleMessage("يعمل"),
         "work_state": MessageLookupByLibrary.simpleMessage("حالة العمل"),

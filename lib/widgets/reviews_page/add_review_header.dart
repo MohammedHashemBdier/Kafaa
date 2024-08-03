@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
-import 'package:kafaa_app/widgets/custom_text_field.dart';
 import 'package:lottie/lottie.dart';
 
-class EmployeesTableHeader extends StatelessWidget {
-  const EmployeesTableHeader({
+class AddReviewHeader extends StatelessWidget {
+  const AddReviewHeader({
     super.key,
   });
 
@@ -23,24 +22,17 @@ class EmployeesTableHeader extends StatelessWidget {
                 Flexible(
                   fit: FlexFit.loose,
                   child: Lottie.asset(
-                    'assets/lottie/employees_header.json',
+                    'assets/lottie/add_review_header.json',
                     height: 150,
                     width: 150,
                   ),
                 ),
                 const SizedBox(width: 10),
                 Text(
-                  S.of(context).employees,
+                  S.of(context).add_evaluation,
                   style: AppStyles.styleBold24(context),
                 ),
               ],
-            ),
-          ),
-          Expanded(
-            child: CustomTextField(
-              suffixIcon: const Icon(Icons.search),
-              hint: S.of(context).search_for_an_employee,
-              label: S.of(context).the_search,
             ),
           ),
         ],

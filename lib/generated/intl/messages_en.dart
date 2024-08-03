@@ -32,6 +32,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add an Employee"),
         "add_department":
             MessageLookupByLibrary.simpleMessage("Add Department"),
+        "add_evaluation":
+            MessageLookupByLibrary.simpleMessage("Add Evaluation"),
+        "add_evaluation_name":
+            MessageLookupByLibrary.simpleMessage("Add Evaluation Name"),
         "add_id_number": MessageLookupByLibrary.simpleMessage("Add ID Number"),
         "add_mobile_number":
             MessageLookupByLibrary.simpleMessage("Add Mobile Number"),
@@ -39,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_password": MessageLookupByLibrary.simpleMessage("Add Password"),
         "add_phone_number":
             MessageLookupByLibrary.simpleMessage("Add Phone Number"),
+        "add_target_value":
+            MessageLookupByLibrary.simpleMessage("Add Target Value"),
         "add_username": MessageLookupByLibrary.simpleMessage("Add Username"),
         "add_work_state":
             MessageLookupByLibrary.simpleMessage("Add Work State"),
@@ -53,6 +59,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change The Password"),
         "choose_a_language":
             MessageLookupByLibrary.simpleMessage("Choose a Language"),
+        "choose_evaluation_type":
+            MessageLookupByLibrary.simpleMessage("Choose Evaluation Type"),
         "close": MessageLookupByLibrary.simpleMessage("Colose"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("Date of Birth"),
@@ -62,6 +70,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "department": MessageLookupByLibrary.simpleMessage("Department"),
         "do_you_want_to_add_an_employee": MessageLookupByLibrary.simpleMessage(
             "Do you want to add an Employee?"),
+        "do_you_want_to_add_an_evaluation":
+            MessageLookupByLibrary.simpleMessage(
+                "Do you want to add an Evaluation?"),
         "do_you_want_to_delete_the_employee":
             MessageLookupByLibrary.simpleMessage(
                 "Do you want to delete the Employee?"),
@@ -73,8 +84,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "employee_info": MessageLookupByLibrary.simpleMessage("Employee Info"),
         "employees": MessageLookupByLibrary.simpleMessage("Employees"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "enter_the_value_of_the_first_field":
+            MessageLookupByLibrary.simpleMessage(
+                "Enter the value of the first field"),
+        "enter_the_value_of_the_second_field":
+            MessageLookupByLibrary.simpleMessage(
+                "Enter the value of the second field"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("Entr the Password"),
+        "evaluation_name":
+            MessageLookupByLibrary.simpleMessage("Evaluation Name"),
+        "evaluation_type":
+            MessageLookupByLibrary.simpleMessage("Evaluation Type"),
+        "from_value": MessageLookupByLibrary.simpleMessage("From value"),
         "hide_password": MessageLookupByLibrary.simpleMessage("Hide Password"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "id_number": MessageLookupByLibrary.simpleMessage("ID Number"),
@@ -99,10 +121,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Search for an Employee"),
         "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "target_value": MessageLookupByLibrary.simpleMessage("Target Value"),
         "targets": MessageLookupByLibrary.simpleMessage("Targets"),
         "the_language": MessageLookupByLibrary.simpleMessage("The Language"),
         "the_search": MessageLookupByLibrary.simpleMessage("The Search"),
         "title": MessageLookupByLibrary.simpleMessage("Kafa\'a App Dash Board"),
+        "to_value": MessageLookupByLibrary.simpleMessage("To value"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "work": MessageLookupByLibrary.simpleMessage("Work"),
         "work_state": MessageLookupByLibrary.simpleMessage("Work State"),

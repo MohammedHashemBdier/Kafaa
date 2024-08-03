@@ -65,5 +65,18 @@
     "new_password" : "New Password",
     "Show_password" : "Show Password",
     "hide_password" : "Hide Password",
-    "next":"Next"
+    "next":"Next",
+    "add_evaluation" : "Add Evaluation",
+    "evaluation_name" : "Evaluation Name",
+    "add_evaluation_name" : "Add Evaluation Name",
+    "evaluation_type" : "Evaluation Type",
+    "choose_evaluation_type" : "Choose Evaluation Type",
+    "from_value" : "From value",
+    "enter_the_value_of_the_first_field" : "Enter the value of the first field",
+    "to_value" : "To value",
+    "enter_the_value_of_the_second_field" : "Enter the value of the second field",
+    "target_value" : "Target Value",
+    "add_target_value" : "Add Target Value",
+    "do_you_want_to_add_an_evaluation" : "Do you want to add an Evaluation?"
+
 }

@@ -55,10 +55,10 @@
     "main_menu" : "القائمة الرئيسية",
     "app_and_user_sittings":  "إعدادات التطبيق و المستخدم",
     "admin" : "المدير",
-    "last_login" : "اخر تسجيل دخول",
+    "last_login" : "آخر تسجيل دخول",
     "arabic" : "عربي",
     "english" : "إنكليزي",
-    "choose_a_language"  : "اختر لغة",
+    "choose_a_language"  : "إختر لغة",
     "the_language" : "اللغة",
     "change_the_password" : "تغيير كلمة المرور",
     "old_password" : "كلمة المرور القديمة",
@@ -66,5 +66,18 @@
     "show_hide_Password" : "إظهار / إخفاء كلمة المرور",
     "Show_password" : "إظهار كلمة المرور",
     "hide_password" : "إخفاء كلمة المرور",
-    "next":"التالي"
+    "next":"التالي",
+    "add_evaluation" : "إضافة تقييم",
+    "evaluation_name" : "اسم التقييم",
+    "add_evaluation_name" : "أدخل اسم التقييم",
+    "evaluation_type" : "نوع التقييم",
+    "choose_evaluation_type" : "إختر نوع التقييم",
+    "from_value" : "من القيمة",
+    "enter_the_value_of_the_first_field" : "أدخل قيمة المجال الاول",
+    "to_value" : "إلى القيمة",
+    "enter_the_value_of_the_second_field" : "أدخل قيمة المجال الثاني",
+    "target_value" : "قيمة النقاط",
+    "add_target_value" : "أدخل قيمة النقاط",
+    "do_you_want_to_add_an_evaluation" : "هل تريد إضافة تقييم؟"
+
 }

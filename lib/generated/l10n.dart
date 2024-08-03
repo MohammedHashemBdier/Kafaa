@@ -719,6 +719,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Add Evaluation`
+  String get add_evaluation {
+    return Intl.message(
+      'Add Evaluation',
+      name: 'add_evaluation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Evaluation Name`
+  String get evaluation_name {
+    return Intl.message(
+      'Evaluation Name',
+      name: 'evaluation_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Evaluation Name`
+  String get add_evaluation_name {
+    return Intl.message(
+      'Add Evaluation Name',
+      name: 'add_evaluation_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Evaluation Type`
+  String get evaluation_type {
+    return Intl.message(
+      'Evaluation Type',
+      name: 'evaluation_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Evaluation Type`
+  String get choose_evaluation_type {
+    return Intl.message(
+      'Choose Evaluation Type',
+      name: 'choose_evaluation_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From value`
+  String get from_value {
+    return Intl.message(
+      'From value',
+      name: 'from_value',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the value of the first field`
+  String get enter_the_value_of_the_first_field {
+    return Intl.message(
+      'Enter the value of the first field',
+      name: 'enter_the_value_of_the_first_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To value`
+  String get to_value {
+    return Intl.message(
+      'To value',
+      name: 'to_value',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the value of the second field`
+  String get enter_the_value_of_the_second_field {
+    return Intl.message(
+      'Enter the value of the second field',
+      name: 'enter_the_value_of_the_second_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Target Value`
+  String get target_value {
+    return Intl.message(
+      'Target Value',
+      name: 'target_value',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Target Value`
+  String get add_target_value {
+    return Intl.message(
+      'Add Target Value',
+      name: 'add_target_value',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to add an Evaluation?`
+  String get do_you_want_to_add_an_evaluation {
+    return Intl.message(
+      'Do you want to add an Evaluation?',
+      name: 'do_you_want_to_add_an_evaluation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
