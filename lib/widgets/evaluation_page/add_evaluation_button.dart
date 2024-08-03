@@ -4,8 +4,8 @@ import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_confirmation_dialog.dart';
 
-class AddReviewButton extends StatelessWidget {
-  const AddReviewButton({
+class AddEvaluationButton extends StatelessWidget {
+  const AddEvaluationButton({
     super.key,
     required this.onPressed,
   });
@@ -27,12 +27,12 @@ class AddReviewButton extends StatelessWidget {
         );
       },
       style: ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(AppColors.c2),
+        backgroundColor: WidgetStateProperty.all<Color>(AppColors.c2),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),

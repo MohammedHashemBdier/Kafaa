@@ -26,7 +26,7 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
       DrawerItemModel(
           title: S.of(context).targets, image: Assets.imagesTargetIcon),
       DrawerItemModel(
-          title: S.of(context).reviews, image: Assets.imagesReviewsIcon),
+          title: S.of(context).evaluation, image: Assets.imagesReviewsIcon),
       DrawerItemModel(
           title: S.of(context).notification,
           image: Assets.imagesNotificationIcon),

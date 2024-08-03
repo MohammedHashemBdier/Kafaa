@@ -87,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل قيمة المجال الثاني"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+        "evaluation": MessageLookupByLibrary.simpleMessage("التقييمات"),
         "evaluation_name": MessageLookupByLibrary.simpleMessage("اسم التقييم"),
         "evaluation_type": MessageLookupByLibrary.simpleMessage("نوع التقييم"),
         "from_value": MessageLookupByLibrary.simpleMessage("من القيمة"),
@@ -111,7 +112,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
-        "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
         "save_edits": MessageLookupByLibrary.simpleMessage("حفظ التعديلات"),
         "search_for_an_employee":
             MessageLookupByLibrary.simpleMessage("ابحث عن موظف"),

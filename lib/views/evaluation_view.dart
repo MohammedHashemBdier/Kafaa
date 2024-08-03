@@ -4,16 +4,16 @@ import 'package:kafaa_app/utils/size_config.dart';
 import 'package:kafaa_app/utils/adaptiv_layout.dart';
 import 'package:kafaa_app/widgets/custom_app_bar.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
-import 'package:kafaa_app/widgets/reviews_page/reviews_desktop_layout.dart';
+import 'package:kafaa_app/widgets/evaluation_page/evaluation_desktop_layout.dart';
 
-class ReviewsView extends StatefulWidget {
-  const ReviewsView({super.key});
+class EvaluationView extends StatefulWidget {
+  const EvaluationView({super.key});
 
   @override
-  State<ReviewsView> createState() => _HomViewState();
+  State<EvaluationView> createState() => _HomViewState();
 }
 
-class _HomViewState extends State<ReviewsView> {
+class _HomViewState extends State<EvaluationView> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
   @override
@@ -29,7 +29,7 @@ class _HomViewState extends State<ReviewsView> {
       body: AdaptiveLayout(
         mobileLayout: (context) => const SizedBox(),
         tabletLayout: (context) => const SizedBox(),
-        desktopLayout: (context) => const ReviewsDesktopLayout(),
+        desktopLayout: (context) => const EvaluationDesktopLayout(),
       ),
     );
   }

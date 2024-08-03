@@ -4,8 +4,8 @@ import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
 import 'package:lottie/lottie.dart';
 
-class AddReviewHeader extends StatelessWidget {
-  const AddReviewHeader({
+class AddEvaluationHeader extends StatelessWidget {
+  const AddEvaluationHeader({
     super.key,
   });
 

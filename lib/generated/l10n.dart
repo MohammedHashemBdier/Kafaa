@@ -120,11 +120,11 @@ class S {
     );
   }
 
-  /// `Reviews`
-  String get reviews {
+  /// `Evaluations`
+  String get evaluation {
     return Intl.message(
-      'Reviews',
-      name: 'reviews',
+      'Evaluations',
+      name: 'evaluation',
       desc: '',
       args: [],
     );

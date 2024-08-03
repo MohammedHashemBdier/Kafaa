@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enter the value of the second field"),
         "entr_the_password":
             MessageLookupByLibrary.simpleMessage("Entr the Password"),
+        "evaluation": MessageLookupByLibrary.simpleMessage("Evaluations"),
         "evaluation_name":
             MessageLookupByLibrary.simpleMessage("Evaluation Name"),
         "evaluation_type":
@@ -115,7 +116,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "old_password": MessageLookupByLibrary.simpleMessage("Old Password"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
-        "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "save_edits": MessageLookupByLibrary.simpleMessage("Save Edits"),
         "search_for_an_employee":
             MessageLookupByLibrary.simpleMessage("Search for an Employee"),

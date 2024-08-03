@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
-import 'package:kafaa_app/widgets/reviews_page/add_review_section.dart';
+import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_section.dart';
 
-class ReviewsDesktopLayout extends StatelessWidget {
-  const ReviewsDesktopLayout({super.key});
+class EvaluationDesktopLayout extends StatelessWidget {
+  const EvaluationDesktopLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ReviewsDesktopLayout extends StatelessWidget {
                       ),
                       SizedBox(width: 20),
                       Expanded(
-                        child: AddReviewSection(),
+                        child: AddEvaluationwSection(),
                       ),
                     ],
                   ),

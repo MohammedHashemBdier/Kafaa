@@ -5,10 +5,10 @@ import 'package:kafaa_app/widgets/custom_app_container.dart';
 import 'package:kafaa_app/widgets/custom_dropdown_list.dart';
 import 'package:kafaa_app/widgets/custom_number_field.dart';
 import 'package:kafaa_app/widgets/custom_text_field.dart';
-import 'package:kafaa_app/widgets/reviews_page/add_review_button.dart';
+import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_button.dart';
 
-class AddReviewBody extends StatefulWidget {
-  const AddReviewBody({
+class AddEvaluationBody extends StatefulWidget {
+  const AddEvaluationBody({
     super.key,
     required this.enabled,
   });
@@ -16,10 +16,10 @@ class AddReviewBody extends StatefulWidget {
   final bool enabled;
 
   @override
-  AddReviewBodyState createState() => AddReviewBodyState();
+  AddEvaluationBodyState createState() => AddEvaluationBodyState();
 }
 
-class AddReviewBodyState extends State<AddReviewBody>
+class AddEvaluationBodyState extends State<AddEvaluationBody>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late List<Animation<double>> _animations;
@@ -161,7 +161,7 @@ class AddReviewBodyState extends State<AddReviewBody>
             Align(
               alignment: AlignmentDirectional.topCenter,
               child: IntrinsicWidth(
-                child: AddReviewButton(
+                child: AddEvaluationButton(
                   onPressed: () {},
                 ),
               ),

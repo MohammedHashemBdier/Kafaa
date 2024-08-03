@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
-import 'package:kafaa_app/views/reviews_view.dart';
+import 'package:kafaa_app/views/evaluation_view.dart';
 
 void main() {
   return runApp(
@@ -17,7 +17,7 @@ class KafaaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: const Locale("ar"),
+      locale: const Locale("en"),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -35,7 +35,7 @@ class KafaaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: Colors.black26,
       title: 'Kafa\'a App Dash Board',
-      home: const ReviewsView(),
+      home: const EvaluationView(),
     );
   }
 }
