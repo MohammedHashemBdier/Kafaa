@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/views/evaluation_view.dart';
+import 'package:kafaa_app/views/login_view.dart';
 
 void main() {
   return runApp(
@@ -35,7 +36,7 @@ class KafaaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: Colors.black26,
       title: 'Kafa\'a App Dash Board',
-      home: const EvaluationView(),
+      home: const LoginView(),
     );
   }
 }
