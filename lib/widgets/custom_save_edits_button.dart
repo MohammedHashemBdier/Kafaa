@@ -10,9 +10,10 @@ class CustomSaveEditsButton extends StatelessWidget {
     required this.onPressed,
     required this.enabled,
   });
+  
   final bool enabled;
-
   final Function onPressed;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

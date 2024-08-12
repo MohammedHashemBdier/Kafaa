@@ -8,10 +8,10 @@ import 'package:kafaa_app/utils/app_styles.dart';
 class InActiveDrawerItem extends StatelessWidget {
   const InActiveDrawerItem({
     super.key,
-    required this.draweritemModel,
+    required this.drawerItemModel,
   });
 
-  final DrawerItemModel draweritemModel;
+  final DrawerItemModel drawerItemModel;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class InActiveDrawerItem extends StatelessWidget {
         leading: FittedBox(
           fit: BoxFit.scaleDown,
           child: SvgPicture.asset(
-            draweritemModel.image,
+            drawerItemModel.image,
             width: 25,
             height: 25,
             colorFilter: ColorFilter.mode(AppColors.c5, BlendMode.srcIn),
@@ -31,7 +31,7 @@ class InActiveDrawerItem extends StatelessWidget {
           fit: BoxFit.scaleDown,
           alignment: AlignmentDirectional.centerStart,
           child: Text(
-            draweritemModel.title,
+            drawerItemModel.title,
             style: AppStyles.styleBold16(context).copyWith(
               color: AppColors.c5,
             ),
@@ -45,10 +45,10 @@ class InActiveDrawerItem extends StatelessWidget {
 class ActiveDrawerItem extends StatelessWidget {
   const ActiveDrawerItem({
     super.key,
-    required this.draweritemModel,
+    required this.drawerItemModel,
   });
 
-  final DrawerItemModel draweritemModel;
+  final DrawerItemModel drawerItemModel;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class ActiveDrawerItem extends StatelessWidget {
       child: ListTile(
         leading: FittedBox(
           child: SvgPicture.asset(
-            draweritemModel.image,
+            drawerItemModel.image,
             width: 50,
             height: 50,
           ),
@@ -66,7 +66,7 @@ class ActiveDrawerItem extends StatelessWidget {
           fit: BoxFit.scaleDown,
           alignment: AlignmentDirectional.centerStart,
           child: Text(
-            draweritemModel.title,
+            drawerItemModel.title,
             style: AppStyles.styleSemiBold24(context)
                 .copyWith(color: AppColors.c1),
           ),

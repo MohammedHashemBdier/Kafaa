@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kafaa_app/utils/router.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 import 'package:kafaa_app/widgets/settings_page/settings_mobile_layout.dart';
 
@@ -9,7 +10,7 @@ class SettingsTabletLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: AppDrawer()),
+        Expanded(child: AppDrawer(route: AppRouter.settings)),
         SizedBox(width: 30),
         Expanded(
           flex: 3,

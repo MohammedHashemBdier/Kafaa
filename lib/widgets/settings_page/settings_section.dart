@@ -12,7 +12,7 @@ class SettingsSection extends StatelessWidget {
     return const Column(
       children: [
         SettingsHeader(),
-        SettingsgBody(),
+        SettingsBody(),
       ],
     );
   }

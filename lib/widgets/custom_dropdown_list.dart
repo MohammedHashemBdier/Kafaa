@@ -3,30 +3,26 @@ import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_text_fields_border.dart';
 
-class CustomDropdownList extends StatefulWidget {
+class CustomDropdownList extends StatelessWidget {
   const CustomDropdownList({
     super.key,
     required this.enabled,
-    required this.label,
+    this.label = '',
     required this.menuItems,
     required this.onChose,
     required this.icon,
     required this.hintText,
+    this.selectedValue,
   });
+
   final bool enabled;
   final String label;
   final List<String> menuItems;
-  final Function onChose;
+  final void Function(String? value)? onChose;
   final Widget icon;
   final String hintText;
-  @override
-  CustomDropdownListtState createState() => CustomDropdownListtState();
-}
+  final String? selectedValue;
 
-class CustomDropdownListtState extends State<CustomDropdownList> {
-  String? selectedValue;
-
-  @override
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,10 +31,10 @@ class CustomDropdownListtState extends State<CustomDropdownList> {
         elevation: 3,
         child: DropdownButtonFormField(
           decoration: InputDecoration(
-            prefixIcon: widget.icon,
-            labelText: widget.label,
+            prefixIcon: icon,
+            labelText: label,
             labelStyle: AppStyles.styleRegular16(context),
-            hintText: widget.hintText,
+            hintText: hintText,
             hintStyle: AppStyles.styleRegular16(context).copyWith(
               color: AppColors.c5,
             ),
@@ -48,27 +44,17 @@ class CustomDropdownListtState extends State<CustomDropdownList> {
             enabledBorder: CustomAppTextFieldsBorder.appTextFieldsBorder(),
           ),
           dropdownColor: AppColors.c3,
-          value: widget.enabled ? selectedValue : null,
-          items: widget.menuItems.map(
+          value: selectedValue,
+          items: menuItems.map(
             (e) {
               return DropdownMenuItem(
-                onTap: () {
-                  widget.onChose;
-                },
+                // onTap: () => onChose?.call(e),
                 value: e,
                 child: Text(e),
               );
             },
           ).toList(),
-          onChanged: widget.enabled
-              ? (val) {
-                  setState(
-                    () {
-                      selectedValue = val as String?;
-                    },
-                  );
-                }
-              : null,
+          onChanged: enabled ? onChose : null,
         ),
       ),
     );

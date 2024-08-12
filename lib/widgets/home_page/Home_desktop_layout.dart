@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kafaa_app/utils/router.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 
 class HomeDesktopLayout extends StatelessWidget {
@@ -8,7 +9,7 @@ class HomeDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: AppDrawer()),
+        Expanded(child: AppDrawer(route: AppRouter.home)),
         Expanded(flex: 4, child: SizedBox()),
       ],
     );

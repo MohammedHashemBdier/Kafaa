@@ -8,20 +8,26 @@ class CustomNumberField extends StatelessWidget {
   const CustomNumberField({
     super.key,
     required this.hint,
-    required this.label,
+    this.label = '',
     this.prefixIcon,
     this.suffixIcon,
     this.maxLength,
+    this.controller,
     this.onTap,
+    this.onChanged,
     this.enabled,
+    this.initialValue,
   });
 
   final String hint;
   final String label;
   final Widget? prefixIcon, suffixIcon;
+  final TextEditingController? controller;
   final Function()? onTap;
+  final void Function(String value)? onChanged;
   final int? maxLength;
   final bool? enabled;
+  final String? initialValue;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +36,9 @@ class CustomNumberField extends StatelessWidget {
       child: Card(
         elevation: 3,
         child: TextFormField(
+          controller: controller,
+          onChanged: onChanged,
+          initialValue: initialValue,
           enabled: enabled,
           keyboardType: TextInputType.number,
           inputFormatters: <TextInputFormatter>[

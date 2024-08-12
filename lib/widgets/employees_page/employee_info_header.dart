@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:kafaa_app/blocks/employees/show_edit_employee/show_edit_employee_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_images.dart';
@@ -25,7 +27,9 @@ class EmployeeInfoHeader extends StatelessWidget {
             child: IconButton(
               icon: const Icon(Icons.edit),
               iconSize: 30,
-              onPressed: () {},
+              onPressed: () => context
+                  .read<ShowEditEmployeeBloc>()
+                  .add(EnableDisableEditingEvent()),
             ),
           ),
           const Expanded(child: SizedBox()),
@@ -51,11 +55,14 @@ class EmployeeInfoHeader extends StatelessWidget {
               onPressed: () {
                 showDialog(
                   context: context,
-                  builder: (BuildContext context) {
+                  builder: (BuildContext _) {
                     return CustomConfirmationDialog(
                       content:
                           S.of(context).do_you_want_to_delete_the_evaluation,
-                      onConfirm: () {},
+                      onConfirm: () {
+                        context.read<ShowEditEmployeeBloc>().add(DeleteEvent());
+                        Navigator.of(context).pop();
+                      },
                     );
                   },
                 );

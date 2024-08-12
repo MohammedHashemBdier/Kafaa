@@ -4,9 +4,7 @@ import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_images.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey;
-
-  const CustomAppBar({super.key, required this.scaffoldKey});
+  const CustomAppBar({super.key});
 
   @override
   Size get preferredSize =>
@@ -25,7 +23,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.c4,
       centerTitle: true,
       title: Image.asset(
-        Assets.imagesKfaaAppLogoPng,
+        Assets.imagesKafaaAppLogoPng,
         width: 100,
         height: 100,
       ),
@@ -39,7 +37,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             color: AppColors.c1,
           ),
           onPressed: () {
-            scaffoldKey.currentState!.openDrawer();
+            Scaffold.of(context).openDrawer();
           },
         ),
       ),

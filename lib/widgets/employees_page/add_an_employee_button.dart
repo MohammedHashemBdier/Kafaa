@@ -21,18 +21,19 @@ class AddAnEmployeeButton extends StatelessWidget {
               content: S.of(context).do_you_want_to_add_an_employee,
               onConfirm: () {
                 onPressed();
+                Navigator.of(context).pop();
               },
             );
           },
         );
       },
       style: ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(AppColors.c2),
+        backgroundColor: WidgetStateProperty.all<Color>(AppColors.c2),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),

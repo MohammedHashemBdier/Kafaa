@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "kfaa_app" "\0"
+            VALUE "FileDescription", "kafaa" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "kfaa_app" "\0"
+            VALUE "InternalName", "kafaa" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "kfaa_app.exe" "\0"
-            VALUE "ProductName", "kfaa_app" "\0"
+            VALUE "OriginalFilename", "kafaa.exe" "\0"
+            VALUE "ProductName", "kafaa" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

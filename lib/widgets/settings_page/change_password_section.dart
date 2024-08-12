@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kafaa_app/widgets/settings_page/change_password_body.dart';
 import 'package:kafaa_app/widgets/settings_page/change_password_header.dart';
 
-class ChangePassworSection extends StatelessWidget {
-  const ChangePassworSection({
+class ChangePasswordSection extends StatelessWidget {
+  const ChangePasswordSection({
     super.key,
   });
 

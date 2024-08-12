@@ -5,7 +5,7 @@ import 'package:kafaa_app/utils/app_styles.dart';
 
 class CustomConfirmationDialog extends StatelessWidget {
   final String content;
-  final Function onConfirm;
+  final void Function() onConfirm;
 
   const CustomConfirmationDialog({
     super.key,
@@ -42,7 +42,7 @@ class CustomConfirmationDialog extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: onConfirm as void Function()?,
+          onPressed: onConfirm,
           child: Text(
             S.of(context).confirm,
             style: AppStyles.styleRegular16(context),

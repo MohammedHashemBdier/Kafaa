@@ -20,15 +20,13 @@ class CustomCloseIcon extends StatelessWidget {
           style: OutlinedButton.styleFrom(
             padding: const EdgeInsets.all(10),
             side: const BorderSide(
-              color: Colors.transparent, 
+              color: Colors.transparent,
               width: 2.0,
             ),
             shape:
                 const CircleBorder(), // Use CircleBorder for a circular shape
           ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
+          onPressed: () => Navigator.of(context).pop(),
           child:
               SvgPicture.asset(width: 50, height: 50, Assets.imagesCloseIcon),
         ),

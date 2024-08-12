@@ -5,8 +5,8 @@ import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/views/login_view.dart';
 import 'package:kafaa_app/widgets/custom_confirmation_dialog.dart';
 
-class LogoutButon extends StatelessWidget {
-  const LogoutButon({
+class LogoutButton extends StatelessWidget {
+  const LogoutButton({
     super.key,
   });
   @override
@@ -36,12 +36,12 @@ class LogoutButon extends StatelessWidget {
           );
         },
         style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          backgroundColor: MaterialStateProperty.all<Color>(AppColors.c1),
+          backgroundColor: WidgetStateProperty.all<Color>(AppColors.c1),
         ),
         child: Padding(
           padding: const EdgeInsets.all(5),

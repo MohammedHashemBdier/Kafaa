@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocks/employees/employees/employees_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
@@ -41,6 +43,11 @@ class EmployeesHeader extends StatelessWidget {
               suffixIcon: const Icon(Icons.search),
               hint: S.of(context).search_for_an_employee,
               label: S.of(context).the_search,
+              initialValue:
+                  context.read<EmployeesBloc>().state.searchOnEmployeesText,
+              onChanged: (value) => context
+                  .read<EmployeesBloc>()
+                  .add(SearchOnEmployeesEvent(employeeName: value)),
             ),
           ),
         ],

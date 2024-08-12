@@ -1,4 +1,4 @@
-package com.example.kfaa_app
+package com.example.kafaa
 
 import io.flutter.embedding.android.FlutterActivity
 

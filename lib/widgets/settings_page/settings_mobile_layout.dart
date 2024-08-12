@@ -17,7 +17,7 @@ class SettingsMobileLayout extends StatelessWidget {
               children: [
                 SettingsSection(),
                 SizedBox(height: 20),
-                ChangePassworSection(),
+                ChangePasswordSection(),
               ],
             ),
           ),

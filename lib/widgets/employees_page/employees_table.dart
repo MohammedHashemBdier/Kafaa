@@ -1,6 +1,11 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kafaa_app/blocks/employees/employees/employees_bloc.dart';
+import 'package:kafaa_app/extensions/date_extensions.dart';
 import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/models/employee_model.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_images.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
@@ -39,36 +44,45 @@ class EmployeesTableState extends State<EmployeesTable>
   @override
   Widget build(BuildContext context) {
     return CustomAppContainer(
-      child: Card(
-        elevation: 3,
-        color: AppColors.c2,
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return Table(
-              border: TableBorder(
-                horizontalInside: BorderSide(color: AppColors.c4, width: 10),
+      child: BlocBuilder<EmployeesBloc, EmployeesState>(
+        builder: (context, state) {
+          if (state is GetEmployeesLoadingState)
+            return const Center(child: CircularProgressIndicator());
+          else if (state is GetEmployeesFailureState)
+            return const Text('error');
+          else if (state is GetEmployeesLoadedState)
+            return Card(
+              elevation: 3,
+              color: AppColors.c2,
+              child: AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Table(
+                    border: TableBorder(
+                      horizontalInside:
+                          BorderSide(color: AppColors.c4, width: 10),
+                    ),
+                    columnWidths: const {
+                      0: FixedColumnWidth(80.0),
+                      2: FixedColumnWidth(80.0),
+                      3: FixedColumnWidth(100.0),
+                    },
+                    children: [
+                      employeesTableHeader(context),
+                      ...state.employees.mapIndexed((index, element) =>
+                          tableBody(context, index, element))
+                    ],
+                  );
+                },
               ),
-              columnWidths: const {
-                0: FixedColumnWidth(80.0),
-                2: FixedColumnWidth(80.0),
-                3: FixedColumnWidth(100.0),
-              },
-              children: [
-                employeesTableHeader(context),
-                ...List.generate(
-                  10,
-                  (index) => tableBody(context, index),
-                ),
-              ],
             );
-          },
-        ),
+          return const SizedBox();
+        },
       ),
     );
   }
 
-  TableRow tableBody(BuildContext context, int index) {
+  TableRow tableBody(BuildContext context, int index, EmployeeModel employee) {
     Animation<double> animation = CurvedAnimation(
       parent: _controller,
       curve: Interval(
@@ -87,14 +101,25 @@ class EmployeesTableState extends State<EmployeesTable>
             waitDuration: const Duration(milliseconds: 700),
             message: S.of(context).employee_info,
             child: InkWell(
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const EmployeeInfoDialog();
-                  },
-                );
-              },
+              onTap: () => showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (BuildContext context) {
+                  return EmployeeInfoDialog(
+                    employee: employee,
+                    onDelete: () {
+                      print('delete');
+                    },
+                    onEdit: (newEmployee) {
+                      print('edit');
+                      print(newEmployee);
+                    },
+                  );
+                },
+              ),
+              // onTap: () => context
+              //     .read<EmployeesBloc>()
+              //     .add(ShowEmployeeInfoEvent(employee: employee)),
               child: FadeTransition(
                 opacity: animation,
                 child: SlideTransition(
@@ -129,7 +154,7 @@ class EmployeesTableState extends State<EmployeesTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  "Mohammed Hashem Bdier",
+                  employee.name ?? '---',
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -149,7 +174,7 @@ class EmployeesTableState extends State<EmployeesTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  "Tech",
+                  employee.department ?? '---',
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -169,7 +194,11 @@ class EmployeesTableState extends State<EmployeesTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  S.of(context).work,
+                  employee.isWork == null
+                      ? '---'
+                      : employee.isWork!
+                          ? S.of(context).work
+                          : S.of(context).not_work,
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -191,7 +220,9 @@ class EmployeesTableState extends State<EmployeesTable>
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    "11/9/2022",
+                    employee.dateOfJoining == null
+                        ? '---'
+                        : employee.dateOfJoining!.commonDateFormat(),
                     textAlign: TextAlign.center,
                     style: AppStyles.styleRegular16(context),
                   ),

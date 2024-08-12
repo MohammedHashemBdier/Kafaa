@@ -21,7 +21,7 @@ class LoginContent extends StatelessWidget {
         Flexible(
           child: Padding(
             padding: const EdgeInsets.all(100),
-            child: Image.asset(Assets.imagesKfaaAppLogoPng),
+            child: Image.asset(Assets.imagesKafaaAppLogoPng),
           ),
         ),
         Row(

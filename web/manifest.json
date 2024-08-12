@@ -1,6 +1,6 @@
 {
-    "name": "kfaa_app",
-    "short_name": "kfaa_app",
+    "name": "kafaa",
+    "short_name": "kafaa",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

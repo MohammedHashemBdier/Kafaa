@@ -3,8 +3,8 @@ import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_dialog.dart';
 
-class AddEvaluatonFloatingActionButton extends StatelessWidget {
-  const AddEvaluatonFloatingActionButton({
+class AddEvaluationFloatingActionButton extends StatelessWidget {
+  const AddEvaluationFloatingActionButton({
     super.key,
   });
 

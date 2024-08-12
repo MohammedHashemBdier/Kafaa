@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kafaa_app/blocks/localization/localization_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_images.dart';
@@ -11,10 +13,8 @@ import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
 import 'package:kafaa_app/widgets/custom_dropdown_list.dart';
 
-class SettingsgBody extends StatelessWidget {
-  const SettingsgBody({
-    super.key,
-  });
+class SettingsBody extends StatelessWidget {
+  const SettingsBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,13 @@ class SettingsgBody extends StatelessWidget {
               ),
             ),
             enabled: true,
-            onChose: () {},
+            selectedValue:
+                context.read<LocalizationBloc>().state.languageCode == 'ar'
+                    ? S.of(context).arabic
+                    : S.of(context).english,
+            onChose: (value) => context.read<LocalizationBloc>().add(
+                ChangeLanguageEvent(
+                    languageCode: value == S.of(context).arabic ? 'ar' : 'en')),
           ),
         ],
       ),

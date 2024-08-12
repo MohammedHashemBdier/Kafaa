@@ -9,17 +9,22 @@ class CustomPasswordField extends StatefulWidget {
     super.key,
     this.enabled,
     required this.hint,
-    required this.label,
-    required this.onTap,
+     this.label = '',
     this.prefixIcon,
+    this.onTap,
+    this.controller,
+    this.onChanged,
+    this.initialValue,
   });
 
   final String hint;
   final String label;
   final bool? enabled;
   final Widget? prefixIcon;
-
-  final Function() onTap;
+  final TextEditingController? controller;
+  final void Function()? onTap;
+  final void Function(String value)? onChanged;
+  final String? initialValue;
 
   @override
   CustomPasswordFieldState createState() => CustomPasswordFieldState();
@@ -40,8 +45,11 @@ class CustomPasswordFieldState extends State<CustomPasswordField> {
       padding: const EdgeInsets.all(10),
       child: Card(
         elevation: 3,
-        child: TextField(
+        child: TextFormField(
+          initialValue: widget.initialValue,
           enabled: widget.enabled,
+          controller: widget.controller,
+          onChanged: widget.onChanged,
           obscureText: _isObscured,
           decoration: InputDecoration(
             label: Text(widget.label),
