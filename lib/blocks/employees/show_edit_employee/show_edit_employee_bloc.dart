@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:kafaa_app/models/employee_model.dart';
@@ -7,19 +8,24 @@ part 'show_edit_employee_state.dart';
 
 class ShowEditEmployeeBloc
     extends Bloc<ShowEditEmployeeEvent, ShowEditEmployeeState> {
-  ShowEditEmployeeBloc() : super(InitialState()) {
+  ShowEditEmployeeBloc()
+      : super(InitialState(formKey: GlobalKey<FormState>())) {
     on<GetEmployeeEvent>((event, emit) {
-      emit(ShowInfoState(employee: event.employee));
+      emit(ShowInfoState(
+        formKey: GlobalKey<FormState>(),
+        employee: event.employee,
+      ));
     });
 
     on<DeleteEvent>((event, emit) {
-      emit(DeleteState());
+      emit(DeleteState(formKey: GlobalKey<FormState>()));
     });
 
     on<EnableDisableEditingEvent>((event, emit) {
       final state = this.state;
       if (state is ShowInfoState)
         emit(ShowInfoState(
+          formKey: GlobalKey<FormState>(),
           employee: state.employee,
           isEditingEnabled: !state.isEditingEnabled,
         ));
@@ -27,8 +33,9 @@ class ShowEditEmployeeBloc
 
     on<SaveEvent>((event, emit) {
       final state = this.state;
-      if (state is ShowInfoState)
+      if (state is ShowInfoState && state.formKey.currentState!.validate())
         emit(SaveState(
+          formKey: GlobalKey<FormState>(),
           employee: state.employee,
           isEditingEnabled: !state.isEditingEnabled,
         ));

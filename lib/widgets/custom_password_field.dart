@@ -15,6 +15,7 @@ class CustomPasswordField extends StatefulWidget {
     this.controller,
     this.onChanged,
     this.initialValue,
+    this.validator,
   });
 
   final String hint;
@@ -25,6 +26,7 @@ class CustomPasswordField extends StatefulWidget {
   final void Function()? onTap;
   final void Function(String value)? onChanged;
   final String? initialValue;
+  final String? Function(String? value)? validator;
 
   @override
   CustomPasswordFieldState createState() => CustomPasswordFieldState();
@@ -46,6 +48,7 @@ class CustomPasswordFieldState extends State<CustomPasswordField> {
       child: Card(
         elevation: 3,
         child: TextFormField(
+          validator: widget.validator,
           initialValue: widget.initialValue,
           enabled: widget.enabled,
           controller: widget.controller,

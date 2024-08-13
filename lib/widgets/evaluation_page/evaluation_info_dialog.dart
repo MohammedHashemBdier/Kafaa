@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kafaa_app/models/Evaluation_model.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/size_config.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
@@ -8,9 +9,17 @@ import 'package:kafaa_app/widgets/evaluation_page/evaluation_info.dart';
 import 'package:kafaa_app/widgets/evaluation_page/evaluation_info_header.dart';
 
 class EvaluationsInfoDialog extends StatelessWidget {
+  final EvaluationModel evaluation;
+  final void Function() onDelete;
+  final void Function(EvaluationModel newEvaluation) onEdit;
+
   const EvaluationsInfoDialog({
     super.key,
+    required this.evaluation,
+    required this.onDelete,
+    required this.onEdit,
   });
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

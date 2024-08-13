@@ -17,6 +17,7 @@ class CustomNumberField extends StatelessWidget {
     this.onChanged,
     this.enabled,
     this.initialValue,
+    this.validator,
   });
 
   final String hint;
@@ -28,6 +29,7 @@ class CustomNumberField extends StatelessWidget {
   final int? maxLength;
   final bool? enabled;
   final String? initialValue;
+  final String? Function(String? value)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class CustomNumberField extends StatelessWidget {
       child: Card(
         elevation: 3,
         child: TextFormField(
+          validator: validator,
           controller: controller,
           onChanged: onChanged,
           initialValue: initialValue,

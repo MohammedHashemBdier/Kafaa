@@ -69,8 +69,8 @@ class EmployeesTableState extends State<EmployeesTable>
                     },
                     children: [
                       employeesTableHeader(context),
-                      ...state.employees.mapIndexed((index, element) =>
-                          tableBody(context, index, element))
+                      ...state.employees.mapIndexed((index, employee) =>
+                          tableBody(context, index, employee))
                     ],
                   );
                 },
@@ -116,9 +116,6 @@ class EmployeesTableState extends State<EmployeesTable>
                   );
                 },
               ),
-              // onTap: () => context
-              //     .read<EmployeesBloc>()
-              //     .add(ShowEmployeeInfoEvent(employee: employee)),
               child: FadeTransition(
                 opacity: animation,
                 child: SlideTransition(

@@ -1,5 +1,9 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocks/evaluations/evaluations/evaluations_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/models/Evaluation_model.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
@@ -37,31 +41,44 @@ class EvaluationsTableState extends State<EvaluationsTable>
   @override
   Widget build(BuildContext context) {
     return CustomAppContainer(
-      child: Card(
-        elevation: 3,
-        color: AppColors.c2,
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return Table(
-              border: TableBorder(
-                horizontalInside: BorderSide(color: AppColors.c4, width: 10),
+      child: BlocBuilder<EvaluationsBloc, EvaluationsState>(
+        builder: (context, state) {
+          if (state is GetEvaluationsLoadingState)
+            return const Center(child: CircularProgressIndicator());
+          else if (state is GetEvaluationsFailureState)
+            return const Text('error');
+          else if (state is GetEvaluationsLoadedState)
+            return Card(
+              elevation: 3,
+              color: AppColors.c2,
+              child: AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Table(
+                    border: TableBorder(
+                      horizontalInside:
+                          BorderSide(color: AppColors.c4, width: 10),
+                    ),
+                    children: [
+                      evaluationTableHeader(context),
+                      ...state.evaluations.mapIndexed((index, evaluation) =>
+                          tableBody(context, index, evaluation))
+                    ],
+                  );
+                },
               ),
-              children: [
-                evaluationTableHeader(context),
-                ...List.generate(
-                  10,
-                  (index) => tableBody(context, index),
-                ),
-              ],
             );
-          },
-        ),
+          return const SizedBox();
+        },
       ),
     );
   }
 
-  TableRow tableBody(BuildContext context, int index) {
+  TableRow tableBody(
+    BuildContext context,
+    int index,
+    EvaluationModel evaluation,
+  ) {
     Animation<double> animation = CurvedAnimation(
       parent: _controller,
       curve: Interval(
@@ -84,7 +101,15 @@ class EvaluationsTableState extends State<EvaluationsTable>
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return const EvaluationsInfoDialog();
+                    return EvaluationsInfoDialog(
+                      evaluation: evaluation,
+                      onDelete: () => context
+                          .read<EvaluationsBloc>()
+                          .add(DeleteEvaluationEvent(evaluation: evaluation)),
+                      onEdit: (newEvaluation) => context
+                          .read<EvaluationsBloc>()
+                          .add(EditEvaluationEvent(evaluation: newEvaluation)),
+                    );
                   },
                 );
               },
@@ -117,7 +142,7 @@ class EvaluationsTableState extends State<EvaluationsTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  "تقيم معدل الكالمات متوسط",
+                  evaluation.name ?? '---',
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -137,7 +162,7 @@ class EvaluationsTableState extends State<EvaluationsTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  "معدل المكالمات اليومي",
+                  evaluation.type ?? '---',
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -157,7 +182,7 @@ class EvaluationsTableState extends State<EvaluationsTable>
                   end: Offset.zero,
                 ).animate(animation),
                 child: Text(
-                  "50",
+                  evaluation.fromValue?.toString() ?? '---',
                   textAlign: TextAlign.center,
                   style: AppStyles.styleRegular16(context),
                 ),
@@ -179,7 +204,7 @@ class EvaluationsTableState extends State<EvaluationsTable>
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    "75",
+                    evaluation.toValue?.toString() ?? '---',
                     textAlign: TextAlign.center,
                     style: AppStyles.styleRegular16(context),
                   ),
@@ -202,7 +227,7 @@ class EvaluationsTableState extends State<EvaluationsTable>
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    "4",
+                    evaluation.targetValue?.toString() ?? '---',
                     textAlign: TextAlign.center,
                     style: AppStyles.styleRegular16(context),
                   ),

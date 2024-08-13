@@ -17,6 +17,7 @@ class CustomTextField extends StatelessWidget {
     this.maxLength,
     this.initialValue,
     this.readOnly = false,
+    this.validator,
   });
 
   final String hint;
@@ -29,6 +30,7 @@ class CustomTextField extends StatelessWidget {
   final bool? enabled;
   final String? initialValue;
   final bool readOnly;
+  final String? Function(String? value)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,7 @@ class CustomTextField extends StatelessWidget {
       child: Card(
         elevation: 3,
         child: TextFormField(
+          validator: validator,
           initialValue: initialValue,
           enabled: enabled,
           readOnly: readOnly,

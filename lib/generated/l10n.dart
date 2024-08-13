@@ -859,7 +859,19 @@ class S {
       args: [],
     );
   }
+
+  /// `Do you want to delete the Evaluation?`
+  String get this_field_is_required {
+    return Intl.message(
+      'This field is required',
+      name: 'this_field_is_required',
+      desc: '',
+      args: [],
+    );
+  }
 }
+
+
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();

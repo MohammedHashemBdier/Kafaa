@@ -58,11 +58,12 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
 
         emit(state.copyWith(employees: newEmployees));
 
-        bool isAdded = await employeesRepo.addEmployee(
-          password: '12345678',
-          employee: event.employee,
-        );
         try {
+          bool isAdded = await employeesRepo.addEmployee(
+            password: '12345678',
+            employee: event.employee,
+          );
+
           if (!isAdded) emit(state.copyWith(employees: oldEmployees));
         } on UnauthorizedException {
           // authRepo.logout();
