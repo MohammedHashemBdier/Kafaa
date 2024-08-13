@@ -19,9 +19,7 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
         emit(state.copyWith(searchOnEmployeesText: event.employeeName));
 
       emit(GetEmployeesLoadingState(
-        addEmployee: state.addEmployee,
-        searchOnEmployeesText: state.searchOnEmployeesText,
-      ));
+          searchOnEmployeesText: state.searchOnEmployeesText));
 
       try {
         List<EmployeeModel> employees = await employeesRepo.getEmployees(
@@ -30,7 +28,6 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
         );
 
         emit(GetEmployeesLoadedState(
-          addEmployee: state.addEmployee,
           searchOnEmployeesText: state.searchOnEmployeesText,
           employees: employees,
         ));
@@ -40,27 +37,105 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
         // authRepo.logout();
       } catch (e) {
         emit(GetEmployeesFailureState(
-          addEmployee: state.addEmployee,
           searchOnEmployeesText: state.searchOnEmployeesText,
           message: e.toString(),
         ));
       }
     });
 
-    on<AddEmployeeEvent>((event, emit) {
+    on<AddEmployeeEvent>((event, emit) async {
+      final state = this.state;
 
+      if (state is GetEmployeesLoadedState) {
+        List<EmployeeModel> oldEmployees =
+            List<EmployeeModel>.from(state.employees);
+
+        List<EmployeeModel> newEmployees =
+            List<EmployeeModel>.from(state.employees);
+
+        if (event.employee.name!.contains(state.searchOnEmployeesText))
+          newEmployees.add(event.employee);
+
+        emit(state.copyWith(employees: newEmployees));
+
+        bool isAdded = await employeesRepo.addEmployee(
+          password: '12345678',
+          employee: event.employee,
+        );
+        try {
+          if (!isAdded) emit(state.copyWith(employees: oldEmployees));
+        } on UnauthorizedException {
+          // authRepo.logout();
+        } on ForbiddenException {
+          // authRepo.logout();
+        } catch (e) {
+          emit(state.copyWith(employees: oldEmployees));
+        }
+      }
     });
 
-    on<EditEmployeeEvent>((event, emit) {});
+    on<EditEmployeeEvent>((event, emit) async {
+      final state = this.state;
 
-    on<DeleteEmployeeEvent>((event, emit) {});
+      if (state is GetEmployeesLoadedState) {
+        List<EmployeeModel> oldEmployees =
+            List<EmployeeModel>.from(state.employees);
 
-    on<ChangeAddEmployeeName>((event, emit) {
-      emit(
-        state.copyWith(
-          addEmployee: state.addEmployee.copyWith(name: () => event.name),
-        ),
-      );
+        List<EmployeeModel> newEmployees = state.employees
+            .map((employee) =>
+                employee.id == event.employee.id ? event.employee : employee)
+            .toList();
+
+        if (!event.employee.name!.contains(state.searchOnEmployeesText))
+          newEmployees.remove(event.employee);
+
+        emit(state.copyWith(employees: newEmployees));
+
+        try {
+          bool isEdited = await employeesRepo.editEmployee(
+            password: '12345678',
+            employee: event.employee,
+          );
+
+          if (!isEdited) emit(state.copyWith(employees: oldEmployees));
+        } on UnauthorizedException {
+          // authRepo.logout();
+        } on ForbiddenException {
+          // authRepo.logout();
+        } catch (e) {
+          emit(state.copyWith(employees: oldEmployees));
+        }
+      }
+    });
+
+    on<DeleteEmployeeEvent>((event, emit) async {
+      final state = this.state;
+
+      if (state is GetEmployeesLoadedState) {
+        List<EmployeeModel> oldEmployees =
+            List<EmployeeModel>.from(state.employees);
+
+        List<EmployeeModel> newEmployees = state.employees
+            .where((employee) => event.employee != employee)
+            .toList();
+
+        emit(state.copyWith(employees: newEmployees));
+
+        try {
+          bool isDeleted = await employeesRepo.deleteEmployee(
+            password: '12345678',
+            employee: event.employee,
+          );
+
+          if (!isDeleted) emit(state.copyWith(employees: oldEmployees));
+        } on UnauthorizedException {
+          // authRepo.logout();
+        } on ForbiddenException {
+          // authRepo.logout();
+        } catch (e) {
+          emit(state.copyWith(employees: oldEmployees));
+        }
+      }
     });
   }
 }

@@ -47,6 +47,7 @@ class EmployeeModel extends Equatable {
     String? Function()? academicSpecialization,
   }) =>
       EmployeeModel(
+        id: id == null ? this.id : id(),
         name: name == null ? this.name : name(),
         username: username == null ? this.username : username(),
         password: password == null ? this.password : password(),
@@ -83,9 +84,19 @@ class EmployeeModel extends Equatable {
       );
 
   Map<String, dynamic> toJson() => {
-        // 'token': token,
-        // 'name': name,
-        // 'type': type.toString(),
+        "id": id,
+        "name": name,
+        "username": username,
+        "password": password,
+        "section": department,
+        "home_num": phoneNumber,
+        "phone_num": mobileNumber,
+        "status": isWork,
+        "join": dateOfJoining?.toString(),
+        "id_num": idNumber,
+        "address": address,
+        "birth": dateOfBirth?.toString(),
+        "edu": academicSpecialization,
       };
 
   static List<EmployeeModel> listFromJson(List json) =>

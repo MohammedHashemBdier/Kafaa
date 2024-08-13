@@ -104,16 +104,15 @@ class EmployeesTableState extends State<EmployeesTable>
               onTap: () => showDialog(
                 context: context,
                 barrierDismissible: false,
-                builder: (BuildContext context) {
+                builder: (BuildContext _) {
                   return EmployeeInfoDialog(
                     employee: employee,
-                    onDelete: () {
-                      print('delete');
-                    },
-                    onEdit: (newEmployee) {
-                      print('edit');
-                      print(newEmployee);
-                    },
+                    onDelete: () => context
+                        .read<EmployeesBloc>()
+                        .add(DeleteEmployeeEvent(employee: employee)),
+                    onEdit: (newEmployee) => context
+                        .read<EmployeesBloc>()
+                        .add(EditEmployeeEvent(employee: newEmployee)),
                   );
                 },
               ),

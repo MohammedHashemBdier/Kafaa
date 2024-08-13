@@ -55,13 +55,13 @@ class EmployeeInfoHeader extends StatelessWidget {
               onPressed: () {
                 showDialog(
                   context: context,
-                  builder: (BuildContext _) {
+                  builder: (BuildContext cnx) {
                     return CustomConfirmationDialog(
                       content:
                           S.of(context).do_you_want_to_delete_the_evaluation,
                       onConfirm: () {
+                        Navigator.of(cnx).pop();
                         context.read<ShowEditEmployeeBloc>().add(DeleteEvent());
-                        Navigator.of(context).pop();
                       },
                     );
                   },

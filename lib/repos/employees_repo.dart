@@ -15,6 +15,44 @@ class EmployeesRepo {
       password: password,
     );
 
-    return EmployeeModel.listFromJson(response['message']);
+    return EmployeeModel.listFromJson(response['data']);
+  }
+
+  Future<bool> addEmployee({
+    required String password,
+    required EmployeeModel employee,
+  }) async {
+    Map<String, dynamic> response = await client.post(
+      'employee/create',
+      password: password,
+      data: employee.toJson(),
+    );
+
+    return response['status'];
+  }
+
+  Future<bool> editEmployee({
+    required String password,
+    required EmployeeModel employee,
+  }) async {
+    Map<String, dynamic> response = await client.post(
+      'employee/update',
+      password: password,
+      data: employee.toJson(),
+    );
+
+    return response['status'];
+  }
+
+  Future<bool> deleteEmployee({
+    required String password,
+    required EmployeeModel employee,
+  }) async {
+    Map<String, dynamic> response = await client.delete(
+      'employee/delete?id=${employee.id}',
+      password: password,
+    );
+
+    return response['status'];
   }
 }
