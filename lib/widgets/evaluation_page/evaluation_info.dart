@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocks/evaluations/show_edit_evaluation/show_edit_evaluation_bloc.dart';
+import 'package:kafaa_app/extensions/string_extensions.dart';
 import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/models/evaluation_model.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/widgets/custom_dropdown_list.dart';
-import 'package:kafaa_app/widgets/custom_number_field.dart';
 import 'package:kafaa_app/widgets/custom_text_field.dart';
 
 class EvaluationInfo extends StatefulWidget {
-  const EvaluationInfo({
-    super.key,
-    required this.enabled,
-  });
-
-  final bool enabled;
+  const EvaluationInfo({super.key});
 
   @override
   EvaluationInfoState createState() => EvaluationInfoState();
@@ -65,95 +63,197 @@ class EvaluationInfoState extends State<EvaluationInfo>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        buildAnimatedField(
-          Text(
-            S.of(context).evaluation_name,
-          ),
-          0,
-        ),
-        buildAnimatedField(
-          CustomTextField(
-            label: "تقييم معدل المكالمات متوسط",
-            enabled: widget.enabled,
-            prefixIcon: const Icon(Icons.star),
-            hint: S.of(context).add_evaluation_name,
-          ),
-          1,
-        ),
-        buildAnimatedField(
-          Text(
-            S.of(context).evaluation_type,
-          ),
-          2,
-        ),
-        buildAnimatedField(
-          CustomDropdownList(
-            menuItems: const [
-              "معدل المكالمات اليومي",
-              "تقييم الدوام",
-              "اخطاء المتابعة",
-              "نسبة القبول",
-              "جودة المكالمات",
-            ],
-            label: "معدل المكالمات اليومي",
-            hintText: S.of(context).choose_evaluation_type,
-            icon: Icon(
-              Icons.star,
-              color: AppColors.c5,
-            ),
-            enabled: widget.enabled,
-            onChose: (val) {},
-          ),
-          3,
-        ),
-        buildAnimatedField(
-          Text(S.of(context).from_value),
-          4,
-        ),
-        buildAnimatedField(
-          CustomNumberField(
-            label: "50",
-            enabled: widget.enabled,
-            prefixIcon: const Icon(Icons.star),
-            hint: S.of(context).enter_the_value_of_the_first_field,
-          ),
-          5,
-        ),
-        buildAnimatedField(
-          Text(
-            S.of(context).to_value,
-          ),
-          6,
-        ),
-        buildAnimatedField(
-          CustomNumberField(
-            label: "75",
-            enabled: widget.enabled,
-            prefixIcon: const Icon(Icons.star),
-            hint: S.of(context).enter_the_value_of_the_second_field,
-          ),
-          7,
-        ),
-        buildAnimatedField(
-          Text(
-            S.of(context).target_value,
-          ),
-          8,
-        ),
-        buildAnimatedField(
-          CustomNumberField(
-            label: "4",
-            enabled: widget.enabled,
-            prefixIcon: const Icon(Icons.star),
-            hint: S.of(context).add_target_value,
-          ),
-          9,
-        ),
-      ],
+    return BlocBuilder<ShowEditEvaluationBloc, ShowEditEvaluationState>(
+      buildWhen: (previous, current) =>
+          current is ShowInfoState && previous is! ShowInfoState,
+      builder: (context, state) {
+        if (state is ShowInfoState) {
+          return BlocBuilder<ShowEditEvaluationBloc, ShowEditEvaluationState>(
+            buildWhen: (previous, current) => current is SaveEvaluationState,
+            builder: (context, state) {
+              if (state is ShowInfoState) {
+                EvaluationModel oldEvaluation = state.evaluation;
+
+                return BlocBuilder<ShowEditEvaluationBloc,
+                    ShowEditEvaluationState>(
+                  buildWhen: (previous, current) {
+                    return current is ShowInfoState &&
+                            previous is ShowInfoState &&
+                            current.isEditingEnabled !=
+                                previous.isEditingEnabled
+                        ? true
+                        : false;
+                  },
+                  builder: (context, state) {
+                    if (state is ShowInfoState) {
+                      EvaluationModel newEvaluation = state.evaluation;
+                      bool enabled = state.isEditingEnabled;
+
+                      return Form(
+                        key: state.formKey,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            buildAnimatedField(
+                              Text(
+                                S.of(context).evaluation_name,
+                              ),
+                              0,
+                            ),
+                            buildAnimatedField(
+                              CustomTextField(
+                                controller: TextEditingController(
+                                    text: enabled
+                                        ? newEvaluation.name ?? ''
+                                        : ''),
+                                label: oldEvaluation.name ?? '',
+                                prefixIcon: const Icon(Icons.star),
+                                hint: S.of(context).add_evaluation_name,
+                                enabled: enabled,
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                        ? S.of(context).this_field_is_required
+                                        : null,
+                                onChanged: (value) => context
+                                    .read<ShowEditEvaluationBloc>()
+                                    .add(ChangeEvaluationName(name: value)),
+                              ),
+                              1,
+                            ),
+                            buildAnimatedField(
+                              Text(
+                                S.of(context).evaluation_type,
+                              ),
+                              2,
+                            ),
+                            buildAnimatedField(
+                              CustomDropdownList(
+                                menuItems: const [
+                                  "معدل المكالمات اليومي",
+                                  "تقييم الدوام",
+                                  "اخطاء المتابعة",
+                                  "نسبة القبول",
+                                  "جودة المكالمات",
+                                ],
+                                label: oldEvaluation.type ?? '',
+                                hintText: S.of(context).choose_evaluation_type,
+                                icon: Icon(
+                                  Icons.star,
+                                  color: AppColors.c5,
+                                ),
+                                enabled: enabled,
+                                onChose: (value) => context
+                                    .read<ShowEditEvaluationBloc>()
+                                    .add(ChangeEvaluationType(type: value)),
+                              ),
+                              3,
+                            ),
+                            buildAnimatedField(
+                              Text(S.of(context).from_value),
+                              4,
+                            ),
+                            buildAnimatedField(
+                              CustomTextField(
+                                controller: TextEditingController(
+                                    text: enabled
+                                        ? newEvaluation.fromValue?.toString() ??
+                                            ''
+                                        : ''),
+                                label:
+                                    oldEvaluation.fromValue?.toString() ?? '',
+                                prefixIcon: const Icon(Icons.star),
+                                hint: S
+                                    .of(context)
+                                    .enter_the_value_of_the_first_field,
+                                enabled: enabled,
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                        ? S.of(context).this_field_is_required
+                                        : null,
+                                onChanged: (value) => context
+                                    .read<ShowEditEvaluationBloc>()
+                                    .add(ChangeEvaluationFromValue(
+                                        fromValue: value.toIntOrNull())),
+                              ),
+                              5,
+                            ),
+                            buildAnimatedField(
+                              Text(
+                                S.of(context).to_value,
+                              ),
+                              6,
+                            ),
+                            buildAnimatedField(
+                              CustomTextField(
+                                controller: TextEditingController(
+                                    text: enabled
+                                        ? newEvaluation.toValue?.toString() ??
+                                            ''
+                                        : ''),
+                                label: oldEvaluation.toValue?.toString() ?? '',
+                                prefixIcon: const Icon(Icons.star),
+                                hint: S
+                                    .of(context)
+                                    .enter_the_value_of_the_second_field,
+                                enabled: enabled,
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                        ? S.of(context).this_field_is_required
+                                        : null,
+                                onChanged: (value) => context
+                                    .read<ShowEditEvaluationBloc>()
+                                    .add(ChangeEvaluationToValue(
+                                        toValue: value.toIntOrNull())),
+                              ),
+                              7,
+                            ),
+                            buildAnimatedField(
+                              Text(
+                                S.of(context).target_value,
+                              ),
+                              8,
+                            ),
+                            buildAnimatedField(
+                              CustomTextField(
+                                controller: TextEditingController(
+                                    text: enabled
+                                        ? newEvaluation.targetValue
+                                                ?.toString() ??
+                                            ''
+                                        : ''),
+                                label:
+                                    oldEvaluation.targetValue?.toString() ?? '',
+                                prefixIcon: const Icon(Icons.star),
+                                hint: S.of(context).add_target_value,
+                                enabled: enabled,
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                        ? S.of(context).this_field_is_required
+                                        : null,
+                                onChanged: (value) => context
+                                    .read<ShowEditEvaluationBloc>()
+                                    .add(ChangeEvaluationTargetValue(
+                                        targetValue: value.toIntOrNull())),
+                              ),
+                              9,
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+
+                    return const SizedBox();
+                  },
+                );
+              }
+              return const SizedBox();
+            },
+          );
+        }
+
+        return const SizedBox();
+      },
     );
   }
 }

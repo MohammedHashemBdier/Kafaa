@@ -1,4 +1,4 @@
-import 'package:kafaa_app/models/Evaluation_model.dart';
+import 'package:kafaa_app/models/evaluation_model.dart';
 import 'package:kafaa_app/utils/dio_client.dart';
 
 class EvaluationsRepo {

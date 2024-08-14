@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:kafaa_app/models/employee_model.dart';
@@ -6,15 +9,18 @@ part 'add_employee_event.dart';
 part 'add_employee_state.dart';
 
 class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
-  AddEmployeeBloc() : super(const InitialState()) {
+  AddEmployeeBloc() : super(InitialState(formKey: GlobalKey<FormState>())) {
     on<AddEvent>((event, emit) {
-      emit(AddState(employee: state.employee));
-      emit(const InitialState());
+      if (state.formKey.currentState!.validate()) {
+        emit(AddState(employee: state.employee, formKey: state.formKey));
+        emit(InitialState(formKey: state.formKey));
+      }
     });
 
     on<ChangeEmployeeName>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee: state.employee.copyWith(name: () => event.name),
         ),
       );
@@ -23,6 +29,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeUsername>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee: state.employee.copyWith(username: () => event.username),
         ),
       );
@@ -31,6 +38,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeePassword>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee: state.employee.copyWith(password: () => event.password),
         ),
       );
@@ -39,6 +47,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeDepartment>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee: state.employee.copyWith(department: () => event.department),
         ),
       );
@@ -47,6 +56,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeePhoneNumber>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee:
               state.employee.copyWith(phoneNumber: () => event.phoneNumber),
         ),
@@ -56,6 +66,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeMobileNumber>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee:
               state.employee.copyWith(mobileNumber: () => event.mobileNumber),
         ),
@@ -65,6 +76,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeIsWork>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee: state.employee.copyWith(isWork: () => event.isWork),
         ),
       );
@@ -73,6 +85,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeDateOfJoining>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee:
               state.employee.copyWith(dateOfJoining: () => event.dateOfJoining),
         ),
@@ -82,6 +95,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeIDNumber>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee: state.employee.copyWith(idNumber: () => event.idNumber),
         ),
       );
@@ -90,6 +104,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeAddress>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee: state.employee.copyWith(address: () => event.address),
         ),
       );
@@ -98,6 +113,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeDateOfBirth>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee:
               state.employee.copyWith(dateOfBirth: () => event.dateOfBirth),
         ),
@@ -107,6 +123,7 @@ class AddEmployeeBloc extends Bloc<AddEmployeeEvent, AddEmployeeState> {
     on<ChangeEmployeeAcademicSpecialization>((event, emit) {
       emit(
         WriteState(
+          formKey: state.formKey,
           employee: state.employee.copyWith(
               academicSpecialization: () => event.academicSpecialization),
         ),

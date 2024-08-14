@@ -73,209 +73,251 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
         child: BlocBuilder<AddEmployeeBloc, AddEmployeeState>(
           buildWhen: (previous, current) => current is AddState,
           builder: (context, state) {
-            return Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                buildAnimatedField(
-                  CustomTextField(
-                    prefixIcon: const Icon(Icons.person_sharp),
-                    hint: S.of(context).add_name,
-                    label: S.of(context).name,
-                    controller: TextEditingController(),
-                    onChanged: (value) => context
-                        .read<AddEmployeeBloc>()
-                        .add(ChangeEmployeeName(name: value)),
-                  ),
-                  0,
-                ),
-                buildAnimatedField(
-                  CustomTextField(
-                    prefixIcon: const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FaIcon(FontAwesomeIcons.at),
+            return Form(
+              key: state.formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  buildAnimatedField(
+                    CustomTextField(
+                      prefixIcon: const Icon(Icons.person_sharp),
+                      hint: S.of(context).add_name,
+                      label: S.of(context).name,
+                      controller: TextEditingController(),
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context
+                          .read<AddEmployeeBloc>()
+                          .add(ChangeEmployeeName(name: value)),
                     ),
-                    hint: S.of(context).add_username,
-                    label: S.of(context).username,
-                    controller: TextEditingController(),
-                    onChanged: (value) => context
-                        .read<AddEmployeeBloc>()
-                        .add(ChangeEmployeeUsername(username: value)),
+                    0,
                   ),
-                  1,
-                ),
-                buildAnimatedField(
-                  CustomPasswordField(
-                    prefixIcon: const Icon(Icons.password),
-                    hint: S.of(context).add_password,
-                    label: S.of(context).password,
-                    controller: TextEditingController(),
-                    onChanged: (value) => context
-                        .read<AddEmployeeBloc>()
-                        .add(ChangeEmployeePassword(password: value)),
-                  ),
-                  2,
-                ),
-                buildAnimatedField(
-                  CustomTextField(
-                    prefixIcon: const Icon(Icons.badge),
-                    hint: S.of(context).add_department,
-                    label: S.of(context).department,
-                    controller: TextEditingController(),
-                    onChanged: (value) => context
-                        .read<AddEmployeeBloc>()
-                        .add(ChangeEmployeeDepartment(department: value)),
-                  ),
-                  3,
-                ),
-                buildAnimatedField(
-                  CustomNumberField(
-                    prefixIcon: const Icon(Icons.phone),
-                    hint: S.of(context).add_phone_number,
-                    label: S.of(context).phone_number,
-                    controller: TextEditingController(),
-                    maxLength: 10,
-                    onChanged: (value) => context
-                        .read<AddEmployeeBloc>()
-                        .add(ChangeEmployeePhoneNumber(phoneNumber: value)),
-                  ),
-                  4,
-                ),
-                buildAnimatedField(
-                  CustomNumberField(
-                    prefixIcon: const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FaIcon(FontAwesomeIcons.mobileRetro),
+                  buildAnimatedField(
+                    CustomTextField(
+                      prefixIcon: const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FaIcon(FontAwesomeIcons.at),
+                      ),
+                      hint: S.of(context).add_username,
+                      label: S.of(context).username,
+                      controller: TextEditingController(),
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context
+                          .read<AddEmployeeBloc>()
+                          .add(ChangeEmployeeUsername(username: value)),
                     ),
-                    hint: S.of(context).add_mobile_number,
-                    label: S.of(context).mobile_number,
-                    controller: TextEditingController(),
-                    maxLength: 10,
-                    onChanged: (value) => context
-                        .read<AddEmployeeBloc>()
-                        .add(ChangeEmployeeMobileNumber(mobileNumber: value)),
+                    1,
                   ),
-                  5,
-                ),
-                buildAnimatedField(
-                  CustomDropdownList(
-                    menuItems: [
-                      S.of(context).work,
-                      S.of(context).not_work,
-                    ],
-                    label: S.of(context).work_state,
-                    hintText: S.of(context).add_work_state,
-                    icon: Icon(
-                      Icons.work_outline,
-                      color: AppColors.c5,
+                  buildAnimatedField(
+                    CustomPasswordField(
+                      prefixIcon: const Icon(Icons.password),
+                      hint: S.of(context).add_password,
+                      label: S.of(context).password,
+                      controller: TextEditingController(),
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context
+                          .read<AddEmployeeBloc>()
+                          .add(ChangeEmployeePassword(password: value)),
                     ),
-                    enabled: true,
-                    onChose: (value) => context.read<AddEmployeeBloc>().add(
-                        ChangeEmployeeIsWork(
-                            isWork: value == S.of(context).work)),
+                    2,
                   ),
-                  6,
-                ),
-                buildAnimatedField(
-                  BlocSelector<AddEmployeeBloc, AddEmployeeState, DateTime?>(
-                    selector: (state) {
-                      if (state is AddState) return null;
-                      return state.employee.dateOfJoining;
-                    },
-                    builder: (context, date) {
-                      return CustomTextField(
-                        prefixIcon: const Icon(Icons.calendar_today),
-                        hint: S.of(context).select_date,
-                        label: S.of(context).date_of_joining_the_department,
-                        readOnly: true,
-                        controller: TextEditingController(
-                            text: date?.commonDateFormat()),
-                        onTap: () async => context.read<AddEmployeeBloc>().add(
-                            ChangeEmployeeDateOfJoining(
-                                dateOfJoining:
-                                    await customSelectDate(context))),
-                      );
-                    },
-                  ),
-                  7,
-                ),
-                buildAnimatedField(
-                  CustomNumberField(
-                    prefixIcon: const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FaIcon(FontAwesomeIcons.idBadge),
+                  buildAnimatedField(
+                    CustomTextField(
+                      prefixIcon: const Icon(Icons.badge),
+                      hint: S.of(context).add_department,
+                      label: S.of(context).department,
+                      controller: TextEditingController(),
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context
+                          .read<AddEmployeeBloc>()
+                          .add(ChangeEmployeeDepartment(department: value)),
                     ),
-                    hint: S.of(context).add_id_number,
-                    label: S.of(context).id_number,
-                    controller: TextEditingController(),
-                    onChanged: (value) => context
-                        .read<AddEmployeeBloc>()
-                        .add(ChangeEmployeeIDNumber(idNumber: value)),
-                    maxLength: 11,
+                    3,
                   ),
-                  8,
-                ),
-                buildAnimatedField(
-                  CustomTextField(
-                    prefixIcon: const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FaIcon(FontAwesomeIcons.locationArrow),
+                  buildAnimatedField(
+                    CustomNumberField(
+                      prefixIcon: const Icon(Icons.phone),
+                      hint: S.of(context).add_phone_number,
+                      label: S.of(context).phone_number,
+                      controller: TextEditingController(),
+                      maxLength: 10,
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context
+                          .read<AddEmployeeBloc>()
+                          .add(ChangeEmployeePhoneNumber(phoneNumber: value)),
                     ),
-                    hint: S.of(context).add_address,
-                    label: S.of(context).address,
-                    controller: TextEditingController(),
-                    onChanged: (value) => context
-                        .read<AddEmployeeBloc>()
-                        .add(ChangeEmployeeAddress(address: value)),
+                    4,
                   ),
-                  9,
-                ),
-                buildAnimatedField(
-                  BlocSelector<AddEmployeeBloc, AddEmployeeState, DateTime?>(
-                    selector: (state) {
-                      if (state is AddState) return null;
-                      return state.employee.dateOfBirth;
-                    },
-                    builder: (context, date) {
-                      return CustomTextField(
-                        prefixIcon: const Icon(Icons.calendar_today),
-                        hint: S.of(context).select_date,
-                        label: S.of(context).date_of_birth,
-                        readOnly: true,
-                        controller: TextEditingController(
-                            text: date?.commonDateFormat()),
-                        onTap: () async => context.read<AddEmployeeBloc>().add(
-                            ChangeEmployeeDateOfBirth(
-                                dateOfBirth: await customSelectDate(context))),
-                      );
-                    },
-                  ),
-                  10,
-                ),
-                buildAnimatedField(
-                  CustomTextField(
-                    prefixIcon: const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FaIcon(FontAwesomeIcons.book),
+                  buildAnimatedField(
+                    CustomNumberField(
+                      prefixIcon: const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FaIcon(FontAwesomeIcons.mobileRetro),
+                      ),
+                      hint: S.of(context).add_mobile_number,
+                      label: S.of(context).mobile_number,
+                      controller: TextEditingController(),
+                      maxLength: 10,
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context
+                          .read<AddEmployeeBloc>()
+                          .add(ChangeEmployeeMobileNumber(mobileNumber: value)),
                     ),
-                    hint: S.of(context).add_academic_specialization,
-                    label: S.of(context).academic_specialization,
-                    controller: TextEditingController(),
-                    onChanged: (value) => context.read<AddEmployeeBloc>().add(
-                        ChangeEmployeeAcademicSpecialization(
-                            academicSpecialization: value)),
+                    5,
                   ),
-                  11,
-                ),
-                const SizedBox(height: 20),
-                buildAnimatedField(
-                  IntrinsicWidth(
-                    child: AddAnEmployeeButton(
-                        onPressed: () =>
-                            context.read<AddEmployeeBloc>().add(AddEvent())),
+                  buildAnimatedField(
+                    CustomDropdownList(
+                      menuItems: [
+                        S.of(context).work,
+                        S.of(context).not_work,
+                      ],
+                      label: S.of(context).work_state,
+                      hintText: S.of(context).add_work_state,
+                      icon: Icon(
+                        Icons.work_outline,
+                        color: AppColors.c5,
+                      ),
+                      enabled: true,
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChose: (value) => context.read<AddEmployeeBloc>().add(
+                          ChangeEmployeeIsWork(
+                              isWork: value == S.of(context).work)),
+                    ),
+                    6,
                   ),
-                  12,
-                ),
-              ],
+                  buildAnimatedField(
+                    BlocSelector<AddEmployeeBloc, AddEmployeeState, DateTime?>(
+                      selector: (state) {
+                        if (state is AddState) return null;
+                        return state.employee.dateOfJoining;
+                      },
+                      builder: (context, date) {
+                        return CustomTextField(
+                          prefixIcon: const Icon(Icons.calendar_today),
+                          hint: S.of(context).select_date,
+                          label: S.of(context).date_of_joining_the_department,
+                          readOnly: true,
+                          controller: TextEditingController(
+                              text: date?.commonDateFormat()),
+                          validator: (value) => value == null || value.isEmpty
+                              ? S.of(context).this_field_is_required
+                              : null,
+                          onTap: () async => context
+                              .read<AddEmployeeBloc>()
+                              .add(ChangeEmployeeDateOfJoining(
+                                  dateOfJoining:
+                                      await customSelectDate(context))),
+                        );
+                      },
+                    ),
+                    7,
+                  ),
+                  buildAnimatedField(
+                    CustomNumberField(
+                      prefixIcon: const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FaIcon(FontAwesomeIcons.idBadge),
+                      ),
+                      hint: S.of(context).add_id_number,
+                      label: S.of(context).id_number,
+                      controller: TextEditingController(),
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context
+                          .read<AddEmployeeBloc>()
+                          .add(ChangeEmployeeIDNumber(idNumber: value)),
+                      maxLength: 11,
+                    ),
+                    8,
+                  ),
+                  buildAnimatedField(
+                    CustomTextField(
+                      prefixIcon: const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FaIcon(FontAwesomeIcons.locationArrow),
+                      ),
+                      hint: S.of(context).add_address,
+                      label: S.of(context).address,
+                      controller: TextEditingController(),
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context
+                          .read<AddEmployeeBloc>()
+                          .add(ChangeEmployeeAddress(address: value)),
+                    ),
+                    9,
+                  ),
+                  buildAnimatedField(
+                    BlocSelector<AddEmployeeBloc, AddEmployeeState, DateTime?>(
+                      selector: (state) {
+                        if (state is AddState) return null;
+                        return state.employee.dateOfBirth;
+                      },
+                      builder: (context, date) {
+                        return CustomTextField(
+                          prefixIcon: const Icon(Icons.calendar_today),
+                          hint: S.of(context).select_date,
+                          label: S.of(context).date_of_birth,
+                          readOnly: true,
+                          controller: TextEditingController(
+                              text: date?.commonDateFormat()),
+                          validator: (value) => value == null || value.isEmpty
+                              ? S.of(context).this_field_is_required
+                              : null,
+                          onTap: () async => context
+                              .read<AddEmployeeBloc>()
+                              .add(ChangeEmployeeDateOfBirth(
+                                  dateOfBirth:
+                                      await customSelectDate(context))),
+                        );
+                      },
+                    ),
+                    10,
+                  ),
+                  buildAnimatedField(
+                    CustomTextField(
+                      prefixIcon: const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FaIcon(FontAwesomeIcons.book),
+                      ),
+                      hint: S.of(context).add_academic_specialization,
+                      label: S.of(context).academic_specialization,
+                      controller: TextEditingController(),
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                      onChanged: (value) => context.read<AddEmployeeBloc>().add(
+                          ChangeEmployeeAcademicSpecialization(
+                              academicSpecialization: value)),
+                    ),
+                    11,
+                  ),
+                  const SizedBox(height: 20),
+                  buildAnimatedField(
+                    IntrinsicWidth(
+                      child: AddAnEmployeeButton(
+                          onPressed: () =>
+                              context.read<AddEmployeeBloc>().add(AddEvent())),
+                    ),
+                    12,
+                  ),
+                ],
+              ),
             );
           },
         ),

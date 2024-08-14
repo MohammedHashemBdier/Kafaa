@@ -39,6 +39,7 @@ class CustomNumberField extends StatelessWidget {
         elevation: 3,
         child: TextFormField(
           validator: validator,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller,
           onChanged: onChanged,
           initialValue: initialValue,

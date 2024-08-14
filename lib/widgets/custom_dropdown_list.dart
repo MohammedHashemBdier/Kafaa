@@ -13,6 +13,7 @@ class CustomDropdownList extends StatelessWidget {
     required this.icon,
     required this.hintText,
     this.selectedValue,
+    this.validator,
   });
 
   final bool enabled;
@@ -22,6 +23,7 @@ class CustomDropdownList extends StatelessWidget {
   final Widget icon;
   final String hintText;
   final String? selectedValue;
+  final String? Function(String? value)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,8 @@ class CustomDropdownList extends StatelessWidget {
       child: Card(
         elevation: 3,
         child: DropdownButtonFormField(
+          validator: validator,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           decoration: InputDecoration(
             prefixIcon: icon,
             labelText: label,

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocks/evaluations/show_edit_evaluation/show_edit_evaluation_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
 import 'package:kafaa_app/widgets/custom_confirmation_dialog.dart';
 
 class EvaluationInfoHeader extends StatelessWidget {
-  const EvaluationInfoHeader({
-    super.key,
-  });
+  const EvaluationInfoHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,9 @@ class EvaluationInfoHeader extends StatelessWidget {
             child: IconButton(
               icon: const Icon(Icons.edit),
               iconSize: 30,
-              onPressed: () {},
+              onPressed: () => context
+                  .read<ShowEditEvaluationBloc>()
+                  .add(EnableDisableEditingEvent()),
             ),
           ),
           const Expanded(child: SizedBox()),
@@ -43,11 +45,16 @@ class EvaluationInfoHeader extends StatelessWidget {
               onPressed: () {
                 showDialog(
                   context: context,
-                  builder: (BuildContext context) {
+                  builder: (BuildContext cnx) {
                     return CustomConfirmationDialog(
                       content:
                           S.of(context).do_you_want_to_delete_the_evaluation,
-                      onConfirm: () {},
+                      onConfirm: () {
+                        Navigator.of(cnx).pop();
+                        context
+                            .read<ShowEditEvaluationBloc>()
+                            .add(DeleteEvaluationEvent());
+                      },
                     );
                   },
                 );

@@ -29,9 +29,7 @@ class AddAnEmployeeDialog extends StatelessWidget {
                   children: [
                     const CustomCloseIcon(),
                     Expanded(
-                      child: AddAnEmployeeSection(
-                        onAdd: onAdd,
-                      ),
+                      child: AddAnEmployeeSection(onAdd: onAdd),
                     ),
                   ],
                 ),

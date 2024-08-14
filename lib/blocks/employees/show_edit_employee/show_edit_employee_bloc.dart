@@ -17,8 +17,8 @@ class ShowEditEmployeeBloc
       ));
     });
 
-    on<DeleteEvent>((event, emit) {
-      emit(DeleteState(formKey: GlobalKey<FormState>()));
+    on<DeleteEmployeeEvent>((event, emit) {
+      emit(DeleteEvaluationState(formKey: GlobalKey<FormState>()));
     });
 
     on<EnableDisableEditingEvent>((event, emit) {
@@ -34,7 +34,7 @@ class ShowEditEmployeeBloc
     on<SaveEvent>((event, emit) {
       final state = this.state;
       if (state is ShowInfoState && state.formKey.currentState!.validate())
-        emit(SaveState(
+        emit(SaveEvaluationState(
           formKey: GlobalKey<FormState>(),
           employee: state.employee,
           isEditingEnabled: !state.isEditingEnabled,

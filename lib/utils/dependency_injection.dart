@@ -22,7 +22,7 @@ Future<void> dependencyInjection() async {
   );
 
   locator.registerLazySingleton(
-    () => LocalizationRepo(pref: locator()),
+    () => LocalizationRepo(pref: locator(), client: locator()),
   );
 
   locator.registerLazySingleton(

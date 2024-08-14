@@ -8,7 +8,7 @@ class GetEmployeeEvent extends ShowEditEmployeeEvent {
   GetEmployeeEvent({required this.employee});
 }
 
-class DeleteEvent extends ShowEditEmployeeEvent {}
+class DeleteEmployeeEvent extends ShowEditEmployeeEvent {}
 
 class SaveEvent extends ShowEditEmployeeEvent {}
 

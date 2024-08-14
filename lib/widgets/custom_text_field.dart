@@ -40,6 +40,7 @@ class CustomTextField extends StatelessWidget {
         elevation: 3,
         child: TextFormField(
           validator: validator,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           initialValue: initialValue,
           enabled: enabled,
           readOnly: readOnly,

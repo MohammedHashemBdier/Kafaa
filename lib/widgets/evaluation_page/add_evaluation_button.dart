@@ -21,6 +21,7 @@ class AddEvaluationButton extends StatelessWidget {
               content: S.of(context).do_you_want_to_add_an_evaluation,
               onConfirm: () {
                 onPressed();
+                Navigator.of(context).pop();
               },
             );
           },

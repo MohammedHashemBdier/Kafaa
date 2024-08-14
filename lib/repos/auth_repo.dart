@@ -1,15 +1,17 @@
+import 'dart:async';
+
 import 'package:kafaa_app/utils/dio_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthRepo {
-//   static const String _userKey = 'USER';
+  static const String _userKey = 'USER';
 
   final DioClient client;
   final SharedPreferences pref;
 
   AuthRepo({required this.client, required this.pref});
 
-//   final _controller = StreamController<bool>();
+  final _controller = StreamController<bool>();
 
 //   Stream<bool> get isAuthenticated async* {
 //     yield user?.token != null;

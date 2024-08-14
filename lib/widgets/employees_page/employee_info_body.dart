@@ -74,7 +74,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
       builder: (context, state) {
         if (state is ShowInfoState) {
           return BlocBuilder<ShowEditEmployeeBloc, ShowEditEmployeeState>(
-            buildWhen: (previous, current) => current is SaveState,
+            buildWhen: (previous, current) => current is SaveEvaluationState,
             builder: (context, state) {
               if (state is ShowInfoState) {
                 EmployeeModel oldEmployee = state.employee;
@@ -281,6 +281,10 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                   color: AppColors.c5,
                                 ),
                                 enabled: enabled,
+                                validator: (value) =>
+                                    value == null || value.isEmpty
+                                        ? S.of(context).this_field_is_required
+                                        : null,
                                 onChose: (value) => context
                                     .read<ShowEditEmployeeBloc>()
                                     .add(ChangeEmployeeIsWork(

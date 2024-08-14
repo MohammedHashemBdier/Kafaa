@@ -2,9 +2,9 @@ import 'package:kafaa_app/models/employee_model.dart';
 import 'package:kafaa_app/utils/dio_client.dart';
 
 class EmployeesRepo {
-  EmployeesRepo({required this.client});
-
   final DioClient client;
+
+  EmployeesRepo({required this.client});
 
   Future<List<EmployeeModel>> getEmployees({
     required String password,

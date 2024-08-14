@@ -13,8 +13,8 @@ final class InitialState extends ShowEditEmployeeState {
   const InitialState({required super.formKey});
 }
 
-final class DeleteState extends ShowEditEmployeeState {
-  const DeleteState({required super.formKey});
+final class DeleteEvaluationState extends ShowEditEmployeeState {
+  const DeleteEvaluationState({required super.formKey});
 }
 
 final class ShowInfoState extends ShowEditEmployeeState {
@@ -42,20 +42,20 @@ final class ShowInfoState extends ShowEditEmployeeState {
   List<Object?> get props => [formKey, employee, isEditingEnabled];
 }
 
-final class SaveState extends ShowInfoState {
-  const SaveState({
+final class SaveEvaluationState extends ShowInfoState {
+  const SaveEvaluationState({
     required super.formKey,
     required super.employee,
     super.isEditingEnabled = false,
   });
 
   @override
-  SaveState copyWith({
+  SaveEvaluationState copyWith({
     GlobalKey<FormState>? formKey,
     EmployeeModel? employee,
     bool? isEditingEnabled,
   }) =>
-      SaveState(
+      SaveEvaluationState(
         formKey: formKey ?? this.formKey,
         employee: employee ?? this.employee,
         isEditingEnabled: isEditingEnabled ?? this.isEditingEnabled,

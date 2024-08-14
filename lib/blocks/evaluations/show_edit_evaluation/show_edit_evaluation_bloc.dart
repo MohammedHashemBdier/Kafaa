@@ -1,165 +1,96 @@
-// import 'package:flutter/widgets.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:equatable/equatable.dart';
-// import 'package:kafaa_app/models/Evaluation_model.dart';
-// import 'package:kafaa_app/models/employee_model.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:kafaa_app/models/evaluation_model.dart';
 
-// part 'show_edit_evaluation_event.dart';
-// part 'show_edit_evaluation_state.dart';
+part 'show_edit_evaluation_event.dart';
+part 'show_edit_evaluation_state.dart';
 
-// class ShowEditEmployeeBloc
-//     extends Bloc<ShowEditEmployeeEvent, ShowEditEmployeeState> {
-//   ShowEditEmployeeBloc() : super(InitialState()) {
-//     on<GetEmployeeEvent>((event, emit) {
-//       emit(ShowInfoState(employee: event.employee));
-//     });
+class ShowEditEvaluationBloc
+    extends Bloc<ShowEditEvaluationEvent, ShowEditEvaluationState> {
+  ShowEditEvaluationBloc()
+      : super(InitialState(formKey: GlobalKey<FormState>())) {
+    on<GetEvaluationEvent>((event, emit) {
+      emit(ShowInfoState(
+        formKey: state.formKey,
+        evaluation: event.evaluation,
+      ));
+    });
 
-//     on<DeleteEvent>((event, emit) {
-//       emit(DeleteState());
-//     });
+    on<DeleteEvaluationEvent>((event, emit) {
+      emit(DeleteEvaluationState(formKey: state.formKey));
+    });
 
-//     on<EnableDisableEditingEvent>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(ShowInfoState(
-//           employee: state.employee,
-//           isEditingEnabled: !state.isEditingEnabled,
-//         ));
-//     });
+    on<EnableDisableEditingEvent>((event, emit) {
+      final state = this.state;
+      if (state is ShowInfoState)
+        emit(ShowInfoState(
+          formKey: state.formKey,
+          evaluation: state.evaluation,
+          isEditingEnabled: !state.isEditingEnabled,
+        ));
+    });
 
-//     on<SaveEvent>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(SaveState(
-//           employee: state.employee,
-//           isEditingEnabled: !state.isEditingEnabled,
-//         ));
-//     });
+    on<SaveEvaluationEvent>((event, emit) {
+      final state = this.state;
+      if (state is ShowInfoState && state.formKey.currentState!.validate())
+        emit(SaveEvaluationState(
+          formKey: state.formKey,
+          evaluation: state.evaluation,
+          isEditingEnabled: !state.isEditingEnabled,
+        ));
+    });
 
-//     on<ChangeEmployeeName>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee: state.employee.copyWith(name: () => event.name),
-//           ),
-//         );
-//     });
+    on<ChangeEvaluationName>((event, emit) {
+      final state = this.state;
+      if (state is ShowInfoState)
+        emit(
+          state.copyWith(
+            evaluation: state.evaluation.copyWith(name: () => event.name),
+          ),
+        );
+    });
 
-//     on<ChangeEmployeeUsername>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee: state.employee.copyWith(username: () => event.username),
-//           ),
-//         );
-//     });
+    on<ChangeEvaluationType>((event, emit) {
+      final state = this.state;
+      if (state is ShowInfoState)
+        emit(
+          state.copyWith(
+            evaluation: state.evaluation.copyWith(type: () => event.type),
+          ),
+        );
+    });
 
-//     on<ChangeEmployeePassword>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee: state.employee.copyWith(password: () => event.password),
-//           ),
-//         );
-//     });
+    on<ChangeEvaluationFromValue>((event, emit) {
+      final state = this.state;
+      if (state is ShowInfoState)
+        emit(
+          state.copyWith(
+            evaluation:
+                state.evaluation.copyWith(fromValue: () => event.fromValue),
+          ),
+        );
+    });
 
-//     on<ChangeEmployeeDepartment>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee:
-//                 state.employee.copyWith(department: () => event.department),
-//           ),
-//         );
-//     });
+    on<ChangeEvaluationToValue>((event, emit) {
+      final state = this.state;
+      if (state is ShowInfoState)
+        emit(
+          state.copyWith(
+            evaluation: state.evaluation.copyWith(toValue: () => event.toValue),
+          ),
+        );
+    });
 
-//     on<ChangeEmployeePhoneNumber>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee:
-//                 state.employee.copyWith(phoneNumber: () => event.phoneNumber),
-//           ),
-//         );
-//     });
-
-//     on<ChangeEmployeeMobileNumber>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee:
-//                 state.employee.copyWith(mobileNumber: () => event.mobileNumber),
-//           ),
-//         );
-//     });
-
-//     on<ChangeEmployeeIsWork>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee: state.employee.copyWith(isWork: () => event.isWork),
-//           ),
-//         );
-//     });
-
-//     on<ChangeEmployeeDateOfJoining>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee: state.employee
-//                 .copyWith(dateOfJoining: () => event.dateOfJoining),
-//           ),
-//         );
-//     });
-
-//     on<ChangeEmployeeIDNumber>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee: state.employee.copyWith(idNumber: () => event.idNumber),
-//           ),
-//         );
-//     });
-
-//     on<ChangeEmployeeAddress>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee: state.employee.copyWith(address: () => event.address),
-//           ),
-//         );
-//     });
-
-//     on<ChangeEmployeeDateOfBirth>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee:
-//                 state.employee.copyWith(dateOfBirth: () => event.dateOfBirth),
-//           ),
-//         );
-//     });
-
-//     on<ChangeEmployeeAcademicSpecialization>((event, emit) {
-//       final state = this.state;
-//       if (state is ShowInfoState)
-//         emit(
-//           state.copyWith(
-//             employee: state.employee.copyWith(
-//                 academicSpecialization: () => event.academicSpecialization),
-//           ),
-//         );
-//     });
-//   }
-// }
+    on<ChangeEvaluationTargetValue>((event, emit) {
+      final state = this.state;
+      if (state is ShowInfoState)
+        emit(
+          state.copyWith(
+            evaluation:
+                state.evaluation.copyWith(targetValue: () => event.targetValue),
+          ),
+        );
+    });
+  }
+}

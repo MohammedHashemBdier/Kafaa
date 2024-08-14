@@ -26,9 +26,7 @@ class AddAnEmployeeFloatingActionButton extends StatelessWidget {
           showDialog(
             context: context,
             builder: (BuildContext context) {
-              return AddAnEmployeeDialog(
-                onAdd: onAdd,
-              );
+              return AddAnEmployeeDialog(onAdd: onAdd);
             },
           );
         },

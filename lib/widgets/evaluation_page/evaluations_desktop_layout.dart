@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocks/evaluations/evaluations/evaluations_bloc.dart';
 import 'package:kafaa_app/utils/router.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_section.dart';
@@ -9,10 +11,10 @@ class EvaluationsDesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Expanded(child: AppDrawer(route: AppRouter.evaluation)),
-        SizedBox(width: 30),
+        const Expanded(child: AppDrawer(route: AppRouter.evaluation)),
+        const SizedBox(width: 30),
         Expanded(
           flex: 4,
           child: CustomScrollView(
@@ -20,17 +22,21 @@ class EvaluationsDesktopLayout extends StatelessWidget {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Padding(
-                  padding:
-                      EdgeInsets.only(top: 40, bottom: 40, right: 20, left: 20),
+                  padding: const EdgeInsets.only(
+                      top: 40, bottom: 40, right: 20, left: 20),
                   child: Row(
                     children: [
-                      Expanded(
+                      const Expanded(
                         flex: 2,
                         child: EvaluationsSection(),
                       ),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
                       Expanded(
-                        child: AddEvaluationwSection(),
+                        child: AddEvaluationSection(
+                          onAdd: (evaluation) => context
+                              .read<EvaluationsBloc>()
+                              .add(AddEvaluationEvent(evaluation: evaluation)),
+                        ),
                       ),
                     ],
                   ),

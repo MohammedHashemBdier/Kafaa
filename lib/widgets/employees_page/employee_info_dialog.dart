@@ -29,12 +29,12 @@ class EmployeeInfoDialog extends StatelessWidget {
           ShowEditEmployeeBloc()..add(GetEmployeeEvent(employee: employee)),
       child: BlocListener<ShowEditEmployeeBloc, ShowEditEmployeeState>(
         listener: (context, state) {
-          if (state is DeleteState) {
+          if (state is DeleteEvaluationState) {
             onDelete.call();
             Navigator.of(context).pop();
           }
 
-          if (state is SaveState) {
+          if (state is SaveEvaluationState) {
             onEdit.call(state.employee);
           }
         },

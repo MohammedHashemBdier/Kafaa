@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:kafaa_app/models/Evaluation_model.dart';
+import 'package:kafaa_app/models/evaluation_model.dart';
 import 'package:kafaa_app/repos/auth_repo.dart';
 import 'package:kafaa_app/repos/evaluations_repo.dart';
 import 'package:kafaa_app/utils/api_exceptions.dart';

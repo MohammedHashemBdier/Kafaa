@@ -12,10 +12,20 @@ class LocalizationBloc extends Bloc<LocalizationEvent, LocalizationState> {
       emit(InitialState(languageCode: repo.languageCode ?? state.languageCode));
     });
 
-    on<ChangeLanguageEvent>((event, emit) {
-      String languageCode = event.languageCode ?? state.languageCode;
-      repo.saveLanguageCode(languageCode);
-      emit(InitialState(languageCode: languageCode));
+    on<ChangeLanguageEvent>((event, emit) async {
+      String oldLanguageCode = state.languageCode;
+      String newLanguageCode = event.languageCode ?? state.languageCode;
+
+      if (oldLanguageCode != newLanguageCode) {
+        emit(InitialState(languageCode: newLanguageCode));
+
+        try {
+          bool isChanged = await repo.changeLanguage(newLanguageCode);
+          if (!isChanged) emit(InitialState(languageCode: oldLanguageCode));
+        } catch (e) {
+          emit(InitialState(languageCode: oldLanguageCode));
+        }
+      }
     });
   }
 }

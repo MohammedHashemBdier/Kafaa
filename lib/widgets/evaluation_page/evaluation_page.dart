@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocks/evaluations/evaluations/evaluations_bloc.dart';
 import 'package:kafaa_app/utils/adaptiv_layout.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/router.dart';
@@ -25,7 +27,11 @@ class EvaluationPage extends StatelessWidget {
       appBar:
           SizeConfig.width < SizeConfig.tablet ? const CustomAppBar() : null,
       floatingActionButton: SizeConfig.width < SizeConfig.desktop
-          ? const AddEvaluationFloatingActionButton()
+          ? AddEvaluationFloatingActionButton(
+              onAdd: (evaluation) => context
+                  .read<EvaluationsBloc>()
+                  .add(AddEvaluationEvent(evaluation: evaluation)),
+            )
           : null,
       body: AdaptiveLayout(
         mobileLayout: (context) => const EvaluationsMobileLayout(),

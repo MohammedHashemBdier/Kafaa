@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kafaa_app/blocks/evaluations/evaluations/evaluations_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
-import 'package:kafaa_app/models/Evaluation_model.dart';
+import 'package:kafaa_app/models/evaluation_model.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
@@ -100,7 +100,7 @@ class EvaluationsTableState extends State<EvaluationsTable>
               onTap: () {
                 showDialog(
                   context: context,
-                  builder: (BuildContext context) {
+                  builder: (BuildContext _) {
                     return EvaluationsInfoDialog(
                       evaluation: evaluation,
                       onDelete: () => context

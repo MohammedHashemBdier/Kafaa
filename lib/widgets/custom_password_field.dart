@@ -9,7 +9,7 @@ class CustomPasswordField extends StatefulWidget {
     super.key,
     this.enabled,
     required this.hint,
-     this.label = '',
+    this.label = '',
     this.prefixIcon,
     this.onTap,
     this.controller,
@@ -49,6 +49,7 @@ class CustomPasswordFieldState extends State<CustomPasswordField> {
         elevation: 3,
         child: TextFormField(
           validator: widget.validator,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           initialValue: widget.initialValue,
           enabled: widget.enabled,
           controller: widget.controller,

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/models/evaluation_model.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_dialog.dart';
 
 class AddEvaluationFloatingActionButton extends StatelessWidget {
-  const AddEvaluationFloatingActionButton({
-    super.key,
-  });
+  final void Function(EvaluationModel evaluation) onAdd;
+
+  const AddEvaluationFloatingActionButton({super.key, required this.onAdd});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class AddEvaluationFloatingActionButton extends StatelessWidget {
           showDialog(
             context: context,
             builder: (BuildContext context) {
-              return const AddAnEvaluationDialog();
+              return AddAnEvaluationDialog(onAdd: onAdd);
             },
           );
         },
