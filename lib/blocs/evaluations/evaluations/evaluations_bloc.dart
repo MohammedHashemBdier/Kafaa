@@ -18,10 +18,15 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
       emit(const GetEvaluationsLoadingState());
 
       try {
-        List<EvaluationModel> evaluation =
+        List<EvaluationModel> evaluations =
             await evaluationsRepo.getEvaluations(password: authRepo.password);
+        List<String> evaluationTypes = await evaluationsRepo.getEvaluationTypes(
+            password: authRepo.password);
 
-        emit(GetEvaluationsLoadedState(evaluations: evaluation));
+        emit(GetEvaluationsLoadedState(
+          evaluations: evaluations,
+          evaluationTypes: evaluationTypes,
+        ));
       } on UnauthorizedException {
         authRepo.logout();
       } on ForbiddenException {
@@ -42,7 +47,7 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
             List<EvaluationModel>.from(state.evaluations)
               ..add(event.evaluation);
 
-        emit(state.copyWith(evaluation: newEvaluations));
+        emit(state.copyWith(evaluations: newEvaluations));
 
         try {
           bool isAdded = await evaluationsRepo.addEvaluation(
@@ -50,13 +55,13 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
             evaluation: event.evaluation,
           );
 
-          if (!isAdded) emit(state.copyWith(evaluation: oldEvaluations));
+          if (!isAdded) emit(state.copyWith(evaluations: oldEvaluations));
         } on UnauthorizedException {
           authRepo.logout();
         } on ForbiddenException {
           authRepo.logout();
         } catch (e) {
-          emit(state.copyWith(evaluation: oldEvaluations));
+          emit(state.copyWith(evaluations: oldEvaluations));
         }
       }
     });
@@ -74,7 +79,7 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
                 : evaluation)
             .toList();
 
-        emit(state.copyWith(evaluation: newEvaluations));
+        emit(state.copyWith(evaluations: newEvaluations));
 
         try {
           bool isEdited = await evaluationsRepo.editEvaluation(
@@ -82,13 +87,13 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
             evaluation: event.evaluation,
           );
 
-          if (!isEdited) emit(state.copyWith(evaluation: oldEvaluations));
+          if (!isEdited) emit(state.copyWith(evaluations: oldEvaluations));
         } on UnauthorizedException {
           authRepo.logout();
         } on ForbiddenException {
           authRepo.logout();
         } catch (e) {
-          emit(state.copyWith(evaluation: oldEvaluations));
+          emit(state.copyWith(evaluations: oldEvaluations));
         }
       }
     });
@@ -104,7 +109,7 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
             .where((evaluation) => event.evaluation != evaluation)
             .toList();
 
-        emit(state.copyWith(evaluation: newEvaluations));
+        emit(state.copyWith(evaluations: newEvaluations));
 
         try {
           bool isDeleted = await evaluationsRepo.deleteEvaluation(
@@ -112,13 +117,13 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
             evaluation: event.evaluation,
           );
 
-          if (!isDeleted) emit(state.copyWith(evaluation: oldEvaluations));
+          if (!isDeleted) emit(state.copyWith(evaluations: oldEvaluations));
         } on UnauthorizedException {
           authRepo.logout();
         } on ForbiddenException {
           authRepo.logout();
         } catch (e) {
-          emit(state.copyWith(evaluation: oldEvaluations));
+          emit(state.copyWith(evaluations: oldEvaluations));
         }
       }
     });

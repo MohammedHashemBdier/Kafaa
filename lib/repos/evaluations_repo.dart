@@ -18,6 +18,18 @@ class EvaluationsRepo {
     return EvaluationModel.listFromJson(response['data']);
   }
 
+  Future<List<String>> getEvaluationTypes({
+    required String? password,
+    String? search = '',
+  }) async {
+    Map<String, dynamic> response = await client.get(
+      'evaluationrules/types',
+      password: password,
+    );
+
+    return response['data'];
+  }
+
   Future<bool> addEvaluation({
     required String? password,
     required EvaluationModel evaluation,

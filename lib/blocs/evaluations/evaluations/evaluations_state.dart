@@ -38,13 +38,23 @@ final class GetEvaluationsFailureState extends EvaluationsState {
 
 final class GetEvaluationsLoadedState extends EvaluationsState {
   final List<EvaluationModel> evaluations;
+  final List<String> evaluationTypes;
 
-  const GetEvaluationsLoadedState({required this.evaluations});
+  const GetEvaluationsLoadedState({
+    required this.evaluations,
+    required this.evaluationTypes,
+  });
 
   @override
-  GetEvaluationsLoadedState copyWith({List<EvaluationModel>? evaluation}) =>
-      GetEvaluationsLoadedState(evaluations: evaluation ?? evaluations);
+  GetEvaluationsLoadedState copyWith({
+    List<EvaluationModel>? evaluations,
+    List<String>? evaluationTypes,
+  }) =>
+      GetEvaluationsLoadedState(
+        evaluations: evaluations ?? this.evaluations,
+        evaluationTypes: evaluationTypes ?? this.evaluationTypes,
+      );
 
   @override
-  List<Object?> get props => [evaluations];
+  List<Object?> get props => [evaluations, evaluationTypes];
 }

@@ -17,32 +17,39 @@ class EvaluationsDesktopLayout extends StatelessWidget {
         const SizedBox(width: 30),
         Expanded(
           flex: 4,
-          child: CustomScrollView(
-            slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 40, bottom: 40, right: 20, left: 20),
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        flex: 2,
-                        child: EvaluationsSection(),
-                      ),
-                      const SizedBox(width: 20),
-                      Expanded(
-                        child: AddEvaluationSection(
-                          onAdd: (evaluation) => context
-                              .read<EvaluationsBloc>()
-                              .add(AddEvaluationEvent(evaluation: evaluation)),
+          child: BlocBuilder<EvaluationsBloc, EvaluationsState>(
+            builder: (context, state) {
+              if (state is GetEvaluationsLoadedState)
+                return CustomScrollView(
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 40, bottom: 40, right: 20, left: 20),
+                        child: Row(
+                          children: [
+                            const Expanded(
+                              flex: 2,
+                              child: EvaluationsSection(),
+                            ),
+                            const SizedBox(width: 20),
+                            Expanded(
+                              child: AddEvaluationSection(
+                                onAdd: (evaluation) => context
+                                    .read<EvaluationsBloc>()
+                                    .add(AddEvaluationEvent(
+                                        evaluation: evaluation)),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              )
-            ],
+                    )
+                  ],
+                );
+              return const SizedBox();
+            },
           ),
         ),
       ],
