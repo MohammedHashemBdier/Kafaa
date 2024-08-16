@@ -2,10 +2,14 @@ part of 'show_edit_evaluation_bloc.dart';
 
 sealed class ShowEditEvaluationEvent {}
 
-class GetEvaluationEvent extends ShowEditEvaluationEvent {
+class InitEvaluationDialogEvent extends ShowEditEvaluationEvent {
   final EvaluationModel evaluation;
+  final List<String> evaluationTypes;
 
-  GetEvaluationEvent({required this.evaluation});
+  InitEvaluationDialogEvent({
+    required this.evaluation,
+    required this.evaluationTypes,
+  });
 }
 
 class DeleteEvaluationEvent extends ShowEditEvaluationEvent {}

@@ -14,20 +14,24 @@ class EvaluationsInfoDialog extends StatelessWidget {
   final EvaluationModel evaluation;
   final void Function() onDelete;
   final void Function(EvaluationModel newEvaluation) onEdit;
-  
+  final List<String> evaluationTypes;
 
   const EvaluationsInfoDialog({
     super.key,
     required this.evaluation,
     required this.onDelete,
     required this.onEdit,
+    required this.evaluationTypes,
   });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ShowEditEvaluationBloc>(
       create: (context) => ShowEditEvaluationBloc()
-        ..add(GetEvaluationEvent(evaluation: evaluation)),
+        ..add(InitEvaluationDialogEvent(
+          evaluation: evaluation,
+          evaluationTypes: evaluationTypes,
+        )),
       child: BlocListener<ShowEditEvaluationBloc, ShowEditEvaluationState>(
         listener: (context, state) {
           if (state is DeleteEvaluationState) {

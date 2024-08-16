@@ -129,13 +129,7 @@ class EvaluationInfoState extends State<EvaluationInfo>
                             ),
                             buildAnimatedField(
                               CustomDropdownList(
-                                menuItems: const [
-                                  "معدل المكالمات اليومي",
-                                  "تقييم الدوام",
-                                  "اخطاء المتابعة",
-                                  "نسبة القبول",
-                                  "جودة المكالمات",
-                                ],
+                                menuItems: state.evaluationTypes,
                                 label: oldEvaluation.type ?? '',
                                 hintText: S.of(context).choose_evaluation_type,
                                 icon: Icon(

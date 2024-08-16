@@ -103,6 +103,9 @@ class EvaluationsTableState extends State<EvaluationsTable>
                   builder: (BuildContext _) {
                     return EvaluationsInfoDialog(
                       evaluation: evaluation,
+                      evaluationTypes: (context.read<EvaluationsBloc>().state
+                              as GetEvaluationsLoadedState)
+                          .evaluationTypes,
                       onDelete: () => context
                           .read<EvaluationsBloc>()
                           .add(DeleteEvaluationEvent(evaluation: evaluation)),

@@ -10,10 +10,11 @@ class ShowEditEvaluationBloc
     extends Bloc<ShowEditEvaluationEvent, ShowEditEvaluationState> {
   ShowEditEvaluationBloc()
       : super(InitialState(formKey: GlobalKey<FormState>())) {
-    on<GetEvaluationEvent>((event, emit) {
+    on<InitEvaluationDialogEvent>((event, emit) {
       emit(ShowInfoState(
         formKey: state.formKey,
         evaluation: event.evaluation,
+        evaluationTypes: event.evaluationTypes,
       ));
     });
 
@@ -27,6 +28,7 @@ class ShowEditEvaluationBloc
         emit(ShowInfoState(
           formKey: state.formKey,
           evaluation: state.evaluation,
+          evaluationTypes: state.evaluationTypes,
           isEditingEnabled: !state.isEditingEnabled,
         ));
     });
@@ -37,6 +39,7 @@ class ShowEditEvaluationBloc
         emit(SaveEvaluationState(
           formKey: state.formKey,
           evaluation: state.evaluation,
+          evaluationTypes: state.evaluationTypes,
           isEditingEnabled: !state.isEditingEnabled,
         ));
     });
