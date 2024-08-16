@@ -22,6 +22,52 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Acceptance_rate":
+            MessageLookupByLibrary.simpleMessage("معدل نسبة القبول"),
+        "Acceptance_rate_from_0_to_100":
+            MessageLookupByLibrary.simpleMessage("نسبة القبول (من 0 الى 100)"),
+        "Add_Discount": MessageLookupByLibrary.simpleMessage("إضافة - خصم: "),
+        "Call_Quality_0_to_100": MessageLookupByLibrary.simpleMessage(
+            "جودة المكالمة (من 0 الى 100)"),
+        "Call_Quality_Rating":
+            MessageLookupByLibrary.simpleMessage("تقييم جودة المكالمات"),
+        "Call_count_evaluation":
+            MessageLookupByLibrary.simpleMessage("تقييم عدد المكالمات"),
+        "Call_response_Evaluation":
+            MessageLookupByLibrary.simpleMessage("تقييم ردود المكالمات"),
+        "Call_response_rate_from_0_to_100":
+            MessageLookupByLibrary.simpleMessage(
+                "نسبة الرد على المكالمات (من 0 الى 100)"),
+        "Daily_call_rate":
+            MessageLookupByLibrary.simpleMessage("معدل المكالمات اليومية"),
+        "Daily_error_rate":
+            MessageLookupByLibrary.simpleMessage("معدل الخطا اليومي"),
+        "Enter_your_notes_here":
+            MessageLookupByLibrary.simpleMessage("أدخل ملاحظاتك هنا"),
+        "Evaluate_follow_up_errors":
+            MessageLookupByLibrary.simpleMessage("تقييم أخطاء المتابعة"),
+        "Evaluate_problem_cards":
+            MessageLookupByLibrary.simpleMessage("تقييم بطاقات المشاكل"),
+        "Marketing_Admission_Assessment":
+            MessageLookupByLibrary.simpleMessage("تقييم القبول في التسويق"),
+        "Monthly_Call_Quality_Average":
+            MessageLookupByLibrary.simpleMessage("معدل جودة المكالمة الشهري"),
+        "Monthly_problem_card_rate":
+            MessageLookupByLibrary.simpleMessage("معدل بطاقات المشاكل الشهرية"),
+        "Monthly_working_hours":
+            MessageLookupByLibrary.simpleMessage("عدد ساعات العمل الشهرية"),
+        "Number_of_monthly_calls":
+            MessageLookupByLibrary.simpleMessage("عدد المكالمات الشهرية"),
+        "Number_of_monthly_follow_up_errors":
+            MessageLookupByLibrary.simpleMessage("عدد أخطاء المتابعة الشهرية "),
+        "Number_of_monthly_problem_cards":
+            MessageLookupByLibrary.simpleMessage("عدد بطاقات المشاكل الشهرية"),
+        "Old_password_is_wrong":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة خاطئة"),
+        "Password_changed_successfully":
+            MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
+        "Reply_rate_from_0_to_100":
+            MessageLookupByLibrary.simpleMessage("معدل الرد (من 0 الى 100)"),
         "Show_password":
             MessageLookupByLibrary.simpleMessage("إظهار كلمة المرور"),
         "academic_specialization":
@@ -62,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إختر نوع التقييم"),
         "close": MessageLookupByLibrary.simpleMessage("إغلاق"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
+        "daily_working_hours":
+            MessageLookupByLibrary.simpleMessage("معدل الدوام اليومي"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("تاريخ الولادة"),
         "date_of_joining_the_department":
             MessageLookupByLibrary.simpleMessage("تاريخ الإنضمام للقسم"),
@@ -81,8 +129,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("هل تريد حفظ التعديلات؟"),
         "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
         "employee_info": MessageLookupByLibrary.simpleMessage("معلومات الموظف"),
+        "employee_point_report":
+            MessageLookupByLibrary.simpleMessage("تقرير نقاط الموظف"),
         "employees": MessageLookupByLibrary.simpleMessage("الموظفين"),
         "english": MessageLookupByLibrary.simpleMessage("إنكليزي"),
+        "enter_the_number": MessageLookupByLibrary.simpleMessage("أدخل العدد"),
         "enter_the_value_of_the_first_field":
             MessageLookupByLibrary.simpleMessage("أدخل قيمة المجال الاول"),
         "enter_the_value_of_the_second_field":
@@ -101,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "id_number": MessageLookupByLibrary.simpleMessage("الرقم الوطني"),
         "info": MessageLookupByLibrary.simpleMessage("التفاصيل"),
         "last_login": MessageLookupByLibrary.simpleMessage("آخر تسجيل دخول"),
+        "last_modified_date":
+            MessageLookupByLibrary.simpleMessage("تاريخ اخر تعديل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "main_menu": MessageLookupByLibrary.simpleMessage("القائمة الرئيسية"),
@@ -116,20 +169,28 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "point": MessageLookupByLibrary.simpleMessage("نقطة"),
+        "point_value": MessageLookupByLibrary.simpleMessage("قيمة النقطة"),
+        "points": MessageLookupByLibrary.simpleMessage("النقاط"),
+        "points_value": MessageLookupByLibrary.simpleMessage("قيمة النقاط"),
         "save_edits": MessageLookupByLibrary.simpleMessage("حفظ التعديلات"),
         "search_for_an_employee":
             MessageLookupByLibrary.simpleMessage("ابحث عن موظف"),
         "select_date": MessageLookupByLibrary.simpleMessage("اخترتاريخا"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "target_value": MessageLookupByLibrary.simpleMessage("قيمة النقاط"),
-        "targets": MessageLookupByLibrary.simpleMessage("النقاط"),
+        "targets": MessageLookupByLibrary.simpleMessage("الأهداف"),
         "the_language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "the_search": MessageLookupByLibrary.simpleMessage("البحث"),
         "title": MessageLookupByLibrary.simpleMessage("لوحة تحكم تطبيق كفاءة"),
         "to_value": MessageLookupByLibrary.simpleMessage("إلى القيمة"),
+        "top_in_ratings":
+            MessageLookupByLibrary.simpleMessage("الأوائل في التقييمات"),
         "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "work": MessageLookupByLibrary.simpleMessage("يعمل"),
         "work_state": MessageLookupByLibrary.simpleMessage("حالة العمل"),
+        "working_hours_evaluation":
+            MessageLookupByLibrary.simpleMessage("تقييم ساعات العمل"),
         "you_are_now_logged_in":
             MessageLookupByLibrary.simpleMessage("لقد تم تسجيل دخولك بنجاك")
       };

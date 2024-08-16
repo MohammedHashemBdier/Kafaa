@@ -22,6 +22,54 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Acceptance_rate":
+            MessageLookupByLibrary.simpleMessage("Acceptance rate"),
+        "Acceptance_rate_from_0_to_100": MessageLookupByLibrary.simpleMessage(
+            "Acceptance rate (from 0 to 100)"),
+        "Add_Discount":
+            MessageLookupByLibrary.simpleMessage("Add - Discount: "),
+        "Call_Quality_0_to_100":
+            MessageLookupByLibrary.simpleMessage("Call Quality (0 to 100)"),
+        "Call_Quality_Rating":
+            MessageLookupByLibrary.simpleMessage("Call Quality Rating"),
+        "Call_count_evaluation":
+            MessageLookupByLibrary.simpleMessage("Call count evaluation"),
+        "Call_response_Evaluation":
+            MessageLookupByLibrary.simpleMessage("Call Response Evaluation"),
+        "Call_response_rate_from_0_to_100":
+            MessageLookupByLibrary.simpleMessage(
+                "Call response rate (from 0 to 100)"),
+        "Daily_call_rate":
+            MessageLookupByLibrary.simpleMessage("Daily call rate"),
+        "Daily_error_rate":
+            MessageLookupByLibrary.simpleMessage("Daily error rate"),
+        "Enter_your_notes_here":
+            MessageLookupByLibrary.simpleMessage("Enter your notes here"),
+        "Evaluate_follow_up_errors":
+            MessageLookupByLibrary.simpleMessage("Evaluate follow-up errors"),
+        "Evaluate_problem_cards":
+            MessageLookupByLibrary.simpleMessage("Evaluate problem cards"),
+        "Marketing_Admission_Assessment": MessageLookupByLibrary.simpleMessage(
+            "Marketing Admission Assessment"),
+        "Monthly_Call_Quality_Average": MessageLookupByLibrary.simpleMessage(
+            "Monthly Call Quality Average"),
+        "Monthly_problem_card_rate":
+            MessageLookupByLibrary.simpleMessage("Monthly problem card rate"),
+        "Monthly_working_hours":
+            MessageLookupByLibrary.simpleMessage("Monthly working hours"),
+        "Number_of_monthly_calls":
+            MessageLookupByLibrary.simpleMessage("Number of monthly calls"),
+        "Number_of_monthly_follow_up_errors":
+            MessageLookupByLibrary.simpleMessage(
+                "Number of monthly follow-up errors"),
+        "Number_of_monthly_problem_cards": MessageLookupByLibrary.simpleMessage(
+            "Number of monthly problem cards"),
+        "Old_password_is_wrong":
+            MessageLookupByLibrary.simpleMessage("Old password is wrong"),
+        "Password_changed_successfully": MessageLookupByLibrary.simpleMessage(
+            "Password changed successfully"),
+        "Reply_rate_from_0_to_100":
+            MessageLookupByLibrary.simpleMessage("Reply rate (from 0 to 100)"),
         "Show_password": MessageLookupByLibrary.simpleMessage("Show Password"),
         "academic_specialization":
             MessageLookupByLibrary.simpleMessage("Academic Specialization"),
@@ -63,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose Evaluation Type"),
         "close": MessageLookupByLibrary.simpleMessage("Colose"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "daily_working_hours":
+            MessageLookupByLibrary.simpleMessage("Daily working hours"),
         "date_of_birth": MessageLookupByLibrary.simpleMessage("Date of Birth"),
         "date_of_joining_the_department": MessageLookupByLibrary.simpleMessage(
             "Date of Joining the Department"),
@@ -85,8 +135,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Do you want to save the edits?"),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "employee_info": MessageLookupByLibrary.simpleMessage("Employee Info"),
+        "employee_point_report":
+            MessageLookupByLibrary.simpleMessage("Employee Poin Report"),
         "employees": MessageLookupByLibrary.simpleMessage("Employees"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "enter_the_number":
+            MessageLookupByLibrary.simpleMessage("Enter the Number"),
         "enter_the_value_of_the_first_field":
             MessageLookupByLibrary.simpleMessage(
                 "Enter the value of the first field"),
@@ -108,6 +162,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "id_number": MessageLookupByLibrary.simpleMessage("ID Number"),
         "info": MessageLookupByLibrary.simpleMessage("Info"),
         "last_login": MessageLookupByLibrary.simpleMessage("Last Login"),
+        "last_modified_date":
+            MessageLookupByLibrary.simpleMessage("Last Modified Date"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "main_menu": MessageLookupByLibrary.simpleMessage("Main Menu"),
@@ -121,6 +177,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "old_password": MessageLookupByLibrary.simpleMessage("Old Password"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "point": MessageLookupByLibrary.simpleMessage("Point"),
+        "point_value": MessageLookupByLibrary.simpleMessage("Point Value"),
+        "points": MessageLookupByLibrary.simpleMessage("Points"),
+        "points_value": MessageLookupByLibrary.simpleMessage("Points Value"),
         "save_edits": MessageLookupByLibrary.simpleMessage("Save Edits"),
         "search_for_an_employee":
             MessageLookupByLibrary.simpleMessage("Search for an Employee"),
@@ -132,9 +192,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "the_search": MessageLookupByLibrary.simpleMessage("The Search"),
         "title": MessageLookupByLibrary.simpleMessage("Kafa\'a App Dash Board"),
         "to_value": MessageLookupByLibrary.simpleMessage("To value"),
+        "top_in_ratings":
+            MessageLookupByLibrary.simpleMessage("Top In Ratings"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "work": MessageLookupByLibrary.simpleMessage("Work"),
         "work_state": MessageLookupByLibrary.simpleMessage("Work State"),
+        "working_hours_evaluation":
+            MessageLookupByLibrary.simpleMessage("Working hours evaluation"),
         "you_are_now_logged_in":
             MessageLookupByLibrary.simpleMessage("You are now logged in")
       };

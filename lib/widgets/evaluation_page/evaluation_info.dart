@@ -113,7 +113,7 @@ class EvaluationInfoState extends State<EvaluationInfo>
                                 enabled: enabled,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEvaluationBloc>()
@@ -169,7 +169,7 @@ class EvaluationInfoState extends State<EvaluationInfo>
                                 enabled: enabled,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEvaluationBloc>()
@@ -199,7 +199,7 @@ class EvaluationInfoState extends State<EvaluationInfo>
                                 enabled: enabled,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEvaluationBloc>()
@@ -229,7 +229,7 @@ class EvaluationInfoState extends State<EvaluationInfo>
                                 enabled: enabled,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEvaluationBloc>()

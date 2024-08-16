@@ -860,11 +860,331 @@ class S {
     );
   }
 
-  /// `This field is required`
-  String get this_field_is_required {
+  /// `Top In Ratings`
+  String get top_in_ratings {
     return Intl.message(
-      'This field is required',
-      name: 'this_field_is_required',
+      'Top In Ratings',
+      name: 'top_in_ratings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Point Value`
+  String get point_value {
+    return Intl.message(
+      'Point Value',
+      name: 'point_value',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Modified Date`
+  String get last_modified_date {
+    return Intl.message(
+      'Last Modified Date',
+      name: 'last_modified_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points`
+  String get points {
+    return Intl.message(
+      'Points',
+      name: 'points',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points Value`
+  String get points_value {
+    return Intl.message(
+      'Points Value',
+      name: 'points_value',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Employee Poin Report`
+  String get employee_point_report {
+    return Intl.message(
+      'Employee Poin Report',
+      name: 'employee_point_report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the Number`
+  String get enter_the_number {
+    return Intl.message(
+      'Enter the Number',
+      name: 'enter_the_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Point`
+  String get point {
+    return Intl.message(
+      'Point',
+      name: 'point',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Working hours evaluation`
+  String get working_hours_evaluation {
+    return Intl.message(
+      'Working hours evaluation',
+      name: 'working_hours_evaluation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly working hours`
+  String get Monthly_working_hours {
+    return Intl.message(
+      'Monthly working hours',
+      name: 'Monthly_working_hours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily working hours`
+  String get daily_working_hours {
+    return Intl.message(
+      'Daily working hours',
+      name: 'daily_working_hours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call count evaluation`
+  String get Call_count_evaluation {
+    return Intl.message(
+      'Call count evaluation',
+      name: 'Call_count_evaluation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of monthly calls`
+  String get Number_of_monthly_calls {
+    return Intl.message(
+      'Number of monthly calls',
+      name: 'Number_of_monthly_calls',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily call rate`
+  String get Daily_call_rate {
+    return Intl.message(
+      'Daily call rate',
+      name: 'Daily_call_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Evaluate follow-up errors`
+  String get Evaluate_follow_up_errors {
+    return Intl.message(
+      'Evaluate follow-up errors',
+      name: 'Evaluate_follow_up_errors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of monthly follow-up errors`
+  String get Number_of_monthly_follow_up_errors {
+    return Intl.message(
+      'Number of monthly follow-up errors',
+      name: 'Number_of_monthly_follow_up_errors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily error rate`
+  String get Daily_error_rate {
+    return Intl.message(
+      'Daily error rate',
+      name: 'Daily_error_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call Quality Rating`
+  String get Call_Quality_Rating {
+    return Intl.message(
+      'Call Quality Rating',
+      name: 'Call_Quality_Rating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call Quality (0 to 100)`
+  String get Call_Quality_0_to_100 {
+    return Intl.message(
+      'Call Quality (0 to 100)',
+      name: 'Call_Quality_0_to_100',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly Call Quality Average`
+  String get Monthly_Call_Quality_Average {
+    return Intl.message(
+      'Monthly Call Quality Average',
+      name: 'Monthly_Call_Quality_Average',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Evaluate problem cards`
+  String get Evaluate_problem_cards {
+    return Intl.message(
+      'Evaluate problem cards',
+      name: 'Evaluate_problem_cards',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of monthly problem cards`
+  String get Number_of_monthly_problem_cards {
+    return Intl.message(
+      'Number of monthly problem cards',
+      name: 'Number_of_monthly_problem_cards',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly problem card rate`
+  String get Monthly_problem_card_rate {
+    return Intl.message(
+      'Monthly problem card rate',
+      name: 'Monthly_problem_card_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call Response Evaluation`
+  String get Call_response_Evaluation {
+    return Intl.message(
+      'Call Response Evaluation',
+      name: 'Call_response_Evaluation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call response rate (from 0 to 100)`
+  String get Call_response_rate_from_0_to_100 {
+    return Intl.message(
+      'Call response rate (from 0 to 100)',
+      name: 'Call_response_rate_from_0_to_100',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reply rate (from 0 to 100)`
+  String get Reply_rate_from_0_to_100 {
+    return Intl.message(
+      'Reply rate (from 0 to 100)',
+      name: 'Reply_rate_from_0_to_100',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Marketing Admission Assessment`
+  String get Marketing_Admission_Assessment {
+    return Intl.message(
+      'Marketing Admission Assessment',
+      name: 'Marketing_Admission_Assessment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Acceptance rate (from 0 to 100)`
+  String get Acceptance_rate_from_0_to_100 {
+    return Intl.message(
+      'Acceptance rate (from 0 to 100)',
+      name: 'Acceptance_rate_from_0_to_100',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Acceptance rate`
+  String get Acceptance_rate {
+    return Intl.message(
+      'Acceptance rate',
+      name: 'Acceptance_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add - Discount: `
+  String get Add_Discount {
+    return Intl.message(
+      'Add - Discount: ',
+      name: 'Add_Discount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your notes here`
+  String get Enter_your_notes_here {
+    return Intl.message(
+      'Enter your notes here',
+      name: 'Enter_your_notes_here',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get Password_changed_successfully {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'Password_changed_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old password is wrong`
+  String get Old_password_is_wrong {
+    return Intl.message(
+      'Old password is wrong',
+      name: 'Old_password_is_wrong',
       desc: '',
       args: [],
     );

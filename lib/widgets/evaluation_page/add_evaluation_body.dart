@@ -88,7 +88,7 @@ class AddEvaluationBodyState extends State<AddEvaluationBody>
                     hint: S.of(context).add_evaluation_name,
                     controller: TextEditingController(),
                     validator: (value) => value == null || value.isEmpty
-                        ? S.of(context).this_field_is_required
+                        ? 'S.of(context).this_field_is_required'
                         : null,
                     onChanged: (value) => context
                         .read<AddEvaluationBloc>()
@@ -115,7 +115,7 @@ class AddEvaluationBodyState extends State<AddEvaluationBody>
                     hintText: S.of(context).choose_evaluation_type,
                     enabled: true,
                     validator: (value) => value == null || value.isEmpty
-                        ? S.of(context).this_field_is_required
+                        ? 'S.of(context).this_field_is_required'
                         : null,
                     icon: Icon(
                       Icons.star,
@@ -138,7 +138,7 @@ class AddEvaluationBodyState extends State<AddEvaluationBody>
                     hint: S.of(context).enter_the_value_of_the_first_field,
                     controller: TextEditingController(),
                     validator: (value) => value == null || value.isEmpty
-                        ? S.of(context).this_field_is_required
+                        ? 'S.of(context).this_field_is_required'
                         : null,
                     onChanged: (value) => context.read<AddEvaluationBloc>().add(
                         ChangeEvaluationFromValue(
@@ -159,7 +159,7 @@ class AddEvaluationBodyState extends State<AddEvaluationBody>
                     hint: S.of(context).enter_the_value_of_the_second_field,
                     controller: TextEditingController(),
                     validator: (value) => value == null || value.isEmpty
-                        ? S.of(context).this_field_is_required
+                        ? 'S.of(context).this_field_is_required'
                         : null,
                     onChanged: (value) => context.read<AddEvaluationBloc>().add(
                         ChangeEvaluationToValue(toValue: value.toIntOrNull())),
@@ -179,7 +179,7 @@ class AddEvaluationBodyState extends State<AddEvaluationBody>
                     hint: S.of(context).add_target_value,
                     controller: TextEditingController(),
                     validator: (value) => value == null || value.isEmpty
-                        ? S.of(context).this_field_is_required
+                        ? 'S.of(context).this_field_is_required'
                         : null,
                     onChanged: (value) => context.read<AddEvaluationBloc>().add(
                         ChangeEvaluationTargetValue(

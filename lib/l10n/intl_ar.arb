@@ -5,7 +5,7 @@
     "entr_the_password" : "أدخل كلمة المرور",
     "home" : "الصفحة الرئيسية",
     "employees" : "الموظفين",
-    "targets" : "النقاط",
+    "targets" : "الأهداف",
     "evaluations" : "التقييمات",
     "notification" : "الإشعارات",
     "settings" : "الإعدادات",
@@ -81,6 +81,43 @@
     "do_you_want_to_add_an_evaluation" : "هل تريد إضافة تقييم؟",
     "evaluation_info": "تفاصيل التقييم",
     "do_you_want_to_delete_the_evaluation":"هل تريد حذف التقييم؟",
+<<<<<<< HEAD
     "this_field_is_required": "هذا الحقل مطلوب"
+=======
+    "top_in_ratings" : "الأوائل في التقييمات",
+    "point_value" : "قيمة النقطة",
+    "last_modified_date" : "تاريخ اخر تعديل",
+    "points" : "النقاط",
+    "points_value" : "قيمة النقاط",
+    "employee_point_report" : "تقرير نقاط الموظف",
+    "enter_the_number" : "أدخل العدد",
+    "point" : "نقطة",
+    "working_hours_evaluation" : "تقييم ساعات العمل",
+    "Monthly_working_hours" : "عدد ساعات العمل الشهرية",
+    "daily_working_hours" : "معدل الدوام اليومي",
+    "Call_count_evaluation" : "تقييم عدد المكالمات",
+    "Number_of_monthly_calls" : "عدد المكالمات الشهرية",
+    "Daily_call_rate" : "معدل المكالمات اليومية",
+    "Evaluate_follow_up_errors" : "تقييم أخطاء المتابعة",
+    "Number_of_monthly_follow_up_errors" : "عدد أخطاء المتابعة الشهرية ",
+    "Daily_error_rate" : "معدل الخطا اليومي",
+    "Call_Quality_Rating" : "تقييم جودة المكالمات",
+    "Call_Quality_0_to_100" : "جودة المكالمة (من 0 الى 100)",
+    "Monthly_Call_Quality_Average" : "معدل جودة المكالمة الشهري",
+    "Evaluate_problem_cards" : "تقييم بطاقات المشاكل",
+    "Number_of_monthly_problem_cards" : "عدد بطاقات المشاكل الشهرية",
+    "Monthly_problem_card_rate" : "معدل بطاقات المشاكل الشهرية",
+    "Call_response_Evaluation" : "تقييم ردود المكالمات",
+    "Call_response_rate_from_0_to_100" : "نسبة الرد على المكالمات (من 0 الى 100)",
+    "Reply_rate_from_0_to_100" : "معدل الرد (من 0 الى 100)",
+    "Marketing_Admission_Assessment" :  "تقييم القبول في التسويق",
+    "Acceptance_rate_from_0_to_100" : "نسبة القبول (من 0 الى 100)",
+    "Acceptance_rate" : "معدل نسبة القبول",
+    "Add_Discount" : "إضافة - خصم: ",
+    "Enter_your_notes_here" : "أدخل ملاحظاتك هنا",
+    "Password_changed_successfully" : "تم تغيير كلمة المرور بنجاح",
+    "Old_password_is_wrong" : "كلمة المرور القديمة خاطئة"
+
+>>>>>>> 5e98f0f9e33b704cba2faf931ddc02fd3736c1e9
 
 }

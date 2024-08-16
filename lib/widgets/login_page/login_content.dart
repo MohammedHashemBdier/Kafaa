@@ -43,7 +43,7 @@ class LoginContent extends StatelessWidget {
                           .read<AuthBloc>()
                           .add(ChangePasswordEvent(password: value)),
                       validator: (value) => value == null || value.isEmpty
-                          ? S.of(context).this_field_is_required
+                          ? 'S.of(context).this_field_is_required'
                           : null,
                     ),
                   );

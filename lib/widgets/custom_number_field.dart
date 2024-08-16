@@ -7,7 +7,7 @@ import 'package:kafaa_app/widgets/custom_app_text_fields_border.dart';
 class CustomNumberField extends StatelessWidget {
   const CustomNumberField({
     super.key,
-    required this.hint,
+    this.hint,
     this.label = '',
     this.prefixIcon,
     this.suffixIcon,
@@ -20,7 +20,7 @@ class CustomNumberField extends StatelessWidget {
     this.validator,
   });
 
-  final String hint;
+  final String? hint;
   final String label;
   final Widget? prefixIcon, suffixIcon;
   final TextEditingController? controller;

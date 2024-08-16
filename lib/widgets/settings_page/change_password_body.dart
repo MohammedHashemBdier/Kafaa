@@ -83,7 +83,7 @@ class ChangePasswordBodyState extends State<ChangePasswordBody>
                     hint: S.of(context).add_password,
                     controller: TextEditingController(),
                     validator: (value) => value == null || value.isEmpty
-                        ? S.of(context).this_field_is_required
+                        ? 'S.of(context).this_field_is_required'
                         : null,
                     onChanged: (value) => context
                         .read<SettingsBloc>()
@@ -103,7 +103,7 @@ class ChangePasswordBodyState extends State<ChangePasswordBody>
                     hint: S.of(context).add_password,
                     controller: TextEditingController(),
                     validator: (value) => value == null || value.isEmpty
-                        ? S.of(context).this_field_is_required
+                        ? 'S.of(context).this_field_is_required'
                         : null,
                     onChanged: (value) => context
                         .read<SettingsBloc>()

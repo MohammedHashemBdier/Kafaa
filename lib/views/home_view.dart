@@ -5,8 +5,8 @@ import 'package:kafaa_app/helpers/extensions/navigator_on_context.dart';
 import 'package:kafaa_app/utils/router.dart';
 import 'package:kafaa_app/widgets/home_page/home_page.dart';
 
-class HomView extends StatelessWidget {
-  const HomView({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {

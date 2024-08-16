@@ -14,7 +14,7 @@ class DrawerItemsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = AppRouter.drawerItems(context);
-    
+
     return SliverList.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {

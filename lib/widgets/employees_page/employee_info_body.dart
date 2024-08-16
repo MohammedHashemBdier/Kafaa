@@ -115,7 +115,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).add_name,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -143,7 +143,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).add_username,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -169,7 +169,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).add_password,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -195,7 +195,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).add_department,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -221,7 +221,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).add_phone_number,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -251,7 +251,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).mobile_number,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -283,7 +283,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 enabled: enabled,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChose: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -351,7 +351,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).id_number,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -381,7 +381,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).add_address,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
@@ -449,7 +449,7 @@ class EmployeeInfoBodyState extends State<EmployeeInfoBody>
                                 hint: S.of(context).add_academic_specialization,
                                 validator: (value) =>
                                     value == null || value.isEmpty
-                                        ? S.of(context).this_field_is_required
+                                        ? 'S.of(context).this_field_is_required'
                                         : null,
                                 onChanged: (value) => context
                                     .read<ShowEditEmployeeBloc>()
