@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -16,13 +17,17 @@ void main() async {
 
   await dependencyInjection();
 
-  runApp(const KafaaApp());
+  runApp(
+    DevicePreview(
+      enabled: !const bool.fromEnvironment('dart.vm.product'),
+      builder: (context) => const KafaaApp(),
+    ),
+  );
 }
 
 class KafaaApp extends StatelessWidget {
   const KafaaApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -41,7 +46,9 @@ class KafaaApp extends StatelessWidget {
         },
         builder: (context, languageCode) {
           return MaterialApp(
-            locale: Locale(languageCode),
+            locale: Locale(languageCode), // استخدام اللغة من Bloc مباشرة
+            builder: (context, widget) => DevicePreview.appBuilder(
+                context, widget), // الحفاظ على `DevicePreview`
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

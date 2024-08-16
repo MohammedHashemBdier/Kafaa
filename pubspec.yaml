@@ -30,6 +30,7 @@ dependencies:
   page_transition: "^2.1.0"
   smooth_page_indicator: ^1.2.0+3
   flutter_swiper_null_safety: ^1.0.2
+  device_preview: ^1.2.0
 
 dev_dependencies:
   flutter_test:

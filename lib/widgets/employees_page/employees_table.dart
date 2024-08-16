@@ -62,11 +62,6 @@ class EmployeesTableState extends State<EmployeesTable>
                       horizontalInside:
                           BorderSide(color: AppColors.c4, width: 10),
                     ),
-                    columnWidths: const {
-                      0: FixedColumnWidth(80.0),
-                      2: FixedColumnWidth(80.0),
-                      3: FixedColumnWidth(100.0),
-                    },
                     children: [
                       employeesTableHeader(context),
                       ...state.employees.mapIndexed((index, employee) =>
