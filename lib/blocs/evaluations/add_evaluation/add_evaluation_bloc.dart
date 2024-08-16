@@ -12,15 +12,31 @@ class AddEvaluationBloc extends Bloc<AddEvaluationEvent, AddEvaluationState> {
   AddEvaluationBloc() : super(InitialState(formKey: GlobalKey<FormState>())) {
     on<AddEvent>((event, emit) {
       if (state.formKey.currentState!.validate()) {
-        emit(AddState(evaluation: state.evaluation, formKey: state.formKey));
-        emit(InitialState(formKey: state.formKey));
+        emit(AddState(
+          evaluation: state.evaluation,
+          evaluationTypes: state.evaluationTypes,
+          formKey: state.formKey,
+        ));
+        emit(InitialState(
+          formKey: state.formKey,
+          evaluationTypes: state.evaluationTypes,
+        ));
       }
+    });
+
+    on<GetEvaluationTypes>((event, emit) {
+      emit(InitialState(
+        formKey: state.formKey,
+        evaluation: state.evaluation,
+        evaluationTypes: event.evaluationTypes,
+      ));
     });
 
     on<ChangeEvaluationName>((event, emit) {
       emit(
         WriteState(
           formKey: state.formKey,
+          evaluationTypes: state.evaluationTypes,
           evaluation: state.evaluation.copyWith(name: () => event.name),
         ),
       );
@@ -30,6 +46,7 @@ class AddEvaluationBloc extends Bloc<AddEvaluationEvent, AddEvaluationState> {
       emit(
         WriteState(
           formKey: state.formKey,
+          evaluationTypes: state.evaluationTypes,
           evaluation: state.evaluation.copyWith(type: () => event.type),
         ),
       );
@@ -39,6 +56,7 @@ class AddEvaluationBloc extends Bloc<AddEvaluationEvent, AddEvaluationState> {
       emit(
         WriteState(
           formKey: state.formKey,
+          evaluationTypes: state.evaluationTypes,
           evaluation:
               state.evaluation.copyWith(fromValue: () => event.fromValue),
         ),
@@ -49,6 +67,7 @@ class AddEvaluationBloc extends Bloc<AddEvaluationEvent, AddEvaluationState> {
       emit(
         WriteState(
           formKey: state.formKey,
+          evaluationTypes: state.evaluationTypes,
           evaluation: state.evaluation.copyWith(toValue: () => event.toValue),
         ),
       );
@@ -58,6 +77,7 @@ class AddEvaluationBloc extends Bloc<AddEvaluationEvent, AddEvaluationState> {
       emit(
         WriteState(
           formKey: state.formKey,
+          evaluationTypes: state.evaluationTypes,
           evaluation:
               state.evaluation.copyWith(targetValue: () => event.targetValue),
         ),

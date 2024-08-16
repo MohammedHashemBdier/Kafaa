@@ -14,6 +14,7 @@ class EvaluationsInfoDialog extends StatelessWidget {
   final EvaluationModel evaluation;
   final void Function() onDelete;
   final void Function(EvaluationModel newEvaluation) onEdit;
+  
 
   const EvaluationsInfoDialog({
     super.key,

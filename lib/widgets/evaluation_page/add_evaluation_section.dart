@@ -7,13 +7,19 @@ import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_header.dart';
 
 class AddEvaluationSection extends StatelessWidget {
   final void Function(EvaluationModel evaluation) onAdd;
+  final List<String> evaluationTypes;
 
-  const AddEvaluationSection({super.key, required this.onAdd});
+  const AddEvaluationSection({
+    super.key,
+    required this.onAdd,
+    required this.evaluationTypes,
+  });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AddEvaluationBloc(),
+      create: (context) => AddEvaluationBloc()
+        ..add(GetEvaluationTypes(evaluationTypes: evaluationTypes)),
       child: BlocListener<AddEvaluationBloc, AddEvaluationState>(
         listener: (context, state) {
           if (state is AddState) onAdd.call(state.evaluation);

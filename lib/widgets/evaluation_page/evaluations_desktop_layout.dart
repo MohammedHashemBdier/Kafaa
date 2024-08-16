@@ -36,6 +36,10 @@ class EvaluationsDesktopLayout extends StatelessWidget {
                             const SizedBox(width: 20),
                             Expanded(
                               child: AddEvaluationSection(
+                                evaluationTypes: (context
+                                        .read<EvaluationsBloc>()
+                                        .state as GetEvaluationsLoadedState)
+                                    .evaluationTypes,
                                 onAdd: (evaluation) => context
                                     .read<EvaluationsBloc>()
                                     .add(AddEvaluationEvent(

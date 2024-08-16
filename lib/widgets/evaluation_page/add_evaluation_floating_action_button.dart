@@ -6,8 +6,13 @@ import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_dialog.dart';
 
 class AddEvaluationFloatingActionButton extends StatelessWidget {
   final void Function(EvaluationModel evaluation) onAdd;
+  final List<String> evaluationTypes;
 
-  const AddEvaluationFloatingActionButton({super.key, required this.onAdd});
+  const AddEvaluationFloatingActionButton({
+    super.key,
+    required this.onAdd,
+    required this.evaluationTypes,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,10 @@ class AddEvaluationFloatingActionButton extends StatelessWidget {
           showDialog(
             context: context,
             builder: (BuildContext context) {
-              return AddAnEvaluationDialog(onAdd: onAdd);
+              return AddAnEvaluationDialog(
+                onAdd: onAdd,
+                evaluationTypes: evaluationTypes,
+              );
             },
           );
         },

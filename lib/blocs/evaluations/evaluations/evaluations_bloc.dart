@@ -20,6 +20,7 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
       try {
         List<EvaluationModel> evaluations =
             await evaluationsRepo.getEvaluations(password: authRepo.password);
+            
         List<String> evaluationTypes = await evaluationsRepo.getEvaluationTypes(
             password: authRepo.password);
 

@@ -27,7 +27,7 @@ class EvaluationsRepo {
       password: password,
     );
 
-    return response['data'];
+    return List<String>.from(response['data']);
   }
 
   Future<bool> addEvaluation({

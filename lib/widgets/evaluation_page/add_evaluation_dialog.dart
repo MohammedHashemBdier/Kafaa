@@ -7,8 +7,13 @@ import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_section.dart';
 
 class AddAnEvaluationDialog extends StatelessWidget {
   final void Function(EvaluationModel evaluation) onAdd;
+  final List<String> evaluationTypes;
 
-  const AddAnEvaluationDialog({super.key, required this.onAdd});
+  const AddAnEvaluationDialog({
+    super.key,
+    required this.onAdd,
+    required this.evaluationTypes,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,12 @@ class AddAnEvaluationDialog extends StatelessWidget {
                 child: Column(
                   children: [
                     const CustomCloseIcon(),
-                    Expanded(child: AddEvaluationSection(onAdd: onAdd)),
+                    Expanded(
+                      child: AddEvaluationSection(
+                        onAdd: onAdd,
+                        evaluationTypes: evaluationTypes,
+                      ),
+                    ),
                   ],
                 ),
               ),

@@ -19,25 +19,33 @@ class EvaluationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig.init(context);
 
-    return Scaffold(
-      backgroundColor: AppColors.c3,
-      drawer: SizeConfig.width < SizeConfig.tablet
-          ? const AppDrawer(route: AppRouter.evaluations)
-          : null,
-      appBar:
-          SizeConfig.width < SizeConfig.tablet ? const CustomAppBar() : null,
-      floatingActionButton: SizeConfig.width < SizeConfig.desktop
-          ? AddEvaluationFloatingActionButton(
-              onAdd: (evaluation) => context
-                  .read<EvaluationsBloc>()
-                  .add(AddEvaluationEvent(evaluation: evaluation)),
-            )
-          : null,
-      body: AdaptiveLayout(
-        mobileLayout: (context) => const EvaluationsMobileLayout(),
-        tabletLayout: (context) => const EvaluationsTabletLayout(),
-        desktopLayout: (context) => const EvaluationsDesktopLayout(),
-      ),
+    return BlocBuilder<EvaluationsBloc, EvaluationsState>(
+      builder: (context, state) {
+        return Scaffold(
+          backgroundColor: AppColors.c3,
+          drawer: SizeConfig.width < SizeConfig.tablet
+              ? const AppDrawer(route: AppRouter.evaluations)
+              : null,
+          appBar: SizeConfig.width < SizeConfig.tablet
+              ? const CustomAppBar()
+              : null,
+          floatingActionButton: state is GetEvaluationsLoadedState
+              ? SizeConfig.width < SizeConfig.desktop
+                  ? AddEvaluationFloatingActionButton(
+                      onAdd: (evaluation) => context
+                          .read<EvaluationsBloc>()
+                          .add(AddEvaluationEvent(evaluation: evaluation)),
+                      evaluationTypes: state.evaluationTypes,
+                    )
+                  : null
+              : null,
+          body: AdaptiveLayout(
+            mobileLayout: (context) => const EvaluationsMobileLayout(),
+            tabletLayout: (context) => const EvaluationsTabletLayout(),
+            desktopLayout: (context) => const EvaluationsDesktopLayout(),
+          ),
+        );
+      },
     );
   }
 }

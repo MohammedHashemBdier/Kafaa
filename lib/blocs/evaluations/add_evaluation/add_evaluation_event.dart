@@ -4,6 +4,12 @@ sealed class AddEvaluationEvent {}
 
 class AddEvent extends AddEvaluationEvent {}
 
+class GetEvaluationTypes extends AddEvaluationEvent {
+  final List<String> evaluationTypes;
+
+  GetEvaluationTypes({required this.evaluationTypes});
+}
+
 class ChangeEvaluationName extends AddEvaluationEvent {
   final String? name;
 
