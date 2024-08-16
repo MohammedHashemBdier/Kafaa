@@ -1,31 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:kafaa_app/utils/app_colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocs/auth/auth_bloc.dart';
+import 'package:kafaa_app/blocs/settings/settings_bloc.dart';
+import 'package:kafaa_app/helpers/extensions/navigator_on_context.dart';
+import 'package:kafaa_app/helpers/functions.dart';
+import 'package:kafaa_app/utils/dependency_injection.dart';
 import 'package:kafaa_app/utils/router.dart';
-import 'package:kafaa_app/utils/size_config.dart';
-import 'package:kafaa_app/utils/adaptiv_layout.dart';
-import 'package:kafaa_app/widgets/custom_app_bar.dart';
-import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
-import 'package:kafaa_app/widgets/settings_page/settings_desktop_layout.dart';
-import 'package:kafaa_app/widgets/settings_page/settings_mobile_layout.dart';
-import 'package:kafaa_app/widgets/settings_page/settings_tablet_layout.dart';
+import 'package:kafaa_app/widgets/settings_page/settings_page.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig.init(context);
-    return Scaffold(
-      backgroundColor: AppColors.c3,
-      drawer: SizeConfig.width < SizeConfig.tablet
-          ? const AppDrawer(route: AppRouter.settings)
-          : null,
-      appBar:
-          SizeConfig.width < SizeConfig.tablet ? const CustomAppBar() : null,
-      body: AdaptiveLayout(
-        mobileLayout: (context) => const SettingsMobileLayout(),
-        tabletLayout: (context) => const SettingsTabletLayout(),
-        desktopLayout: (context) => const SettingsDesktopLayout(),
+    return BlocProvider<SettingsBloc>(
+      create: (context) => locator<SettingsBloc>()..add(GetDataEvent()),
+      child: MultiBlocListener(
+        listeners: [
+          BlocListener<SettingsBloc, SettingsState>(
+            listener: (context, state) {
+              if (state is ChangePasswordSuccessState)
+                HelperFunctions.successSnackBar(context, state.message);
+
+              if (state is ChangePasswordFailureState)
+                HelperFunctions.failureSnackBar(context, state.message);
+            },
+          ),
+          BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) {
+              if (state is UnauthenticatedState) {
+                context.popUntil((route) => route.isFirst);
+                context.pushReplacementNamed(AppRouter.login);
+              }
+            },
+          ),
+        ],
+        child: const SettingsPage(),
       ),
     );
   }

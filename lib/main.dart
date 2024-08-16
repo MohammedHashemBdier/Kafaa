@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:kafaa_app/blocks/localization/localization_bloc.dart';
+import 'package:kafaa_app/blocs/auth/auth_bloc.dart';
+import 'package:kafaa_app/blocs/localization/localization_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/bloc_observer.dart';
@@ -26,9 +27,12 @@ class KafaaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<AuthBloc>(
+          create: (context) => locator<AuthBloc>()..add(OpenAppEvent()),
+        ),
         BlocProvider<LocalizationBloc>(
           create: (context) =>
-              locator<LocalizationBloc>()..add(GetSavedLanguageEvent()),
+              locator<LocalizationBloc>()..add(GetAppLanguageEvent()),
         ),
       ],
       child: BlocSelector<LocalizationBloc, LocalizationState, String>(
@@ -56,7 +60,6 @@ class KafaaApp extends StatelessWidget {
             color: Colors.black26,
             title: 'Kafa\'a App Dash Board',
             onGenerateRoute: AppRouter.onGenerateRoute,
-            initialRoute: AppRouter.home,
           );
         },
       ),

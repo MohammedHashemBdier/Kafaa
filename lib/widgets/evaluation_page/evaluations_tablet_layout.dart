@@ -10,7 +10,7 @@ class EvaluationsTabletLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: AppDrawer(route: AppRouter.evaluation)),
+        Expanded(child: AppDrawer(route: AppRouter.evaluations)),
         SizedBox(width: 30),
         Expanded(
           flex: 3,

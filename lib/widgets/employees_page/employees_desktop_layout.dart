@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kafaa_app/blocks/employees/employees/employees_bloc.dart';
+import 'package:kafaa_app/blocs/employees/employees/employees_bloc.dart';
 import 'package:kafaa_app/utils/router.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 import 'package:kafaa_app/widgets/employees_page/add_an_employee_section.dart';

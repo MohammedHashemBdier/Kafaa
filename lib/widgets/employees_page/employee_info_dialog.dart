@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kafaa_app/blocks/employees/show_edit_employee/show_edit_employee_bloc.dart';
+import 'package:kafaa_app/blocs/employees/show_edit_employee/show_edit_employee_bloc.dart';
 import 'package:kafaa_app/models/employee_model.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/size_config.dart';

@@ -1,10 +1,11 @@
 import 'dart:async';
 
+import 'package:kafaa_app/utils/constants.dart';
 import 'package:kafaa_app/utils/dio_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthRepo {
-  static const String _userKey = 'USER';
+  static const String _passwordKey = 'PASSWORD';
 
   final DioClient client;
   final SharedPreferences pref;
@@ -13,34 +14,64 @@ class AuthRepo {
 
   final _controller = StreamController<bool>();
 
-//   Stream<bool> get isAuthenticated async* {
-//     yield user?.token != null;
-//     yield* _controller.stream;
-//   }
+  Stream<bool> get isAuthenticated async* {
+    yield password != null;
+    yield* _controller.stream;
+  }
 
-//   UserModel? get user {
-//     String? json = pref.getString(_userKey);
-//     return json == null ? null : UserModel.fromJson(jsonDecode(json));
-//   }
+  String? get password => pref.getString(_passwordKey);
 
-//   String? get token => user?.token;
+  Future<bool> login(String password) async {
+    Map<String, dynamic> response = await client.post(
+      'login',
+      data: {'password': password},
+    );
 
-//   Future<UserModel> login(String username, String password) async {
-//     Map<String, dynamic> response = await client.post(
-//       'teachers/login',
-//       data: {'username': username, 'password': password},
-//     );
+    bool isLogged = response['status'];
+    if (!isLogged) return false;
 
-//     UserModel user = UserModel.fromJson(response['teacher']);
-//     pref.setString(_userKey, jsonEncode(user.toJson()));
-//     _controller.add(true);
-//     return user;
-//   }
+    pref.setString(_passwordKey, password);
+    _controller.add(true);
+    return true;
+  }
 
-//   void logout() {
-//     pref.remove(_userKey);
-//     _controller.add(false);
-//   }
+  void logout() async {
+    _controller.add(false);
+    String? password = this.password;
+    pref.remove(_passwordKey);
+    try {
+      await client.get('out', password: password);
+    } catch (e) {
+      //
+    }
+  }
 
-//   void dispose() => _controller.close();
+  Future<bool> changePassword({
+    required String oldPassword,
+    required String newPassword,
+  }) async {
+    Map<String, dynamic> response = await client.post(
+      'password/change',
+      password: oldPassword,
+      data: {
+        'old': oldPassword,
+        'new': newPassword,
+      },
+    );
+
+    bool isChanged = response['status'];
+    if (isChanged) pref.setString(_passwordKey, newPassword);
+    return true;
+  }
+
+  Future<JsonMap> getManagerDetails() async {
+    Map<String, dynamic> response = await client.get(
+      'maneger/get',
+      password: password,
+    );
+
+    return response['data'];
+  }
+
+  void dispose() => _controller.close();
 }

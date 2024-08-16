@@ -23,7 +23,7 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
 
       try {
         List<EmployeeModel> employees = await employeesRepo.getEmployees(
-          password: '12345678',
+          password: authRepo.password,
           search: event is SearchOnEmployeesEvent ? event.employeeName : null,
         );
 
@@ -32,9 +32,9 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
           employees: employees,
         ));
       } on UnauthorizedException {
-        // authRepo.logout();
+        authRepo.logout();
       } on ForbiddenException {
-        // authRepo.logout();
+        authRepo.logout();
       } catch (e) {
         emit(GetEmployeesFailureState(
           searchOnEmployeesText: state.searchOnEmployeesText,
@@ -60,15 +60,15 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
 
         try {
           bool isAdded = await employeesRepo.addEmployee(
-            password: '12345678',
+            password: authRepo.password,
             employee: event.employee,
           );
 
           if (!isAdded) emit(state.copyWith(employees: oldEmployees));
         } on UnauthorizedException {
-          // authRepo.logout();
+          authRepo.logout();
         } on ForbiddenException {
-          // authRepo.logout();
+          authRepo.logout();
         } catch (e) {
           emit(state.copyWith(employees: oldEmployees));
         }
@@ -94,15 +94,15 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
 
         try {
           bool isEdited = await employeesRepo.editEmployee(
-            password: '12345678',
+            password: authRepo.password,
             employee: event.employee,
           );
 
           if (!isEdited) emit(state.copyWith(employees: oldEmployees));
         } on UnauthorizedException {
-          // authRepo.logout();
+          authRepo.logout();
         } on ForbiddenException {
-          // authRepo.logout();
+          authRepo.logout();
         } catch (e) {
           emit(state.copyWith(employees: oldEmployees));
         }
@@ -124,15 +124,15 @@ class EmployeesBloc extends Bloc<EmployeesEvent, EmployeesState> {
 
         try {
           bool isDeleted = await employeesRepo.deleteEmployee(
-            password: '12345678',
+            password: authRepo.password,
             employee: event.employee,
           );
 
           if (!isDeleted) emit(state.copyWith(employees: oldEmployees));
         } on UnauthorizedException {
-          // authRepo.logout();
+          authRepo.logout();
         } on ForbiddenException {
-          // authRepo.logout();
+          authRepo.logout();
         } catch (e) {
           emit(state.copyWith(employees: oldEmployees));
         }

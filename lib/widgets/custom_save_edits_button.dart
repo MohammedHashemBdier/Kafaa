@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/helpers/extensions/navigator_on_context.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_confirmation_dialog.dart';
@@ -10,7 +11,7 @@ class CustomSaveEditsButton extends StatelessWidget {
     required this.onPressed,
     required this.enabled,
   });
-  
+
   final bool enabled;
   final Function onPressed;
 
@@ -26,6 +27,7 @@ class CustomSaveEditsButton extends StatelessWidget {
                     content: S.of(context).do_you_want_to_save_the_edits,
                     onConfirm: () {
                       onPressed();
+                      context.pop();
                     },
                   );
                 },
@@ -33,12 +35,12 @@ class CustomSaveEditsButton extends StatelessWidget {
             }
           : null,
       style: ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(
+        backgroundColor: WidgetStateProperty.all<Color>(
             enabled ? AppColors.c2 : AppColors.c5),
       ),
       child: Padding(

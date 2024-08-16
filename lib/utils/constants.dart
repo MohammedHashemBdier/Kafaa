@@ -5,7 +5,8 @@ String webUrl = 'http://127.0.0.1:8000/';
 String baseUrl = webUrl;
 
 Map<String, String> headers = {
-  // "Access-Control-Allow-Origin": "*",
+  'Access-Control-Allow-Origin': '*',
   'Content-Type': 'application/json',
+  'Connection': 'keep-alive',
   'Accept': '*/*'
 };

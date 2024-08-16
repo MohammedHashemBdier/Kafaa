@@ -6,10 +6,15 @@ part 'localization_event.dart';
 part 'localization_state.dart';
 
 class LocalizationBloc extends Bloc<LocalizationEvent, LocalizationState> {
-  final LocalizationRepo repo;
-  LocalizationBloc({required this.repo}) : super(const InitialState()) {
-    on<GetSavedLanguageEvent>((event, emit) {
-      emit(InitialState(languageCode: repo.languageCode ?? state.languageCode));
+  final LocalizationRepo localizationRepo;
+  LocalizationBloc({required this.localizationRepo})
+      : super(const InitialState()) {
+    on<GetAppLanguageEvent>((event, emit) async {
+      try {
+        emit(InitialState(languageCode: await localizationRepo.languageCode));
+      } catch (e) {
+        //
+      }
     });
 
     on<ChangeLanguageEvent>((event, emit) async {
@@ -20,7 +25,8 @@ class LocalizationBloc extends Bloc<LocalizationEvent, LocalizationState> {
         emit(InitialState(languageCode: newLanguageCode));
 
         try {
-          bool isChanged = await repo.changeLanguage(newLanguageCode);
+          bool isChanged =
+              await localizationRepo.changeLanguage(newLanguageCode);
           if (!isChanged) emit(InitialState(languageCode: oldLanguageCode));
         } catch (e) {
           emit(InitialState(languageCode: oldLanguageCode));

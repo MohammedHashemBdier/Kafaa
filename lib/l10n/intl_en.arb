@@ -79,7 +79,7 @@
     "add_target_value" : "Add Target Value",
     "do_you_want_to_add_an_evaluation" : "Do you want to add an Evaluation?",
     "evaluation_info": "Evaluation Info",
-    "do_you_want_to_delete_the_evaluation":"Do you want to delete the Evaluation?"
+    "do_you_want_to_delete_the_evaluation":"Do you want to delete the Evaluation?",
     "this_field_is_required": "This field is required"
 
 }

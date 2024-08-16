@@ -81,7 +81,7 @@ class S {
   }
 
   /// `Entr the Password`
-  String get entr_the_password {
+  String get enter_the_password {
     return Intl.message(
       'Entr the Password',
       name: 'entr_the_password',
@@ -860,7 +860,7 @@ class S {
     );
   }
 
-  /// `Do you want to delete the Evaluation?`
+  /// `This field is required`
   String get this_field_is_required {
     return Intl.message(
       'This field is required',
@@ -870,8 +870,6 @@ class S {
     );
   }
 }
-
-
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();

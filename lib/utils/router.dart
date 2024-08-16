@@ -10,12 +10,12 @@ import 'package:kafaa_app/views/settings_view.dart';
 import 'package:page_transition/page_transition.dart';
 
 abstract class AppRouter {
+  static const String home = '/';
   static const String login = '/login';
-  static const String home = '/home';
   static const String settings = '/settings';
   static const String employees = '/employees';
-  static const String target = '/target';
-  static const String evaluation = '/evaluation';
+  static const String targets = '/targets';
+  static const String evaluations = '/evaluations';
   static const String notifications = '/notifications';
 
   static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) =>
@@ -48,7 +48,7 @@ abstract class AppRouter {
             // duration: const Duration(milliseconds: 700),
             settings: routeSettings,
           ),
-        evaluation => PageTransition(
+        evaluations => PageTransition(
             child: const EvaluationView(),
             type: PageTransitionType.fade,
             alignment: Alignment.center,
@@ -72,12 +72,12 @@ abstract class AppRouter {
         DrawerItemModel(
           title: S.of(context).targets,
           image: Assets.imagesTargetIcon,
-          route: AppRouter.target,
+          route: AppRouter.targets,
         ),
         DrawerItemModel(
           title: S.of(context).evaluations,
           image: Assets.imagesReviewsIcon,
-          route: AppRouter.evaluation,
+          route: AppRouter.evaluations,
         ),
         DrawerItemModel(
           title: S.of(context).notification,

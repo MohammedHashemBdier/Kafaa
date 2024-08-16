@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kafaa_app/blocks/evaluations/add_evaluation/add_evaluation_bloc.dart';
+import 'package:kafaa_app/blocs/evaluations/add_evaluation/add_evaluation_bloc.dart';
 import 'package:kafaa_app/models/evaluation_model.dart';
 import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_body.dart';
 import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_header.dart';

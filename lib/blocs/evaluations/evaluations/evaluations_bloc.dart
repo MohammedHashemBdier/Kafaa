@@ -19,13 +19,13 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
 
       try {
         List<EvaluationModel> evaluation =
-            await evaluationsRepo.getEvaluations(password: '12345678');
+            await evaluationsRepo.getEvaluations(password: authRepo.password);
 
         emit(GetEvaluationsLoadedState(evaluations: evaluation));
       } on UnauthorizedException {
-        // authRepo.logout();
+        authRepo.logout();
       } on ForbiddenException {
-        // authRepo.logout();
+        authRepo.logout();
       } catch (e) {
         emit(GetEvaluationsFailureState(message: e.toString()));
       }
@@ -46,15 +46,15 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
 
         try {
           bool isAdded = await evaluationsRepo.addEvaluation(
-            password: '12345678',
+            password: authRepo.password,
             evaluation: event.evaluation,
           );
 
           if (!isAdded) emit(state.copyWith(evaluation: oldEvaluations));
         } on UnauthorizedException {
-          // authRepo.logout();
+          authRepo.logout();
         } on ForbiddenException {
-          // authRepo.logout();
+          authRepo.logout();
         } catch (e) {
           emit(state.copyWith(evaluation: oldEvaluations));
         }
@@ -78,15 +78,15 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
 
         try {
           bool isEdited = await evaluationsRepo.editEvaluation(
-            password: '12345678',
+            password: authRepo.password,
             evaluation: event.evaluation,
           );
 
           if (!isEdited) emit(state.copyWith(evaluation: oldEvaluations));
         } on UnauthorizedException {
-          // authRepo.logout();
+          authRepo.logout();
         } on ForbiddenException {
-          // authRepo.logout();
+          authRepo.logout();
         } catch (e) {
           emit(state.copyWith(evaluation: oldEvaluations));
         }
@@ -108,15 +108,15 @@ class EvaluationsBloc extends Bloc<EvaluationsEvent, EvaluationsState> {
 
         try {
           bool isDeleted = await evaluationsRepo.deleteEvaluation(
-            password: '12345678',
+            password: authRepo.password,
             evaluation: event.evaluation,
           );
 
           if (!isDeleted) emit(state.copyWith(evaluation: oldEvaluations));
         } on UnauthorizedException {
-          // authRepo.logout();
+          authRepo.logout();
         } on ForbiddenException {
-          // authRepo.logout();
+          authRepo.logout();
         } catch (e) {
           emit(state.copyWith(evaluation: oldEvaluations));
         }

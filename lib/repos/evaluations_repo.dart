@@ -7,7 +7,7 @@ class EvaluationsRepo {
   final DioClient client;
 
   Future<List<EvaluationModel>> getEvaluations({
-    required String password,
+    required String? password,
     String? search = '',
   }) async {
     Map<String, dynamic> response = await client.get(
@@ -19,7 +19,7 @@ class EvaluationsRepo {
   }
 
   Future<bool> addEvaluation({
-    required String password,
+    required String? password,
     required EvaluationModel evaluation,
   }) async {
     Map<String, dynamic> response = await client.post(
@@ -32,7 +32,7 @@ class EvaluationsRepo {
   }
 
   Future<bool> editEvaluation({
-    required String password,
+    required String? password,
     required EvaluationModel evaluation,
   }) async {
     Map<String, dynamic> response = await client.post(
@@ -45,7 +45,7 @@ class EvaluationsRepo {
   }
 
   Future<bool> deleteEvaluation({
-    required String password,
+    required String? password,
     required EvaluationModel evaluation,
   }) async {
     Map<String, dynamic> response = await client.delete(

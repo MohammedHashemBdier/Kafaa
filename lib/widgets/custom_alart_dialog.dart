@@ -3,10 +3,10 @@ import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 
-class CustomAlartDialog extends StatelessWidget {
+class CustomAlertDialog extends StatelessWidget {
   final String content;
 
-  const CustomAlartDialog({
+  const CustomAlertDialog({
     super.key,
     required this.content,
   });

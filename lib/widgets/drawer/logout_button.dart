@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocs/auth/auth_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
+import 'package:kafaa_app/helpers/extensions/navigator_on_context.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
-import 'package:kafaa_app/views/login_view.dart';
 import 'package:kafaa_app/widgets/custom_confirmation_dialog.dart';
 
 class LogoutButton extends StatelessWidget {
-  const LogoutButton({
-    super.key,
-  });
+  const LogoutButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return PhysicalModel(
@@ -20,16 +21,12 @@ class LogoutButton extends StatelessWidget {
         onPressed: () {
           showDialog(
             context: context,
-            builder: (BuildContext context) {
+            builder: (BuildContext cnx) {
               return CustomConfirmationDialog(
                 content: S.of(context).do_you_want_to_logout,
                 onConfirm: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => (const LoginView()),
-                    ),
-                  );
+                  cnx.pop();
+                  context.read<AuthBloc>().add(LoggedOutEvent());
                 },
               );
             },

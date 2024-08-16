@@ -1,7 +1,9 @@
 import 'package:get_it/get_it.dart';
-import 'package:kafaa_app/blocks/employees/employees/employees_bloc.dart';
-import 'package:kafaa_app/blocks/evaluations/evaluations/evaluations_bloc.dart';
-import 'package:kafaa_app/blocks/localization/localization_bloc.dart';
+import 'package:kafaa_app/blocs/auth/auth_bloc.dart';
+import 'package:kafaa_app/blocs/employees/employees/employees_bloc.dart';
+import 'package:kafaa_app/blocs/evaluations/evaluations/evaluations_bloc.dart';
+import 'package:kafaa_app/blocs/localization/localization_bloc.dart';
+import 'package:kafaa_app/blocs/settings/settings_bloc.dart';
 import 'package:kafaa_app/repos/auth_repo.dart';
 import 'package:kafaa_app/repos/employees_repo.dart';
 import 'package:kafaa_app/repos/evaluations_repo.dart';
@@ -22,7 +24,7 @@ Future<void> dependencyInjection() async {
   );
 
   locator.registerLazySingleton(
-    () => LocalizationRepo(pref: locator(), client: locator()),
+    () => LocalizationRepo(client: locator()),
   );
 
   locator.registerLazySingleton(
@@ -33,7 +35,9 @@ Future<void> dependencyInjection() async {
     () => EvaluationsRepo(client: locator()),
   );
 
-  locator.registerFactory(() => LocalizationBloc(repo: locator()));
+  locator.registerFactory(() => LocalizationBloc(localizationRepo: locator()));
+
+  locator.registerFactory(() => AuthBloc(authRepo: locator()));
 
   locator.registerFactory(() => EmployeesBloc(
         employeesRepo: locator(),
@@ -44,4 +48,6 @@ Future<void> dependencyInjection() async {
         evaluationsRepo: locator(),
         authRepo: locator(),
       ));
+
+  locator.registerFactory(() => SettingsBloc(authRepo: locator()));
 }

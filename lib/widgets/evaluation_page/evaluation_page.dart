@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kafaa_app/blocks/evaluations/evaluations/evaluations_bloc.dart';
+import 'package:kafaa_app/blocs/evaluations/evaluations/evaluations_bloc.dart';
 import 'package:kafaa_app/utils/adaptiv_layout.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/router.dart';
@@ -22,7 +22,7 @@ class EvaluationPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.c3,
       drawer: SizeConfig.width < SizeConfig.tablet
-          ? const AppDrawer(route: AppRouter.evaluation)
+          ? const AppDrawer(route: AppRouter.evaluations)
           : null,
       appBar:
           SizeConfig.width < SizeConfig.tablet ? const CustomAppBar() : null,

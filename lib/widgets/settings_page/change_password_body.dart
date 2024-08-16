@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocs/settings/settings_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
-import 'package:kafaa_app/widgets/custom_next_button.dart';
 import 'package:kafaa_app/widgets/custom_password_field.dart';
 import 'package:kafaa_app/widgets/custom_save_edits_button.dart';
 
@@ -63,65 +64,72 @@ class ChangePasswordBodyState extends State<ChangePasswordBody>
   @override
   Widget build(BuildContext context) {
     return CustomAppContainer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          buildAnimatedField(
-            Text(S.of(context).old_password,
-                style: AppStyles.styleBold16(context)),
-            0,
-          ),
-          buildAnimatedField(
-            CustomPasswordField(
-              label: S.of(context).old_password,
-              enabled: true,
-              hint: S.of(context).add_password,
-              onTap: () {},
-            ),
-            1,
-          ),
-          const SizedBox(height: 5),
-          buildAnimatedField(
-            Align(
-              alignment: Alignment.center,
-              child: IntrinsicWidth(
-                child: CustomNextButton(
-                  onPressed: () {},
-                  enabled: true,
+      child: BlocBuilder<SettingsBloc, SettingsState>(
+        buildWhen: (previous, current) => current is ChangePasswordSuccessState,
+        builder: (context, state) {
+          return Form(
+            key: (state as GetDataLoadedState).formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                buildAnimatedField(
+                  Text(S.of(context).old_password,
+                      style: AppStyles.styleBold16(context)),
+                  0,
                 ),
-              ),
-            ),
-            2,
-          ),
-          const SizedBox(height: 20),
-          buildAnimatedField(
-            Text(S.of(context).new_password,
-                style: AppStyles.styleBold16(context)),
-            3,
-          ),
-          buildAnimatedField(
-            CustomPasswordField(
-              label: S.of(context).new_password,
-              enabled: false,
-              hint: S.of(context).add_password,
-              onTap: () {},
-            ),
-            4,
-          ),
-          const SizedBox(height: 5),
-          buildAnimatedField(
-            Align(
-              alignment: Alignment.center,
-              child: IntrinsicWidth(
-                child: CustomSaveEditsButton(
-                  onPressed: () {},
-                  enabled: false,
+                buildAnimatedField(
+                  CustomPasswordField(
+                    label: S.of(context).old_password,
+                    hint: S.of(context).add_password,
+                    controller: TextEditingController(),
+                    validator: (value) => value == null || value.isEmpty
+                        ? S.of(context).this_field_is_required
+                        : null,
+                    onChanged: (value) => context
+                        .read<SettingsBloc>()
+                        .add(ChangeOldPasswordEvent(password: value)),
+                  ),
+                  1,
                 ),
-              ),
+                const SizedBox(height: 5),
+                buildAnimatedField(
+                  Text(S.of(context).new_password,
+                      style: AppStyles.styleBold16(context)),
+                  2,
+                ),
+                buildAnimatedField(
+                  CustomPasswordField(
+                    label: S.of(context).new_password,
+                    hint: S.of(context).add_password,
+                    controller: TextEditingController(),
+                    validator: (value) => value == null || value.isEmpty
+                        ? S.of(context).this_field_is_required
+                        : null,
+                    onChanged: (value) => context
+                        .read<SettingsBloc>()
+                        .add(ChangeNewPasswordEvent(password: value)),
+                  ),
+                  3,
+                ),
+                const SizedBox(height: 5),
+                buildAnimatedField(
+                  Align(
+                    alignment: Alignment.center,
+                    child: IntrinsicWidth(
+                      child: CustomSaveEditsButton(
+                        onPressed: () => context
+                            .read<SettingsBloc>()
+                            .add(ChangePasswordEvent()),
+                        enabled: true,
+                      ),
+                    ),
+                  ),
+                  4,
+                ),
+              ],
             ),
-            5,
-          ),
-        ],
+          );
+        },
       ),
     );
   }

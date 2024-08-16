@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocs/auth/auth_bloc.dart';
 import 'package:kafaa_app/utils/app_images.dart';
 import 'package:kafaa_app/widgets/custom_password_field.dart';
-import 'package:kafaa_app/widgets/login_page/login_buttom.dart';
+import 'package:kafaa_app/widgets/login_page/login_button.dart';
 
 import '../../generated/l10n.dart';
 
 class LoginContent extends StatelessWidget {
-  const LoginContent({
-    super.key,
-  });
+  const LoginContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +29,25 @@ class LoginContent extends StatelessWidget {
             const Spacer(),
             Flexible(
               flex: 5,
-              child: CustomPasswordField(
-                hint: S.of(context).entr_the_password,
-                label: S.of(context).password,
-                onTap: () {},
+              child: BlocSelector<AuthBloc, AuthState, GlobalKey<FormState>?>(
+                selector: (state) {
+                  return state is UnauthenticatedState ? state.formKey : null;
+                },
+                builder: (context, formKey) {
+                  return Form(
+                    key: formKey,
+                    child: CustomPasswordField(
+                      hint: S.of(context).enter_the_password,
+                      label: S.of(context).password,
+                      onChanged: (value) => context
+                          .read<AuthBloc>()
+                          .add(ChangePasswordEvent(password: value)),
+                      validator: (value) => value == null || value.isEmpty
+                          ? S.of(context).this_field_is_required
+                          : null,
+                    ),
+                  );
+                },
               ),
             ),
             const Spacer(),

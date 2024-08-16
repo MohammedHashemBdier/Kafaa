@@ -80,7 +80,7 @@
     "add_target_value" : "أدخل قيمة النقاط",
     "do_you_want_to_add_an_evaluation" : "هل تريد إضافة تقييم؟",
     "evaluation_info": "تفاصيل التقييم",
-    "do_you_want_to_delete_the_evaluation":"هل تريد حذف التقييم؟"
+    "do_you_want_to_delete_the_evaluation":"هل تريد حذف التقييم؟",
     "this_field_is_required": "هذا الحقل مطلوب"
 
 }

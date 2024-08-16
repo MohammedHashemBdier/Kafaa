@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kafaa_app/blocks/evaluations/add_evaluation/add_evaluation_bloc.dart';
-import 'package:kafaa_app/extensions/string_extensions.dart';
+import 'package:kafaa_app/blocs/evaluations/add_evaluation/add_evaluation_bloc.dart';
+import 'package:kafaa_app/helpers/extensions/string_extensions.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';

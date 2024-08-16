@@ -7,7 +7,7 @@ class EmployeesRepo {
   EmployeesRepo({required this.client});
 
   Future<List<EmployeeModel>> getEmployees({
-    required String password,
+    required String? password,
     String? search = '',
   }) async {
     Map<String, dynamic> response = await client.get(
@@ -19,7 +19,7 @@ class EmployeesRepo {
   }
 
   Future<bool> addEmployee({
-    required String password,
+    required String? password,
     required EmployeeModel employee,
   }) async {
     Map<String, dynamic> response = await client.post(
@@ -32,7 +32,7 @@ class EmployeesRepo {
   }
 
   Future<bool> editEmployee({
-    required String password,
+    required String? password,
     required EmployeeModel employee,
   }) async {
     Map<String, dynamic> response = await client.post(
@@ -45,7 +45,7 @@ class EmployeesRepo {
   }
 
   Future<bool> deleteEmployee({
-    required String password,
+    required String? password,
     required EmployeeModel employee,
   }) async {
     Map<String, dynamic> response = await client.delete(

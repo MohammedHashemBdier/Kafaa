@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocs/auth/auth_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_styles.dart';
-import 'package:kafaa_app/views/home_view.dart';
-import 'package:kafaa_app/widgets/custom_alart_dialog.dart';
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({
-    super.key,
-  });
+  const LoginButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return PhysicalModel(
@@ -17,29 +16,14 @@ class LoginButton extends StatelessWidget {
       shadowColor: AppColors.c1,
       borderRadius: BorderRadius.circular(50),
       child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => (const HomView()),
-            ),
-          );
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return CustomAlartDialog(
-                content: S.of(context).you_are_now_logged_in,
-              );
-            },
-          );
-        },
+        onPressed: () => context.read<AuthBloc>().add(LoggedInEvent()),
         style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          backgroundColor: MaterialStateProperty.all<Color>(AppColors.c1),
+          backgroundColor: WidgetStateProperty.all<Color>(AppColors.c1),
         ),
         child: Padding(
           padding: const EdgeInsets.all(5),

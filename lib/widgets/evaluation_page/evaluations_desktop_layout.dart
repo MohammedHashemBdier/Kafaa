@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kafaa_app/blocks/evaluations/evaluations/evaluations_bloc.dart';
+import 'package:kafaa_app/blocs/evaluations/evaluations/evaluations_bloc.dart';
 import 'package:kafaa_app/utils/router.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 import 'package:kafaa_app/widgets/evaluation_page/add_evaluation_section.dart';
@@ -13,7 +13,7 @@ class EvaluationsDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(child: AppDrawer(route: AppRouter.evaluation)),
+        const Expanded(child: AppDrawer(route: AppRouter.evaluations)),
         const SizedBox(width: 30),
         Expanded(
           flex: 4,

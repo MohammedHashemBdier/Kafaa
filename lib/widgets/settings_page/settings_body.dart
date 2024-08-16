@@ -5,7 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kafaa_app/blocks/localization/localization_bloc.dart';
+import 'package:kafaa_app/blocs/localization/localization_bloc.dart';
+import 'package:kafaa_app/blocs/settings/settings_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/utils/app_images.dart';
@@ -38,14 +39,16 @@ class SettingsBody extends StatelessWidget {
                     text: "${S.of(context).name}: ",
                     style: AppStyles.styleMedium24(context)),
                 TextSpan(
-                    text: "${S.of(context).admin}\n",
+                    text:
+                        "${(context.read<SettingsBloc>().state as GetDataLoadedState).name}\n",
                     style: AppStyles.styleRegular16(context)
                         .copyWith(color: AppColors.c5)),
                 TextSpan(
                     text: "${S.of(context).last_login}: ",
                     style: AppStyles.styleSemiBold24(context)),
                 TextSpan(
-                    text: "24/5/2024 15:36:20\n",
+                    text:
+                        "${(context.read<SettingsBloc>().state as GetDataLoadedState).lastLogin}\n",
                     style: AppStyles.styleRegular16(context)
                         .copyWith(color: AppColors.c5)),
               ],

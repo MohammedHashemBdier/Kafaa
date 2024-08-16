@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kafaa_app/blocks/employees/add_employee/add_employee_bloc.dart';
-import 'package:kafaa_app/extensions/date_extensions.dart';
+import 'package:kafaa_app/blocs/employees/add_employee/add_employee_bloc.dart';
+import 'package:kafaa_app/helpers/extensions/date_extensions.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 import 'package:kafaa_app/widgets/custom_app_container.dart';
