@@ -7,6 +7,7 @@ import 'package:kafaa_app/views/evaluation_view.dart';
 import 'package:kafaa_app/views/home_view.dart';
 import 'package:kafaa_app/views/login_view.dart';
 import 'package:kafaa_app/views/settings_view.dart';
+import 'package:kafaa_app/views/targets_view.dart';
 import 'package:page_transition/page_transition.dart';
 
 abstract class AppRouter {
@@ -18,45 +19,63 @@ abstract class AppRouter {
   static const String evaluation = '/evaluation';
   static const String notifications = '/notifications';
 
-  static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) =>
-      switch (routeSettings.name) {
-        login => PageTransition(
-            child: const LoginView(),
-            type: PageTransitionType.fade,
-            alignment: Alignment.center,
-            // duration: const Duration(milliseconds: 700),
-            settings: routeSettings,
-          ),
-        home => PageTransition(
-            child: const HomView(),
-            type: PageTransitionType.fade,
-            alignment: Alignment.center,
-            // duration: const Duration(milliseconds: 700),
-            settings: routeSettings,
-          ),
-        settings => PageTransition(
-            child: const SettingsView(),
-            type: PageTransitionType.fade,
-            alignment: Alignment.center,
-            // duration: const Duration(milliseconds: 700),
-            settings: routeSettings,
-          ),
-        employees => PageTransition(
-            child: const EmployeesView(),
-            type: PageTransitionType.fade,
-            alignment: Alignment.center,
-            // duration: const Duration(milliseconds: 700),
-            settings: routeSettings,
-          ),
-        evaluation => PageTransition(
-            child: const EvaluationView(),
-            type: PageTransitionType.fade,
-            alignment: Alignment.center,
-            // duration: const Duration(milliseconds: 700),
-            settings: routeSettings,
-          ),
-        _ => null,
-      };
+  static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
+    const transitionType = PageTransitionType.fade;
+    const transitionDuration = Duration(milliseconds: 500);
+
+    switch (routeSettings.name) {
+      case login:
+        return PageTransition(
+          child: const LoginView(),
+          type: transitionType,
+          alignment: Alignment.center,
+          duration: transitionDuration,
+          settings: routeSettings,
+        );
+      case home:
+        return PageTransition(
+          child: const HomeView(),
+          type: transitionType,
+          alignment: Alignment.center,
+          duration: transitionDuration,
+          settings: routeSettings,
+        );
+      case settings:
+        return PageTransition(
+          child: const SettingsView(),
+          type: transitionType,
+          alignment: Alignment.center,
+          duration: transitionDuration,
+          settings: routeSettings,
+        );
+      case employees:
+        return PageTransition(
+          child: const EmployeesView(),
+          type: transitionType,
+          alignment: Alignment.center,
+          duration: transitionDuration,
+          settings: routeSettings,
+        );
+      case target:
+        return PageTransition(
+          child: const TargetsView(),
+          type: transitionType,
+          alignment: Alignment.center,
+          duration: transitionDuration,
+          settings: routeSettings,
+        );
+      case evaluation:
+        return PageTransition(
+          child: const EvaluationView(),
+          type: transitionType,
+          alignment: Alignment.center,
+          duration: transitionDuration,
+          settings: routeSettings,
+        );
+      default:
+        return null;
+    }
+  }
 
   static List<DrawerItemModel> drawerItems(BuildContext context) => [
         DrawerItemModel(
@@ -78,11 +97,6 @@ abstract class AppRouter {
           title: S.of(context).evaluations,
           image: Assets.imagesReviewsIcon,
           route: AppRouter.evaluation,
-        ),
-        DrawerItemModel(
-          title: S.of(context).notification,
-          image: Assets.imagesNotificationIcon,
-          route: AppRouter.notifications,
         ),
         DrawerItemModel(
           title: S.of(context).settings,

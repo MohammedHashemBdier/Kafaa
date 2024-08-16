@@ -7,8 +7,8 @@ import 'package:kafaa_app/widgets/custom_app_bar.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 import 'package:kafaa_app/widgets/home_page/home_desktop_layout.dart';
 
-class HomView extends StatelessWidget {
-  const HomView({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
