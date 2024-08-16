@@ -3,8 +3,8 @@ import 'package:kafaa_app/utils/router.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
 import 'package:kafaa_app/widgets/targets__page/targets_mobile_layout.dart';
 
-class EvaluationsTabletLayout extends StatelessWidget {
-  const EvaluationsTabletLayout({super.key});
+class TargetsTabletLayout extends StatelessWidget {
+  const TargetsTabletLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

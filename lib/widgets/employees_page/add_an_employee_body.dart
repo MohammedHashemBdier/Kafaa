@@ -85,7 +85,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       label: S.of(context).name,
                       controller: TextEditingController(),
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context
                           .read<AddEmployeeBloc>()
@@ -103,7 +103,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       label: S.of(context).username,
                       controller: TextEditingController(),
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context
                           .read<AddEmployeeBloc>()
@@ -118,7 +118,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       label: S.of(context).password,
                       controller: TextEditingController(),
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context
                           .read<AddEmployeeBloc>()
@@ -133,7 +133,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       label: S.of(context).department,
                       controller: TextEditingController(),
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context
                           .read<AddEmployeeBloc>()
@@ -149,7 +149,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       controller: TextEditingController(),
                       maxLength: 10,
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context
                           .read<AddEmployeeBloc>()
@@ -168,7 +168,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       controller: TextEditingController(),
                       maxLength: 10,
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context
                           .read<AddEmployeeBloc>()
@@ -190,7 +190,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       ),
                       enabled: true,
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChose: (value) => context.read<AddEmployeeBloc>().add(
                           ChangeEmployeeIsWork(
@@ -213,7 +213,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                           controller: TextEditingController(
                               text: date?.commonDateFormat()),
                           validator: (value) => value == null || value.isEmpty
-                              ? "S.of(context).this_field_is_required"
+                              ? S.of(context).This_field_is_required
                               : null,
                           onTap: () async => context
                               .read<AddEmployeeBloc>()
@@ -235,7 +235,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       label: S.of(context).id_number,
                       controller: TextEditingController(),
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context
                           .read<AddEmployeeBloc>()
@@ -254,7 +254,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       label: S.of(context).address,
                       controller: TextEditingController(),
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context
                           .read<AddEmployeeBloc>()
@@ -277,7 +277,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                           controller: TextEditingController(
                               text: date?.commonDateFormat()),
                           validator: (value) => value == null || value.isEmpty
-                              ? "S.of(context).this_field_is_required"
+                              ? S.of(context).This_field_is_required
                               : null,
                           onTap: () async => context
                               .read<AddEmployeeBloc>()
@@ -299,7 +299,7 @@ class AddAnEmployeeBodyState extends State<AddAnEmployeeBody>
                       label: S.of(context).academic_specialization,
                       controller: TextEditingController(),
                       validator: (value) => value == null || value.isEmpty
-                          ? "S.of(context).this_field_is_required"
+                          ? S.of(context).This_field_is_required
                           : null,
                       onChanged: (value) => context.read<AddEmployeeBloc>().add(
                           ChangeEmployeeAcademicSpecialization(

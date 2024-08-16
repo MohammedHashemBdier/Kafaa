@@ -104,7 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "admin": MessageLookupByLibrary.simpleMessage("Admin"),
         "alart": MessageLookupByLibrary.simpleMessage("Alart"),
         "app_and_user_sittings":
-            MessageLookupByLibrary.simpleMessage("App and User Sittings"),
+            MessageLookupByLibrary.simpleMessage("App and User Settings"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "change_the_password":

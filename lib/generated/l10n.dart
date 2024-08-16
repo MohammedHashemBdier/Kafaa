@@ -590,10 +590,10 @@ class S {
     );
   }
 
-  /// `App and User Sittings`
+  /// `App and User Settings`
   String get app_and_user_sittings {
     return Intl.message(
-      'App and User Sittings',
+      'App and User Settings',
       name: 'app_and_user_sittings',
       desc: '',
       args: [],

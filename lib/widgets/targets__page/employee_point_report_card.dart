@@ -11,7 +11,7 @@ class EmployeePointReportCard extends StatelessWidget {
   final int evaluationAverage;
   final int points;
   final VoidCallback onDelete;
-
+  final bool enable;
   const EmployeePointReportCard({
     super.key,
     required this.evaluationName,
@@ -21,11 +21,13 @@ class EmployeePointReportCard extends StatelessWidget {
     required this.evaluationAverageName,
     this.evaluationNumber,
     required this.evaluationAverage,
+    required this.enable,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: enable ? null : Colors.grey[300],
       elevation: 10,
       margin: const EdgeInsets.all(16),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -89,6 +91,7 @@ class EmployeePointReportCard extends StatelessWidget {
                       hintStyle: AppStyles.styleRegular16(context)
                           .copyWith(color: AppColors.c5),
                       border: InputBorder.none,
+                      enabled: enable,
                     ),
                   ),
                 ),

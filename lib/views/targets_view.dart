@@ -5,9 +5,9 @@ import 'package:kafaa_app/utils/size_config.dart';
 import 'package:kafaa_app/utils/adaptiv_layout.dart';
 import 'package:kafaa_app/widgets/custom_app_bar.dart';
 import 'package:kafaa_app/widgets/drawer/app_drawer.dart';
-import 'package:kafaa_app/widgets/evaluation_page/evaluations_tablet_layout.dart';
 import 'package:kafaa_app/widgets/targets__page/targets_desktop_layout.dart';
 import 'package:kafaa_app/widgets/targets__page/targets_mobile_layout.dart';
+import 'package:kafaa_app/widgets/targets__page/targets_tablet_layout.dart';
 
 class TargetsView extends StatelessWidget {
   const TargetsView({super.key});
@@ -24,7 +24,7 @@ class TargetsView extends StatelessWidget {
           SizeConfig.width < SizeConfig.tablet ? const CustomAppBar() : null,
       body: AdaptiveLayout(
         mobileLayout: (context) => const TargetsMobileLayout(),
-        tabletLayout: (context) => const EvaluationsTabletLayout(),
+        tabletLayout: (context) => const TargetsTabletLayout(),
         desktopLayout: (context) => const TargetsDesktopLayout(),
       ),
     );

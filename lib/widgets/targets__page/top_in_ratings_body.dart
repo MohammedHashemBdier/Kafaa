@@ -51,7 +51,7 @@ class TopInRatingsBodyState extends State<TopInRatingsBody>
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
+      height: 170,
       child: Swiper(
         controller: _swiperController,
         itemCount: widget.cardsData.length,
@@ -70,6 +70,7 @@ class TopInRatingsBodyState extends State<TopInRatingsBody>
           );
         },
         pagination: SwiperPagination(
+          margin: const EdgeInsets.only(bottom: 20),
           builder: DotSwiperPaginationBuilder(
             size: 7,
             activeSize: 10,

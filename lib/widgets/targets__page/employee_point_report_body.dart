@@ -1,7 +1,5 @@
 import "package:flutter/material.dart";
-import "package:flutter/services.dart";
 import "package:kafaa_app/generated/l10n.dart";
-import "package:kafaa_app/widgets/custom_save_edits_button.dart";
 import "package:kafaa_app/widgets/targets__page/employee_point_report_add_delete_card.dart";
 import "package:kafaa_app/widgets/targets__page/employee_point_report_card.dart";
 
@@ -26,7 +24,7 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
       vsync: this,
       duration: const Duration(seconds: 7),
     );
-    _animations = List.generate(9, (index) {
+    _animations = List.generate(8, (index) {
       double start = index * 0.05;
       double end = start + 0.1;
       return CurvedAnimation(
@@ -66,6 +64,7 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
       children: [
         buildAnimatedField(
           EmployeePointReportCard(
+            enable: false,
             evaluationName: S.of(context).working_hours_evaluation,
             evaluationNumberName: S.of(context).Monthly_working_hours,
             evaluationAverageName: S.of(context).daily_working_hours,
@@ -77,6 +76,7 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
         ),
         buildAnimatedField(
           EmployeePointReportCard(
+            enable: true,
             evaluationName: S.of(context).Call_count_evaluation,
             evaluationNumberName: S.of(context).Number_of_monthly_calls,
             evaluationNumber: "2000",
@@ -89,6 +89,7 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
         ),
         buildAnimatedField(
           EmployeePointReportCard(
+            enable: true,
             evaluationName: S.of(context).Evaluate_follow_up_errors,
             evaluationNumberName:
                 S.of(context).Number_of_monthly_follow_up_errors,
@@ -102,6 +103,7 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
         ),
         buildAnimatedField(
           EmployeePointReportCard(
+            enable: true,
             evaluationName: S.of(context).Call_Quality_Rating,
             evaluationNumberName: S.of(context).Call_Quality_0_to_100,
             evaluationNumber: "90",
@@ -114,6 +116,7 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
         ),
         buildAnimatedField(
           EmployeePointReportCard(
+            enable: true,
             evaluationName: S.of(context).Evaluate_problem_cards,
             evaluationNumberName: S.of(context).Number_of_monthly_problem_cards,
             evaluationNumber: "300",
@@ -126,6 +129,7 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
         ),
         buildAnimatedField(
           EmployeePointReportCard(
+            enable: true,
             evaluationName: S.of(context).Call_response_Evaluation,
             evaluationNumberName:
                 S.of(context).Call_response_rate_from_0_to_100,
@@ -139,6 +143,7 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
         ),
         buildAnimatedField(
           EmployeePointReportCard(
+            enable: true,
             evaluationName: S.of(context).Marketing_Admission_Assessment,
             evaluationNumberName: S.of(context).Acceptance_rate_from_0_to_100,
             evaluationNumber: "50",
@@ -156,16 +161,6 @@ class AddEvaluationBodyState extends State<EmployeePointReportBody>
             onDelete: () {},
           ),
           7,
-        ),
-        const SizedBox(height: 20),
-        buildAnimatedField(
-          IntrinsicWidth(
-            child: CustomSaveEditsButton(
-              enabled: true,
-              onPressed: () {},
-            ),
-          ),
-          8,
         ),
       ],
     );
