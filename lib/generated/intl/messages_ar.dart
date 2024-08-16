@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تقييم أخطاء المتابعة"),
         "Evaluate_problem_cards":
             MessageLookupByLibrary.simpleMessage("تقييم بطاقات المشاكل"),
+        "Incorrect_password":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور خاطئة"),
         "Marketing_Admission_Assessment":
             MessageLookupByLibrary.simpleMessage("تقييم القبول في التسويق"),
         "Monthly_Call_Quality_Average":
@@ -70,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("معدل الرد (من 0 الى 100)"),
         "Show_password":
             MessageLookupByLibrary.simpleMessage("إظهار كلمة المرور"),
+        "This_field_is_required":
+            MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "academic_specialization":
             MessageLookupByLibrary.simpleMessage("الإختصاص الأكاديمي"),
         "add_academic_specialization":
@@ -134,6 +138,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "employees": MessageLookupByLibrary.simpleMessage("الموظفين"),
         "english": MessageLookupByLibrary.simpleMessage("إنكليزي"),
         "enter_the_number": MessageLookupByLibrary.simpleMessage("أدخل العدد"),
+        "enter_the_password":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "enter_the_value_of_the_first_field":
             MessageLookupByLibrary.simpleMessage("أدخل قيمة المجال الاول"),
         "enter_the_value_of_the_second_field":

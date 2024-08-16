@@ -81,9 +81,6 @@
     "do_you_want_to_add_an_evaluation" : "هل تريد إضافة تقييم؟",
     "evaluation_info": "تفاصيل التقييم",
     "do_you_want_to_delete_the_evaluation":"هل تريد حذف التقييم؟",
-<<<<<<< HEAD
-    "this_field_is_required": "هذا الحقل مطلوب"
-=======
     "top_in_ratings" : "الأوائل في التقييمات",
     "point_value" : "قيمة النقطة",
     "last_modified_date" : "تاريخ اخر تعديل",
@@ -116,8 +113,9 @@
     "Add_Discount" : "إضافة - خصم: ",
     "Enter_your_notes_here" : "أدخل ملاحظاتك هنا",
     "Password_changed_successfully" : "تم تغيير كلمة المرور بنجاح",
-    "Old_password_is_wrong" : "كلمة المرور القديمة خاطئة"
-
->>>>>>> 5e98f0f9e33b704cba2faf931ddc02fd3736c1e9
+    "Old_password_is_wrong" : "كلمة المرور القديمة خاطئة",
+    "Incorrect_password" : "كلمة المرور خاطئة",
+    "This_field_is_required" : "هذا الحقل مطلوب",
+    "enter_the_password" : "أدخل كلمة المرور"
 
 }

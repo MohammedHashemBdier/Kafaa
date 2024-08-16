@@ -81,7 +81,7 @@ class S {
   }
 
   /// `Entr the Password`
-  String get enter_the_password {
+  String get entr_the_password {
     return Intl.message(
       'Entr the Password',
       name: 'entr_the_password',
@@ -1185,6 +1185,36 @@ class S {
     return Intl.message(
       'Old password is wrong',
       name: 'Old_password_is_wrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect_password`
+  String get Incorrect_password {
+    return Intl.message(
+      'Incorrect_password',
+      name: 'Incorrect_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get This_field_is_required {
+    return Intl.message(
+      'This field is required',
+      name: 'This_field_is_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the password`
+  String get enter_the_password {
+    return Intl.message(
+      'Enter the password',
+      name: 'enter_the_password',
       desc: '',
       args: [],
     );

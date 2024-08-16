@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Evaluate follow-up errors"),
         "Evaluate_problem_cards":
             MessageLookupByLibrary.simpleMessage("Evaluate problem cards"),
+        "Incorrect_password":
+            MessageLookupByLibrary.simpleMessage("Incorrect_password"),
         "Marketing_Admission_Assessment": MessageLookupByLibrary.simpleMessage(
             "Marketing Admission Assessment"),
         "Monthly_Call_Quality_Average": MessageLookupByLibrary.simpleMessage(
@@ -71,6 +73,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Reply_rate_from_0_to_100":
             MessageLookupByLibrary.simpleMessage("Reply rate (from 0 to 100)"),
         "Show_password": MessageLookupByLibrary.simpleMessage("Show Password"),
+        "This_field_is_required":
+            MessageLookupByLibrary.simpleMessage("This field is required"),
         "academic_specialization":
             MessageLookupByLibrary.simpleMessage("Academic Specialization"),
         "add_academic_specialization":
@@ -141,6 +145,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "enter_the_number":
             MessageLookupByLibrary.simpleMessage("Enter the Number"),
+        "enter_the_password":
+            MessageLookupByLibrary.simpleMessage("Enter the password"),
         "enter_the_value_of_the_first_field":
             MessageLookupByLibrary.simpleMessage(
                 "Enter the value of the first field"),
