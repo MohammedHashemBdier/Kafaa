@@ -12,6 +12,7 @@ class EmployeePointReportCard extends StatelessWidget {
   final int points;
   final VoidCallback onDelete;
   final bool enable;
+  
   const EmployeePointReportCard({
     super.key,
     required this.evaluationName,

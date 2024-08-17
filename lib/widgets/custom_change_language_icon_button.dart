@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kafaa_app/blocs/localization/localization_bloc.dart';
 import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/utils/app_colors.dart';
 
-class CustomChangeLanguageIconButten extends StatelessWidget {
-  const CustomChangeLanguageIconButten({super.key});
+class CustomChangeLanguageIconButton extends StatelessWidget {
+  const CustomChangeLanguageIconButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,10 @@ class CustomChangeLanguageIconButten extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: () => context.read<LocalizationBloc>().add(ChangeLanguageEvent(
+          languageCode: Localizations.localeOf(context).languageCode == 'ar'
+              ? 'en'
+              : 'ar')),
     );
   }
 }

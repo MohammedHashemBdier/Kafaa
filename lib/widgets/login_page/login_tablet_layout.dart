@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kafaa_app/widgets/login_page/login_tablet_background.dart';
 import 'package:kafaa_app/widgets/login_page/login_tablet_section.dart';
-import 'package:kafaa_app/widgets/custom_change_language_icon_butten.dart';
+import 'package:kafaa_app/widgets/custom_change_language_icon_button.dart';
 
 class LoginTabletLayout extends StatelessWidget {
   const LoginTabletLayout({super.key});
@@ -12,7 +12,7 @@ class LoginTabletLayout extends StatelessWidget {
       children: [
         LoginTabletBackground(),
         LoginTabletSection(),
-        CustomChangeLanguageIconButten(),
+        CustomChangeLanguageIconButton(),
       ],
     );
   }

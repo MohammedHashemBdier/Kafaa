@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kafaa_app/blocs/auth/auth_bloc.dart';
+import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/helpers/extensions/navigator_on_context.dart';
 import 'package:kafaa_app/helpers/functions.dart';
 import 'package:kafaa_app/utils/router.dart';
@@ -24,11 +25,18 @@ class LoginView extends StatelessWidget {
           //     );
           //   },
           // );
-        } else if (state is LoginLoadingState) {
+        }
+
+        if (state is LoginLoadingState) {
           HelperFunctions.loadingDialog(context);
-        } else if (state is LoginFailureState) {
+        }
+
+        if (state is LoginFailureState) {
           context.pop();
-          HelperFunctions.failureSnackBar(context, state.message);
+          HelperFunctions.failureSnackBar(
+            context,
+            S.of(context).Incorrect_password,
+          );
         }
       },
       child: const LoginPage(),

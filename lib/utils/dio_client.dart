@@ -12,6 +12,7 @@ class DioClient {
     _dio.options.connectTimeout = const Duration(seconds: 30);
     _dio.options.sendTimeout = const Duration(seconds: 20);
     _dio.options.receiveTimeout = const Duration(seconds: 20);
+    _dio.options.extra['withCredentials'];
 
     _dio.interceptors.add(
       InterceptorsWrapper(

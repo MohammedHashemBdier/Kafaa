@@ -4,9 +4,7 @@ import 'package:kafaa_app/widgets/targets__page/top_in_ratings_body.dart';
 import 'package:kafaa_app/widgets/targets__page/top_in_ratings_header.dart';
 
 class TopInRatingSection extends StatelessWidget {
-  TopInRatingSection({
-    super.key,
-  });
+  TopInRatingSection({super.key});
 
   final List<TopInRatingCardModel> cardsData = [
     TopInRatingCardModel(
@@ -22,6 +20,7 @@ class TopInRatingSection extends StatelessWidget {
     TopInRatingCardModel(
         empName: 'ليلى أحمد', evoName: 'معدل جودة المكالمة:', points: 270),
   ];
+  
   @override
   Widget build(BuildContext context) {
     return Column(

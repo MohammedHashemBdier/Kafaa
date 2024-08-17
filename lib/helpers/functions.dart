@@ -15,7 +15,11 @@ class HelperFunctions {
   static void successSnackBar(BuildContext context, String message) {
     context.clearSnackBars();
     context.showSnackBar(
-      SnackBar(content: Text(message)),
+      SnackBar(
+        content: Text(message),
+        backgroundColor: Colors.green,
+
+      ),
     );
   }
 

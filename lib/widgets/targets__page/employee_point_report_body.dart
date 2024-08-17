@@ -4,9 +4,7 @@ import "package:kafaa_app/widgets/targets__page/employee_point_report_add_delete
 import "package:kafaa_app/widgets/targets__page/employee_point_report_card.dart";
 
 class EmployeePointReportBody extends StatefulWidget {
-  const EmployeePointReportBody({
-    super.key,
-  });
+  const EmployeePointReportBody({super.key});
 
   @override
   AddEvaluationBodyState createState() => AddEvaluationBodyState();

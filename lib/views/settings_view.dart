@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kafaa_app/blocs/auth/auth_bloc.dart';
 import 'package:kafaa_app/blocs/settings/settings_bloc.dart';
+import 'package:kafaa_app/generated/l10n.dart';
 import 'package:kafaa_app/helpers/extensions/navigator_on_context.dart';
 import 'package:kafaa_app/helpers/functions.dart';
 import 'package:kafaa_app/utils/dependency_injection.dart';
@@ -20,10 +21,16 @@ class SettingsView extends StatelessWidget {
           BlocListener<SettingsBloc, SettingsState>(
             listener: (context, state) {
               if (state is ChangePasswordSuccessState)
-                HelperFunctions.successSnackBar(context, state.message);
+                HelperFunctions.successSnackBar(
+                  context,
+                  S.of(context).Password_changed_successfully,
+                );
 
               if (state is ChangePasswordFailureState)
-                HelperFunctions.failureSnackBar(context, state.message);
+                HelperFunctions.failureSnackBar(
+                  context,
+                  S.of(context).Old_password_is_wrong,
+                );
             },
           ),
           BlocListener<AuthBloc, AuthState>(

@@ -17,12 +17,14 @@ void main() async {
 
   await dependencyInjection();
 
-  runApp(
-    DevicePreview(
-      enabled: !const bool.fromEnvironment('dart.vm.product'),
-      builder: (context) => const KafaaApp(),
-    ),
-  );
+  runApp(const KafaaApp());
+
+  // runApp(
+  //   DevicePreview(
+  //     enabled: !const bool.fromEnvironment('dart.vm.product'),
+  //     builder: (context) => const KafaaApp(),
+  //   ),
+  // );
 }
 
 class KafaaApp extends StatelessWidget {

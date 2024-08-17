@@ -6,6 +6,7 @@ import 'package:kafaa_app/widgets/targets__page/top_in_ratings_card.dart';
 
 class TopInRatingsBody extends StatefulWidget {
   final List<TopInRatingCardModel> cardsData;
+
   const TopInRatingsBody({
     super.key,
     required this.cardsData,
@@ -55,6 +56,7 @@ class TopInRatingsBodyState extends State<TopInRatingsBody>
       child: Swiper(
         controller: _swiperController,
         itemCount: widget.cardsData.length,
+        
         itemBuilder: (context, index) {
           final cardData = widget.cardsData[index];
           return SlideTransition(
