@@ -11,19 +11,20 @@ class EmployeePointReportHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAppContainer(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Spacer(),
+          Text(
+            "280",
+            style: AppStyles.styleBold24(context),
+          ),
           Text(
             "Mohammed Hashem Bdier",
             style: AppStyles.styleBold24(context),
           ),
-          const Spacer(),
           Text(
             "8/2024",
             style: AppStyles.styleBold24(context),
           ),
-          const Spacer(),
         ],
       ),
     );

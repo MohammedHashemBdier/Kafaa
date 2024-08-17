@@ -10,7 +10,7 @@ class TargetsTabletLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: AppDrawer(route: AppRouter.evaluations)),
+        Expanded(child: AppDrawer(route: AppRouter.targets)),
         SizedBox(width: 30),
         Expanded(
           flex: 3,
