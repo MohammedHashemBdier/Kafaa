@@ -17,14 +17,14 @@ void main() async {
 
   await dependencyInjection();
 
-  runApp(const KafaaApp());
+  // runApp(const KafaaApp());
 
-  // runApp(
-  //   DevicePreview(
-  //     enabled: !const bool.fromEnvironment('dart.vm.product'),
-  //     builder: (context) => const KafaaApp(),
-  //   ),
-  // );
+  runApp(
+    DevicePreview(
+      enabled: !const bool.fromEnvironment('dart.vm.product'),
+      builder: (context) => const KafaaApp(),
+    ),
+  );
 }
 
 class KafaaApp extends StatelessWidget {
@@ -48,9 +48,9 @@ class KafaaApp extends StatelessWidget {
         },
         builder: (context, languageCode) {
           return MaterialApp(
-            locale: Locale(languageCode), // استخدام اللغة من Bloc مباشرة
+            locale: Locale(languageCode),
             builder: (context, widget) => DevicePreview.appBuilder(
-                context, widget), // الحفاظ على `DevicePreview`
+                context, widget), 
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,
